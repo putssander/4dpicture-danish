@@ -1,0 +1,801 @@
+{"_header": "retag_vehicle_v3", "model": "ollama:gemma4:31b", "top": 800, "run_utc": "2026-08-24T15:04:36.318783+00:00", "inventory": "complete USAS tagset, 232 codes, from /work/speech/eval/usas_tags.json", "crosswalk": {"Violence": ["G3", "A1.1.1", "A1.1.2", "E3-", "S8+", "S8-", "X8+"], "Journey": ["M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8"], "Machine": ["Y2", "O2", "H3", "M3"], "Sports/Games": ["K5", "K1", "K2"], "Nature/Growth": ["L1", "L2", "L3", "W3", "W5", "F4"], "Weather": ["W4"], "Body": ["B1", "B2", "B3"], "Home/Shelter": ["H1", "H2", "H4", "H5"], "Burden/Weight": ["O4.4", "N3.5", "A15", "X5"], "Food/Eating": ["F1", "F2"], "Art/Music": ["C1", "K2", "Q4"], "Time": ["T1", "T2", "T3"], "Emotion": ["E1", "E2", "E4", "E5", "E6"]}, "overlap_rule": "crosswalk applied at aggregation; category priority = listed order; an overlapping code counts under the first category listing it (M3->Journey, K2->Sports/Games); codes in no category -> 'Other (outside crosswalk)'", "num_ctx": 8192, "temperature": 0}
+{"id": "PLANT|ANCHOR_reframe-156|going through some huge alpine tunnel", "code": "H2", "analyst": "Home/Shelter", "domain": "building parts"}
+{"id": "PLANT|MENU_12|invite my cancer to leave", "code": "H4", "analyst": "Home/Shelter", "domain": "housing and residence"}
+{"id": "PLANT|MENU_12|parking itself in the back room", "code": "M3", "analyst": "Journey", "domain": "vehicles and transport"}
+{"id": "PLANT|ANCHOR_reframe-199|I have a flood", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid water"}
+{"id": "PLANT|MENU_5|let the stone rest right under the sole of your foot", "code": "O2", "analyst": "Machine", "domain": "physical objects"}
+{"id": "PLANT|MENU_12|cancer arrived as an unwelcome lodger", "code": "H4", "analyst": "Home/Shelter", "domain": "domestic residence"}
+{"id": "PLANT|MENU_5|life after cancer to walking with a stone in your shoe", "code": "O2", "analyst": "Machine", "domain": "physical objects"}
+{"id": "POOL|COVID19positive_gs6u0a_0|h887be5bf97b9", "code": "F2", "analyst": "Food/Eating", "domain": "alcoholic drinks"}
+{"id": "POOL|COVID19positive_gskcy4_0|h16d8e487f09e", "code": "S2", "analyst": "Other (outside crosswalk)", "domain": "people"}
+{"id": "POOL|covidlonghaulers_lxv62j_0|h62d900704e7d", "code": "W1", "analyst": "Other (outside crosswalk)", "domain": "outer space"}
+{"id": "POOL|covidlonghaulers_l20kfc_10|h17580ffb4c89", "code": "W1", "analyst": "Other (outside crosswalk)", "domain": "the universe/realities"}
+{"id": "POOL|covidlonghaulers_m713wr_0|h4ac35e3d84c5", "code": "O1.1", "analyst": "Other (outside crosswalk)", "domain": "solid substances"}
+{"id": "POOL|covidlonghaulers_m713wr_1|h0c62fe0bc04c", "code": "O1.1", "analyst": "Other (outside crosswalk)", "domain": "solid substances"}
+{"id": "POOL|covidlonghaulers_mp996l_0|h606927d12f54", "code": "M3", "analyst": "Journey", "domain": "land vehicles"}
+{"id": "PLANT|MENU_11|Cancer is part of me", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|COVID19positive_gahhk0_1|h49d04ab588df", "code": "NONE", "analyst": "not metaphorical", "domain": "physical sensation"}
+{"id": "POOL|covidlonghaulers_ods9nw_0|h47babfd87a20", "code": "O1.1", "analyst": "Other (outside crosswalk)", "domain": "heavy metals"}
+{"id": "POOL|COVID19positive_gqcpol_2|h2923b762ca81", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electrical equipment failure"}
+{"id": "POOL|COVID19positive_gx8gks_0|h162ab27d5b5c", "code": "M2", "analyst": "Journey", "domain": "pushing and pulling"}
+{"id": "POOL|COVID19positive_hpb6nr_2|hd7abe100ba42", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|COVID19positive_h8h2d7_0|h89d6280f486f", "code": "O4.6", "analyst": "Other (outside crosswalk)", "domain": "temperature"}
+{"id": "POOL|covidlonghaulers_lcqfwz_0|hacd92e051ef9", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid/water"}
+{"id": "POOL|covidlonghaulers_lksgtk_1|h1a22f7053f6e", "code": "O2", "analyst": "Machine", "domain": "physical objects"}
+{"id": "POOL|covidlonghaulers_mp996l_0|h1a0f2a650a70", "code": "O2", "analyst": "Machine", "domain": "mechanical tools"}
+{"id": "PLANT|ANCHOR_reframe-128|embers reigniting as a big blaze", "code": "W4", "analyst": "Weather", "domain": "fire and weather"}
+{"id": "PLANT|ANCHOR_reframe-156|come through the peak", "code": "M6", "analyst": "Journey", "domain": "geographical location and terrain"}
+{"id": "PLANT|ANCHOR_reframe-156|see the sunlight and the pasture ahead of us", "code": "W3", "analyst": "Nature/Growth", "domain": "geography and landscape"}
+{"id": "PLANT|ANCHOR_reframe-199|every drop which comes in we mop it up", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid and cleaning"}
+{"id": "PLANT|MENU_11|sing in tune with the rest of the body", "code": "K2", "analyst": "Sports/Games", "domain": "music and singing"}
+{"id": "PLANT|MENU_12|courteous if unwilling host", "code": "H4", "analyst": "Home/Shelter", "domain": "domestic residence/hosting"}
+{"id": "PLANT|MENU_13|feels like an alien invasion", "code": "G3", "analyst": "Violence", "domain": "warfare and invasion"}
+{"id": "PLANT|MENU_3|It’s like driving a horse-drawn coach without the back wheel", "code": "M3", "analyst": "Journey", "domain": "land transport"}
+{"id": "POOL|COVID19positive_frhjp7_4|h7e6d6e84bae9", "code": "M4", "analyst": "Journey", "domain": "water and swimming"}
+{"id": "PLANT|MENU_5|manoeuvre the stone to sit between your toes", "code": "M2", "analyst": "Journey", "domain": "moving and positioning objects"}
+{"id": "POOL|COVID19positive_gon5oi_1|h13d20aeb8ba1", "code": "NONE", "analyst": "not metaphorical", "domain": "physical sensation"}
+{"id": "POOL|COVID19positive_gpedy8_0|h3b68f6eba2c9", "code": "NONE", "analyst": "not metaphorical", "domain": "NONE"}
+{"id": "POOL|COVID19positive_hbsyjv_0|h88c44607ce99", "code": "NONE", "analyst": "not metaphorical", "domain": "NONE"}
+{"id": "POOL|COVID19positive_gxjbqr_5|h5e2c716610ef", "code": "B5", "analyst": "Other (outside crosswalk)", "domain": "clothes and accessories"}
+{"id": "POOL|COVID19positive_ht1mil_4|hbe0dec90d5d6", "code": "F1", "analyst": "Food/Eating", "domain": "food and cooking"}
+{"id": "POOL|covidlonghaulers_k7afdk_0|h6f559a7e1bc0", "code": "W4", "analyst": "Weather", "domain": "weather and climate"}
+{"id": "POOL|covidlonghaulers_ktfzbs_3|h4e17d6e1a56f", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid substances"}
+{"id": "POOL|covidlonghaulers_kxhvmz_1|ha14c106477be", "code": "L2", "analyst": "Nature/Growth", "domain": "living creatures"}
+{"id": "POOL|covidlonghaulers_kypnki_1|hd65ff7fe8238", "code": "K6", "analyst": "Other (outside crosswalk)", "domain": "children's toys"}
+{"id": "POOL|covidlonghaulers_l20kfc_8|ha9d37278a935", "code": "O1.1", "analyst": "Other (outside crosswalk)", "domain": "solid building materials"}
+{"id": "POOL|covidlonghaulers_la1kbs_1|h2d38185bba1c", "code": "O2", "analyst": "Machine", "domain": "household objects"}
+{"id": "POOL|covidlonghaulers_lye64q_0|ha65d88258947", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electrical equipment"}
+{"id": "POOL|covidlonghaulers_l25isx_5|hd8620e5f1b70", "code": "A1.1.2", "analyst": "Violence", "domain": "damaging and destroying"}
+{"id": "POOL|covidlonghaulers_m7qzb7_6|h0654bbc8a4c4", "code": "O2", "analyst": "Machine", "domain": "mechanical devices"}
+{"id": "PLANT|ANCHOR_reframe-133|Like glitter, it gets everywhere", "code": "O2", "analyst": "Machine", "domain": "small physical objects"}
+{"id": "PLANT|ANCHOR_reframe-199|tide has not turned", "code": "M4", "analyst": "Journey", "domain": "water and tides"}
+{"id": "PLANT|ANCHOR_reframe-199|the tide is still coming in", "code": "W4", "analyst": "Weather", "domain": "water and weather"}
+{"id": "PLANT|ANCHOR_reframe-201|like the tide it just keeps returning", "code": "M4", "analyst": "Journey", "domain": "water and tides"}
+{"id": "PLANT|MENU_16|bend with the wind", "code": "L3", "analyst": "Nature/Growth", "domain": "plants and nature"}
+{"id": "POOL|COVID19positive_fv3ez1_0|ha157c088f816", "code": "M4", "analyst": "Journey", "domain": "water and waves"}
+{"id": "POOL|COVID19positive_g8ns1x_0|h72f9573cf391", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|COVID19positive_gg9r63_1|h97bbf6fdc08a", "code": "M4", "analyst": "Journey", "domain": "water and ocean"}
+{"id": "POOL|COVID19positive_hqmmj7_1|h061b7dddae0c", "code": "L2", "analyst": "Nature/Growth", "domain": "living creatures"}
+{"id": "POOL|COVID19positive_hkt30r_0|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|COVID19positive_ggp1cl_0|h4ea822a8c28e", "code": "M2", "analyst": "Journey", "domain": "physical gripping/pulling"}
+{"id": "POOL|covidlonghaulers_j2bly9_3|h106c514064fb", "code": "M1", "analyst": "Journey", "domain": "downward movement"}
+{"id": "POOL|covidlonghaulers_jvkd7u_0|h6d4524726a38", "code": "M3", "analyst": "Journey", "domain": "amusement park rides"}
+{"id": "POOL|covidlonghaulers_k1vssr_2|h2499e11cc47a", "code": "O2", "analyst": "Machine", "domain": "physical objects/containers"}
+{"id": "POOL|covidlonghaulers_klqbpw_0|h3ff9f1c25e88", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electrical equipment"}
+{"id": "POOL|covidlonghaulers_l0ugdj_1|h103c9f15eb6f", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_l4nafp_3|h23dcb4dca580", "code": "N3.5", "analyst": "Burden/Weight", "domain": "physical weight"}
+{"id": "POOL|covidlonghaulers_l8vk9b_3|h9b6e86aeb4ac", "code": "T3", "analyst": "Time", "domain": "age and aging"}
+{"id": "POOL|covidlonghaulers_lpr19w_0|ha562d0a7b7f1", "code": "M1", "analyst": "Journey", "domain": "movement and speed"}
+{"id": "POOL|covidlonghaulers_m6kjza_2|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_m7qzb7_3|hadcdee7c29e7", "code": "O4.6", "analyst": "Other (outside crosswalk)", "domain": "temperature/freezing"}
+{"id": "POOL|covidlonghaulers_meawvq_0|h8017407d12f1", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electricity and electronics"}
+{"id": "POOL|covidlonghaulers_my7xc1_4|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_my7xc1_5|hcc8ef186875a", "code": "Y2", "analyst": "Machine", "domain": "computing and data"}
+{"id": "POOL|covidlonghaulers_n2tvxl_0|hbe0ea4fc061c", "code": "M2", "analyst": "Journey", "domain": "physical excavation/movement"}
+{"id": "POOL|covidlonghaulers_nbcu3n_0|h8dacb41198eb", "code": "M1", "analyst": "Journey", "domain": "travel and movement"}
+{"id": "POOL|covidlonghaulers_nfdd9q_0|hd939aac33079", "code": "T3", "analyst": "Time", "domain": "age and aging"}
+{"id": "POOL|covidlonghaulers_o47vps_0|ha27c22a9849a", "code": "A9", "analyst": "Other (outside crosswalk)", "domain": "possession and loss"}
+{"id": "PLANT|ANCHOR_reframe-135|the last guest to leave", "code": "S1.1.3", "analyst": "Other (outside crosswalk)", "domain": "social gathering guests"}
+{"id": "PLANT|ANCHOR_reframe-158|wrestle it to the floor", "code": "G3", "analyst": "Violence", "domain": "physical combat/fighting"}
+{"id": "PLANT|ANCHOR_reframe-199|put up our dykes", "code": "H3", "analyst": "Machine", "domain": "water management infrastructure"}
+{"id": "PLANT|MENU_3|rest the horses", "code": "L2", "analyst": "Nature/Growth", "domain": "animals and livestock"}
+{"id": "POOL|COVID19positive_hg68f1_1|h86a6334c0b8d", "code": "G3", "analyst": "Violence", "domain": "warfare and weapons"}
+{"id": "POOL|COVID19positive_hp8w5b_2|hf123483759c2", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_kfa5j7_1|he78220aea965", "code": "M2", "analyst": "Journey", "domain": "transporting heavy loads"}
+{"id": "POOL|covidlonghaulers_l25isx_5|h32086cbb8ef7", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|covidlonghaulers_mnyecy_1|hd6b15433ebbd", "code": "K4", "analyst": "Other (outside crosswalk)", "domain": "drama and storytelling"}
+{"id": "POOL|covidlonghaulers_nbmnyf_0|h2715dd6f881c", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid movement"}
+{"id": "PLANT|ANCHOR_reframe-159|the music just stopped", "code": "K2", "analyst": "Sports/Games", "domain": "music and audio"}
+{"id": "PLANT|ANCHOR_reframe-149|this marathon", "code": "K5.1", "analyst": "Sports/Games", "domain": "sports"}
+{"id": "PLANT|ANCHOR_reframe-231|vessel is full", "code": "O2", "analyst": "Machine", "domain": "containers and vessels"}
+{"id": "PLANT|MENU_3|Cancer is a hard journey with many twists and turns", "code": "M1", "analyst": "Journey", "domain": "travel and movement"}
+{"id": "POOL|COVID19positive_hjq6a9_0|hcfa27c4f3a1b", "code": "M1", "analyst": "Journey", "domain": "upward movement"}
+{"id": "POOL|COVID19positive_hx5xht_0|h9313e582e025", "code": "M4", "analyst": "Journey", "domain": "water and waves"}
+{"id": "POOL|covidlonghaulers_l0ugdj_2|hdc72ce5a864c", "code": "M1", "analyst": "Journey", "domain": "circular motion"}
+{"id": "POOL|covidlonghaulers_m74jhs_0|h9bdfd2e60772", "code": "W2", "analyst": "Other (outside crosswalk)", "domain": "light and visibility"}
+{"id": "POOL|covidlonghaulers_mnyecy_1|h4933ab8e9cbc", "code": "K4", "analyst": "Other (outside crosswalk)", "domain": "drama and storytelling"}
+{"id": "POOL|covidlonghaulers_mcg8nz_4|h2ada0d8e2f54", "code": "K5.2", "analyst": "Sports/Games", "domain": "games"}
+{"id": "POOL|covidlonghaulers_nth7lz_0|ha15336cb24d2", "code": "W4", "analyst": "Weather", "domain": "weather conditions"}
+{"id": "POOL|covidlonghaulers_o918o1_0|ha9fcfc05a96b", "code": "M1", "analyst": "Journey", "domain": "physical movement"}
+{"id": "POOL|covidlonghaulers_o918o1_1|h9220790482ac", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electrical machinery/equipment"}
+{"id": "POOL|covidlonghaulers_o918o1_2|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "PLANT|ANCHOR_reframe-128|Wild Fire", "code": "W4", "analyst": "Weather", "domain": "weather and fire"}
+{"id": "PLANT|ANCHOR_reframe-108|Coronavirus Flight C-19", "code": "M5", "analyst": "Journey", "domain": "aircraft and flying"}
+{"id": "PLANT|ANCHOR_reframe-156|come under what could have been a vast peak", "code": "W3", "analyst": "Nature/Growth", "domain": "geography and mountains"}
+{"id": "PLANT|ANCHOR_reframe-158|If this virus were a physical assailant", "code": "G2", "analyst": "Other (outside crosswalk)", "domain": "crime and violence"}
+{"id": "PLANT|ANCHOR_reframe-158|an unexpected and invisible mugger", "code": "G2", "analyst": "Other (outside crosswalk)", "domain": "crime and robbery"}
+{"id": "PLANT|MENU_13|you want to strip off your body and get a new one", "code": "B5", "analyst": "Other (outside crosswalk)", "domain": "clothes and belongings"}
+{"id": "PLANT|MENU_15|Cancerous tissue is like a garden that has become overgrown ", "code": "F4", "analyst": "Nature/Growth", "domain": "farming and horticulture"}
+{"id": "POOL|COVID19positive_hb7qji_0|h68e5b871ee24", "code": "O1.1", "analyst": "Other (outside crosswalk)", "domain": "solid building materials"}
+{"id": "POOL|covidlonghaulers_lcqfwz_4|h15572de6d698", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electrical circuits"}
+{"id": "PLANT|ANCHOR_reframe-150|sprint at the beginning", "code": "K5.1", "analyst": "Sports/Games", "domain": "sports and athletics"}
+{"id": "PLANT|ANCHOR_reframe-175|tough game", "code": "K5.2", "analyst": "Sports/Games", "domain": "games and sports"}
+{"id": "PLANT|ANCHOR_reframe-231|jam-jar metaphor", "code": "O2", "analyst": "Machine", "domain": "household containers"}
+{"id": "PLANT|MENU_4|The rocks in our path", "code": "O2", "analyst": "Machine", "domain": "physical objects"}
+{"id": "POOL|COVID19positive_g0dbha_0|h0eaf46a99ba1", "code": "M1", "analyst": "Journey", "domain": "movement and travel"}
+{"id": "POOL|COVID19positive_g6w6z8_2|h222f3d87250b", "code": "M4", "analyst": "Journey", "domain": "swimming and drowning"}
+{"id": "POOL|COVID19positive_gbf99d_0|h51f2881161fb", "code": "M4", "analyst": "Journey", "domain": "water waves"}
+{"id": "POOL|COVID19positive_gahhk0_0|hefc9bb5780e9", "code": "H2", "analyst": "Home/Shelter", "domain": "parts of buildings"}
+{"id": "POOL|COVID19positive_gc0oir_0|h1a06447c29d7", "code": "S2", "analyst": "Other (outside crosswalk)", "domain": "human beings"}
+{"id": "POOL|COVID19positive_gc0oir_3|h459ba4c748d5", "code": "I4", "analyst": "Other (outside crosswalk)", "domain": "industrial maintenance"}
+{"id": "POOL|COVID19positive_gpuun4_1|hacd3fd0286e6", "code": "M4", "analyst": "Journey", "domain": "water and swimming"}
+{"id": "POOL|COVID19positive_gqcpol_3|hd7ce74466d54", "code": "M4", "analyst": "Journey", "domain": "water and waves"}
+{"id": "POOL|COVID19positive_gx2q19_2|ha92cd5906319", "code": "K5.2", "analyst": "Sports/Games", "domain": "amusement park rides"}
+{"id": "POOL|covidlonghaulers_km58r3_2|hd033cbb86416", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electrical equipment"}
+{"id": "POOL|covidlonghaulers_ic9bi1_1|hf56490e50b0e", "code": "M4", "analyst": "Journey", "domain": "water and waves"}
+{"id": "POOL|COVID19positive_hk97dk_0|h5cda5cda2067", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "water and waves"}
+{"id": "POOL|covidlonghaulers_kr6dxm_0|h0c7a8574f388", "code": "M4", "analyst": "Journey", "domain": "water and waves"}
+{"id": "POOL|covidlonghaulers_mn4xqe_0|habc2280fecb2", "code": "M4", "analyst": "Journey", "domain": "water and waves"}
+{"id": "POOL|covidlonghaulers_m3qdpw_4|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_krxyon_2|h33da562bb31e", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_mdxdgx_2|hbda9d8b6c3ec", "code": "W4", "analyst": "Weather", "domain": "weather conditions"}
+{"id": "POOL|covidlonghaulers_m8imry_0|hfca8c19d145c", "code": "M3", "analyst": "Journey", "domain": "land transport"}
+{"id": "POOL|covidlonghaulers_mnyecy_1|h58d6c098ab32", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "POOL|covidlonghaulers_lxv62j_0|h70d1df7cd871", "code": "X2.1", "analyst": "Other (outside crosswalk)", "domain": "dreams and sleep"}
+{"id": "POOL|covidlonghaulers_n0v896_1|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "PLANT|MENU_15|weed-killer also damages the healthy plants", "code": "F4", "analyst": "Nature/Growth", "domain": "farming and horticulture"}
+{"id": "PLANT|MENU_12|rich memory of time spent with a stranger", "code": "S3.1", "analyst": "Other (outside crosswalk)", "domain": "social relationships"}
+{"id": "POOL|COVID19positive_ggrp2e_4|h5803d3b9c189", "code": "N3.5", "analyst": "Burden/Weight", "domain": "physical weight"}
+{"id": "POOL|covidlonghaulers_mnyecy_1|ha3c134521d32", "code": "A9", "analyst": "Other (outside crosswalk)", "domain": "getting and giving"}
+{"id": "POOL|covidlonghaulers_nsenv6_3|h12e8d038341b", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electrical equipment"}
+{"id": "PLANT|ANCHOR_reframe-150|this is a marathon", "code": "K5.1", "analyst": "Sports/Games", "domain": "sports and athletics"}
+{"id": "PLANT|ANCHOR_reframe-184|keep afloat", "code": "M4", "analyst": "Journey", "domain": "shipping and swimming"}
+{"id": "PLANT|MENU_2|journeys with cancer", "code": "M1", "analyst": "Journey", "domain": "travel and movement"}
+{"id": "PLANT|MENU_6|I want to beat it", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "POOL|COVID19positive_fzw7z8_4|h9a25afb63835", "code": "X6", "analyst": "Other (outside crosswalk)", "domain": "decision making"}
+{"id": "PLANT|PROBE_RHMD_71|body decided to just say fuck you", "code": "Q1.1", "analyst": "Other (outside crosswalk)", "domain": "linguistic communication"}
+{"id": "PLANT|PROBE_RHMD_71|anxiety fucks your mind and body", "code": "A1.1.2", "analyst": "Violence", "domain": "damaging and destroying"}
+{"id": "POOL|COVID19positive_g5aa18_0|h6869707d5a80", "code": "M1", "analyst": "Journey", "domain": "movement and direction"}
+{"id": "POOL|COVID19positive_ggrp2e_4|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|COVID19positive_g5aa18_2|hb43c785e5a7b", "code": "M4", "analyst": "Journey", "domain": "water and ocean"}
+{"id": "POOL|COVID19positive_htr4yj_1|h869f95690634", "code": "W4", "analyst": "Weather", "domain": "weather conditions"}
+{"id": "POOL|covidlonghaulers_jow4pi_1|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_jym0db_1|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_lye64q_2|ha381562afa0e", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electrical noise"}
+{"id": "POOL|covidlonghaulers_ldm9mz_3|h377dbc06d870", "code": "K5.2", "analyst": "Sports/Games", "domain": "games and competition"}
+{"id": "POOL|covidlonghaulers_m7qzb7_13|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_m86tof_1|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_mcg8nz_3|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_micqry_0|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_moxc36_0|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_mnyecy_1|hc9f10a82c82c", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "POOL|covidlonghaulers_n0v896_0|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_n0v896_4|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_n36oiv_0|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather"}
+{"id": "POOL|covidlonghaulers_n5o0y5_0|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_nfdd9q_0|h8d8d846aac48", "code": "O1.3", "analyst": "Other (outside crosswalk)", "domain": "atmospheric gas/weather"}
+{"id": "POOL|covidlonghaulers_ocpp1u_0|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "PLANT|ANCHOR_reframe-108|unbuckle their seat belts", "code": "M3", "analyst": "Journey", "domain": "land transport/aviation"}
+{"id": "PLANT|ANCHOR_reframe-156|run slap into a second and even bigger mountain", "code": "M6", "analyst": "Journey", "domain": "navigation and geography"}
+{"id": "PLANT|ANCHOR_reframe-128|explosion", "code": "A1.1.2", "analyst": "Violence", "domain": "damaging and destroying"}
+{"id": "PLANT|ANCHOR_reframe-157|get mugged by it", "code": "G2", "analyst": "Other (outside crosswalk)", "domain": "crime and robbery"}
+{"id": "PLANT|ANCHOR_reframe-159|Time just merges", "code": "T1", "analyst": "Time", "domain": "time and duration"}
+{"id": "PLANT|ANCHOR_reframe-183|a very real entity taking control of our daily lives", "code": "S7", "analyst": "Other (outside crosswalk)", "domain": "power and control"}
+{"id": "PLANT|ANCHOR_reframe-184|in the same storm", "code": "W4", "analyst": "Weather", "domain": "weather and storms"}
+{"id": "PLANT|ANCHOR_reframe-184|not in the same boats", "code": "M4", "analyst": "Journey", "domain": "shipping and boating"}
+{"id": "PLANT|PROBE_RHMD_38|Wind is dyspnea", "code": "W4", "analyst": "Weather", "domain": "weather and elements"}
+{"id": "PLANT|PROBE_RHMD_38|Wind is dysepnea", "code": "W4", "analyst": "Weather", "domain": "weather and elements"}
+{"id": "PLANT|PROBE_RHMD_63|here comes the train", "code": "M3", "analyst": "Journey", "domain": "land transport"}
+{"id": "POOL|COVID19positive_fjts2k_2|hd7226e74e0d1", "code": "K2", "analyst": "Sports/Games", "domain": "musical instruments"}
+{"id": "POOL|COVID19positive_fmgcpn_1|h18d6b9188213", "code": "G3", "analyst": "Violence", "domain": "weapons and warfare"}
+{"id": "POOL|COVID19positive_ggrp2e_2|h0d824785ccc6", "code": "L2", "analyst": "Nature/Growth", "domain": "living creatures"}
+{"id": "POOL|COVID19positive_ggrp2e_4|hfb6acbeeeeae", "code": "F1", "analyst": "Food/Eating", "domain": "food and cooking"}
+{"id": "POOL|COVID19positive_ggrp2e_4|h123c799c4d6e", "code": "N3.5", "analyst": "Burden/Weight", "domain": "physical weight"}
+{"id": "POOL|COVID19positive_hg68f1_1|hc705246dc25b", "code": "G3", "analyst": "Violence", "domain": "warfare and attack"}
+{"id": "POOL|COVID19positive_hwtvx4_0|h71e58cd4ea8f", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid properties"}
+{"id": "POOL|COVID19positive_hp0540_1|h6d94019c0b34", "code": "G3", "analyst": "Violence", "domain": "warfare and weapons"}
+{"id": "POOL|covidlonghaulers_jow4pi_1|hc0c2239c79f2", "code": "M2", "analyst": "Journey", "domain": "physical impact/collision"}
+{"id": "POOL|covidlonghaulers_kr6dxm_2|hb6c8ed55f105", "code": "S9", "analyst": "Other (outside crosswalk)", "domain": "religion and supernatural"}
+{"id": "POOL|covidlonghaulers_m7qzb7_4|ha91eb6df95f8", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid bubbles"}
+{"id": "POOL|covidlonghaulers_n36oiv_2|hb4f3f1abe140", "code": "M2", "analyst": "Journey", "domain": "taking and removing"}
+{"id": "POOL|covidlonghaulers_obk82f_2|hf3538627cbe4", "code": "O2", "analyst": "Machine", "domain": "folding objects"}
+{"id": "PLANT|ANCHOR_reframe-107|It is not a sprint", "code": "K5.1", "analyst": "Sports/Games", "domain": "sports and athletics"}
+{"id": "PLANT|ANCHOR_reframe-146|right formula", "code": "F2", "analyst": "Food/Eating", "domain": "drinks and potions"}
+{"id": "PLANT|ANCHOR_reframe-186|you will need a team", "code": "K5.2", "analyst": "Sports/Games", "domain": "sports and games"}
+{"id": "PLANT|ANCHOR_reframe-199|fighting", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "PLANT|ANCHOR_reframe-231|bubble over", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid behavior"}
+{"id": "PLANT|MENU_10|fought back", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "PLANT|ANCHOR_reframe-233|out of the woods", "code": "L3", "analyst": "Nature/Growth", "domain": "forests and trees"}
+{"id": "PLANT|MENU_10|fight this terrible, faceless illness", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "PLANT|MENU_10|You stand and say, ‘No, this is not all there is to me’", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "PLANT|MENU_11|the cure for cancer is accepting it", "code": "X2.1", "analyst": "Other (outside crosswalk)", "domain": "belief and acceptance"}
+{"id": "PLANT|MENU_2|walk that journey", "code": "M1", "analyst": "Journey", "domain": "travel and movement"}
+{"id": "PLANT|MENU_6|I want to fight it", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "PLANT|MENU_6|I don’t want it to beat me", "code": "K5.2", "analyst": "Sports/Games", "domain": "games and competition"}
+{"id": "PLANT|MENU_7|hit it back head on", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "PLANT|MENU_7|beating it", "code": "K5.2", "analyst": "Sports/Games", "domain": "games and competition"}
+{"id": "POOL|COVID19positive_fotx1h_1|h8cbb9ba3a29f", "code": "O4.6", "analyst": "Other (outside crosswalk)", "domain": "temperature and heat"}
+{"id": "POOL|COVID19positive_fzw7z8_1|h8aeecd9b8c77", "code": "M4", "analyst": "Journey", "domain": "shipping and sailing"}
+{"id": "POOL|COVID19positive_g0dbha_2|had8e7d23f616", "code": "M4", "analyst": "Journey", "domain": "water and waves"}
+{"id": "POOL|COVID19positive_g86ca4_0|h007727e04b9d", "code": "M1", "analyst": "Journey", "domain": "movement and motion"}
+{"id": "POOL|COVID19positive_gc0oir_3|h17994056fef7", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "POOL|COVID19positive_gclxlg_2|hbb36dfafdd75", "code": "N5.1", "analyst": "Other (outside crosswalk)", "domain": "percentage and entirety"}
+{"id": "POOL|COVID19positive_ggrp2e_0|h59daa3048b6b", "code": "L3", "analyst": "Nature/Growth", "domain": "forests and trees"}
+{"id": "POOL|COVID19positive_gnpcn9_2|hcfb18e81efbd", "code": "M8", "analyst": "Journey", "domain": "remaining stationary"}
+{"id": "POOL|COVID19positive_gokfhh_0|he29fbc33ba17", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "POOL|COVID19positive_gokfhh_3|h365e9448862d", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "POOL|COVID19positive_gskcy4_1|h7f8ab14d197a", "code": "M3", "analyst": "Journey", "domain": "vehicles and transport"}
+{"id": "POOL|COVID19positive_gon5oi_1|h75656a5743f3", "code": "I1", "analyst": "Other (outside crosswalk)", "domain": "money and payment"}
+{"id": "POOL|COVID19positive_gujk84_0|hbb36dfafdd75", "code": "N5.1", "analyst": "Other (outside crosswalk)", "domain": "percentage and entirety"}
+{"id": "POOL|COVID19positive_gwbuyz_1|h97394cd8ad0d", "code": "A1.1.2", "analyst": "Violence", "domain": "extinguishing a fire"}
+{"id": "POOL|COVID19positive_gz1cah_0|hb352f8ea23a6", "code": "M1", "analyst": "Journey", "domain": "physical movement"}
+{"id": "POOL|COVID19positive_gxinr3_1|hc59a30cecc1b", "code": "A1.1.2", "analyst": "Violence", "domain": "damaging and destroying"}
+{"id": "POOL|COVID19positive_hizo14_1|h3e9e5b8c9498", "code": "Q1.2", "analyst": "Other (outside crosswalk)", "domain": "written documents"}
+{"id": "POOL|COVID19positive_hk34u4_0|hf78fd469eb0b", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electricity and energy"}
+{"id": "POOL|COVID19positive_hk34u4_1|ha0d7819e3485", "code": "S9", "analyst": "Other (outside crosswalk)", "domain": "religion and supernatural"}
+{"id": "POOL|COVID19positive_hp3lfb_0|h3982b674fdbb", "code": "M3", "analyst": "Journey", "domain": "long distance travel"}
+{"id": "POOL|COVID19positive_hoych2_0|h990dc8754a82", "code": "A1.1.2", "analyst": "Violence", "domain": "damaging and destroying"}
+{"id": "POOL|COVID19positive_hp8w5b_0|ha0f325a04442", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "POOL|COVID19positive_hpb6nr_7|h66305241e62b", "code": "M4", "analyst": "Journey", "domain": "shipping and sailing"}
+{"id": "POOL|COVID19positive_hpb6nr_7|h1ed9b7ac5e13", "code": "S8", "analyst": "Other (outside crosswalk)", "domain": "helping and hindering"}
+{"id": "POOL|COVID19positive_hql3wm_0|hdfbb6580e203", "code": "L2", "analyst": "Nature/Growth", "domain": "living creatures"}
+{"id": "POOL|COVID19positive_huqxa9_1|h8c8201c14813", "code": "A1.7", "analyst": "Other (outside crosswalk)", "domain": "constraint and release"}
+{"id": "POOL|COVID19positive_htgmz4_8|h1bcc49d4e01c", "code": "K5.2", "analyst": "Sports/Games", "domain": "games and competition"}
+{"id": "POOL|covidlonghaulers_ii20m8_4|h276e469d451c", "code": "A1.1.2", "analyst": "Violence", "domain": "damaging and destroying"}
+{"id": "POOL|covidlonghaulers_ir5mdn_2|h9991bf888ba2", "code": "M2", "analyst": "Journey", "domain": "taking or removing"}
+{"id": "POOL|covidlonghaulers_ir5mdn_4|he7bc7e5d35c8", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "POOL|covidlonghaulers_is1x6d_0|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_jow4pi_4|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_ja5vif_1|hcb8aaf8c33f8", "code": "M2", "analyst": "Journey", "domain": "replacing or exchanging objects"}
+{"id": "POOL|covidlonghaulers_jvkd7u_0|hde0e5d470b68", "code": "M6", "analyst": "Journey", "domain": "location and direction"}
+{"id": "POOL|covidlonghaulers_jym0db_0|hf13c5d79eb70", "code": "A1.1.2", "analyst": "Violence", "domain": "damaging and destroying"}
+{"id": "POOL|covidlonghaulers_k7afdk_0|h69439823595a", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electrical equipment"}
+{"id": "POOL|covidlonghaulers_k81cpq_0|hb501c9e132eb", "code": "M3", "analyst": "Journey", "domain": "long distance transport"}
+{"id": "POOL|covidlonghaulers_kddw44_4|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_kldmiy_7|ha37718981585", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electricity and batteries"}
+{"id": "POOL|covidlonghaulers_kldmiy_3|hba33c4637c52", "code": "K5", "analyst": "Sports/Games", "domain": "sports and games"}
+{"id": "POOL|covidlonghaulers_kfa5j7_1|h1776fbbb6eed", "code": "G3", "analyst": "Violence", "domain": "warfare and defense"}
+{"id": "POOL|covidlonghaulers_km58r3_2|h092e91b1e954", "code": "E3", "analyst": "Other (outside crosswalk)", "domain": "emotional state/agitation"}
+{"id": "POOL|covidlonghaulers_krxyon_2|hbda9d8b6c3ec", "code": "W4", "analyst": "Weather", "domain": "weather conditions"}
+{"id": "POOL|covidlonghaulers_kx3igs_0|h632826d53918", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "POOL|covidlonghaulers_l0ugdj_2|h07e9a84d89f0", "code": "M4", "analyst": "Journey", "domain": "sailing or surfing"}
+{"id": "POOL|covidlonghaulers_l25isx_3|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_l3nubc_0|hbb2ba39a1a52", "code": "Y2", "analyst": "Machine", "domain": "computing and technology"}
+{"id": "POOL|covidlonghaulers_l25isx_4|h2a130b83d509", "code": "A1.7", "analyst": "Other (outside crosswalk)", "domain": "constraint and confinement"}
+{"id": "POOL|covidlonghaulers_l49b1p_0|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_l8m3id_2|h4a7561892f9d", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electrical equipment"}
+{"id": "POOL|covidlonghaulers_lc57h2_1|hb501c9e132eb", "code": "M3", "analyst": "Journey", "domain": "land transport"}
+{"id": "POOL|covidlonghaulers_ldfkp6_2|h8e05b04ec4d5", "code": "S7.1", "analyst": "Other (outside crosswalk)", "domain": "power and control"}
+{"id": "POOL|covidlonghaulers_lj9t4g_0|h07e9a84d89f0", "code": "M4", "analyst": "Journey", "domain": "sailing or boating"}
+{"id": "POOL|covidlonghaulers_lks441_0|h5e8715d2dd2e", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "POOL|covidlonghaulers_lm60n5_5|h49622fa2358b", "code": "N4", "analyst": "Other (outside crosswalk)", "domain": "linear order and cycles"}
+{"id": "POOL|covidlonghaulers_lm60n5_1|h8d8d846aac48", "code": "O1.3", "analyst": "Other (outside crosswalk)", "domain": "atmospheric gas/weather"}
+{"id": "POOL|covidlonghaulers_lpspan_3|h919c470e3cad", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electrical equipment/machinery"}
+{"id": "POOL|covidlonghaulers_lqmhg0_3|hda56ed33b2a1", "code": "K5.2", "analyst": "Sports/Games", "domain": "games and tricks"}
+{"id": "POOL|covidlonghaulers_ls787w_0|h4525dd18ad24", "code": "M6", "analyst": "Journey", "domain": "location and direction"}
+{"id": "POOL|covidlonghaulers_ls787w_2|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_lxv62j_1|h8d8d846aac48", "code": "O1.3", "analyst": "Other (outside crosswalk)", "domain": "atmospheric gas/weather"}
+{"id": "POOL|covidlonghaulers_m3qdpw_7|h2a96ff72135d", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|covidlonghaulers_m7qzb7_14|hef2774dfaca7", "code": "L2", "analyst": "Nature/Growth", "domain": "animals"}
+{"id": "POOL|covidlonghaulers_m86tof_0|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_medn2z_0|h87b29e0c18c8", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_mnllaq_1|hf8d368e60322", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "POOL|covidlonghaulers_mtn6ob_0|ha704ea4e0e10", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electricity and wiring"}
+{"id": "POOL|covidlonghaulers_mv393r_0|ha9bf6ca052d1", "code": "M3", "analyst": "Journey", "domain": "long-distance trucking"}
+{"id": "POOL|covidlonghaulers_n81bm2_1|hcfbc7950357b", "code": "M4", "analyst": "Journey", "domain": "water and waves"}
+{"id": "POOL|covidlonghaulers_n81bm2_5|h58bee740acec", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|covidlonghaulers_nazgg5_0|hb13b82e84bf2", "code": "M3", "analyst": "Journey", "domain": "long distance travel"}
+{"id": "POOL|covidlonghaulers_ndzubd_0|h13badf59aec6", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid flow"}
+{"id": "POOL|covidlonghaulers_nazgg5_0|h2054f55279fd", "code": "M2", "analyst": "Journey", "domain": "moving and transporting"}
+{"id": "POOL|covidlonghaulers_np8ihq_1|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_nsenv6_1|h6183d4ea732e", "code": "M3", "analyst": "Journey", "domain": "road vehicles"}
+{"id": "POOL|covidlonghaulers_nv0wwe_1|hdc61404d14bd", "code": "F2", "analyst": "Food/Eating", "domain": "alcohol and hangovers"}
+{"id": "POOL|covidlonghaulers_nvilzm_0|he78220aea965", "code": "M3", "analyst": "Journey", "domain": "land transport"}
+{"id": "POOL|covidlonghaulers_obm8l8_1|hd2aa6b9db1b0", "code": "M3", "analyst": "Journey", "domain": "land transport"}
+{"id": "PLANT|ANCHOR_reframe-196|replicate... in the human mind", "code": "B2", "analyst": "Body", "domain": "health and disease"}
+{"id": "POOL|covidlonghaulers_ocpp1u_3|h7da33f497407", "code": "M1", "analyst": "Journey", "domain": "travel and movement"}
+{"id": "PLANT|PROBE_RHMD_38|Wind could also be asthma", "code": "W4", "analyst": "Weather", "domain": "weather and elements"}
+{"id": "PLANT|PROBE_RHMD_38|earth could also be bruises/broken bones", "code": "B1", "analyst": "Body", "domain": "anatomy and physiology"}
+{"id": "PLANT|PROBE_RHMD_52|bulletproof", "code": "G3", "analyst": "Violence", "domain": "warfare and weapons"}
+{"id": "PLANT|PROBE_RHMD_53|shove you deeper into your sea of despair", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid/water"}
+{"id": "POOL|COVID19positive_fotx1h_2|h665b3a474602", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid substances"}
+{"id": "POOL|COVID19positive_gpna2p_2|h2a3a31a98f2d", "code": "X2.1", "analyst": "Other (outside crosswalk)", "domain": "memory and cognition"}
+{"id": "POOL|covidlonghaulers_mnyecy_0|hbbbdb4bbc7f6", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electricity and electronics"}
+{"id": "PLANT|ANCHOR_reframe-107|But nor is it a marathon", "code": "K5.1", "analyst": "Sports/Games", "domain": "sports and athletics"}
+{"id": "PLANT|ANCHOR_reframe-186|build a team", "code": "K5.2", "analyst": "Sports/Games", "domain": "sports and games"}
+{"id": "PLANT|ANCHOR_reframe-189|sink or swim", "code": "M4", "analyst": "Journey", "domain": "swimming and water"}
+{"id": "PLANT|MENU_4|are heading there with you", "code": "M1", "analyst": "Journey", "domain": "movement and travel"}
+{"id": "PLANT|PROBE_RHMD_71|I feel like shit", "code": "F1", "analyst": "Food/Eating", "domain": "food and waste"}
+{"id": "POOL|COVID19positive_fph8mt_0|h0656ec9553e4", "code": "M1", "analyst": "Journey", "domain": "movement and travel"}
+{"id": "POOL|COVID19positive_fq5pin_1|h865cd4394ddb", "code": "M1", "analyst": "Journey", "domain": "physical movement"}
+{"id": "POOL|COVID19positive_frhjp7_0|h201a0885605f", "code": "N3.5", "analyst": "Burden/Weight", "domain": "physical weight"}
+{"id": "POOL|COVID19positive_fv3ez1_2|h8338cb98ae62", "code": "M6", "analyst": "Journey", "domain": "location and direction"}
+{"id": "POOL|COVID19positive_fv6qyc_0|h1af66fa44ddc", "code": "A1.1.1", "analyst": "Violence", "domain": "repairing and fixing"}
+{"id": "POOL|COVID19positive_fviaqc_2|hce15802a8c5e", "code": "O4.5", "analyst": "Other (outside crosswalk)", "domain": "physical surface texture"}
+{"id": "POOL|COVID19positive_fvk5i2_1|h14e50aa864d7", "code": "O2", "analyst": "Machine", "domain": "disorganized physical objects"}
+{"id": "POOL|COVID19positive_fxjyaj_0|h552f6990d3c6", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "POOL|COVID19positive_fxjyaj_3|he74bb3fd18d3", "code": "M6", "analyst": "Journey", "domain": "location and direction"}
+{"id": "POOL|COVID19positive_fxzznl_1|h5232a36d409f", "code": "O2", "analyst": "Machine", "domain": "physical objects/materials"}
+{"id": "POOL|COVID19positive_fzij0g_3|hbf16e3115492", "code": "M2", "analyst": "Journey", "domain": "transport and movement"}
+{"id": "POOL|COVID19positive_fzw7z8_3|h21858e059aad", "code": "M4", "analyst": "Journey", "domain": "shipping and boating"}
+{"id": "POOL|COVID19positive_g5pv2n_1|hdc9eb7c11249", "code": "A3", "analyst": "Other (outside crosswalk)", "domain": "state of being"}
+{"id": "POOL|COVID19positive_g7dmsj_1|hf52d1b093df0", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "POOL|COVID19positive_gg9r63_2|h48fbdd7ad91c", "code": "W2", "analyst": "Other (outside crosswalk)", "domain": "light and vision"}
+{"id": "POOL|COVID19positive_gnpcn9_2|ha24b65a5be0d", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|COVID19positive_gon5oi_2|hf161ab898db0", "code": "T1.3", "analyst": "Time", "domain": "time period"}
+{"id": "POOL|COVID19positive_gpmpay_0|h022262479531", "code": "A5.1", "analyst": "Other (outside crosswalk)", "domain": "evaluation of quality"}
+{"id": "POOL|COVID19positive_gxjbqr_3|hf2312205cdf9", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|COVID19positive_gxwnq8_2|h6cffe48a5c8c", "code": "N3.7", "analyst": "Other (outside crosswalk)", "domain": "physical length"}
+{"id": "POOL|COVID19positive_gz1cah_0|hb0b21b54255a", "code": "M6", "analyst": "Journey", "domain": "spatial position/location"}
+{"id": "POOL|COVID19positive_gz1cah_7|he57629bb287d", "code": "L2", "analyst": "Nature/Growth", "domain": "animal behavior"}
+{"id": "POOL|COVID19positive_hagx6k_1|h242968178554", "code": "G3", "analyst": "Violence", "domain": "warfare and attack"}
+{"id": "POOL|COVID19positive_hbqg4r_1|h3b737260a21e", "code": "M1", "analyst": "Journey", "domain": "movement and travel"}
+{"id": "POOL|COVID19positive_hk34u4_0|h9f702dbf99dd", "code": "A1.1.2", "analyst": "Violence", "domain": "damaging and destroying"}
+{"id": "POOL|COVID19positive_hoqu3f_2|h9e093ecd0a45", "code": "M3", "analyst": "Journey", "domain": "mechanical vehicle transmission"}
+{"id": "POOL|COVID19positive_hlduq7_0|h5d11738f4d94", "code": "M6", "analyst": "Journey", "domain": "location and direction"}
+{"id": "POOL|COVID19positive_hpobvn_4|h5ec747ddf251", "code": "A15", "analyst": "Burden/Weight", "domain": "safety and danger"}
+{"id": "POOL|COVID19positive_hpobvn_5|h4f89d1cf2547", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|COVID19positive_hpobvn_6|h93ab6ef19d18", "code": "K5.2", "analyst": "Sports/Games", "domain": "games and competition"}
+{"id": "POOL|COVID19positive_hqjfs8_4|hcf628bceba83", "code": "O2", "analyst": "Machine", "domain": "waste objects"}
+{"id": "POOL|COVID19positive_hqjfs8_5|h398e5c14bb0c", "code": "L2", "analyst": "Nature/Growth", "domain": "animal anatomy"}
+{"id": "POOL|COVID19positive_hqmmj7_0|hb32f0e20b594", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|COVID19positive_hual1j_0|h411ff9bd4e8b", "code": "G3", "analyst": "Violence", "domain": "warfare and weapons"}
+{"id": "POOL|COVID19positive_hqtued_1|hc06ffae10082", "code": "A1.1.2", "analyst": "Violence", "domain": "damaging and destroying"}
+{"id": "POOL|COVID19positive_hvckh0_2|h6b80c32b6bd6", "code": "G3", "analyst": "Violence", "domain": "warfare and attack"}
+{"id": "POOL|COVID19positive_hwvwql_1|h3497d5369a10", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|covidlonghaulers_ic9bi1_1|h7d6fd5cd3eb2", "code": "G3", "analyst": "Violence", "domain": "physical attack/warfare"}
+{"id": "POOL|covidlonghaulers_jgqwfd_0|ha9bf6ca052d1", "code": "M3", "analyst": "Journey", "domain": "land transport"}
+{"id": "POOL|covidlonghaulers_jgqwfd_1|hcb0bd2b9ce0c", "code": "M1", "analyst": "Journey", "domain": "movement and travel"}
+{"id": "POOL|covidlonghaulers_jqk8yd_1|hb07aed8f0400", "code": "G3", "analyst": "Violence", "domain": "warfare and attack"}
+{"id": "POOL|covidlonghaulers_jwsg22_0|hb501c9e132eb", "code": "M3", "analyst": "Journey", "domain": "long distance transport"}
+{"id": "POOL|covidlonghaulers_k1vssr_4|h90e759d380d9", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|covidlonghaulers_k70zps_2|h7a8eab14a18d", "code": "K5.2", "analyst": "Sports/Games", "domain": "games and gambling"}
+{"id": "POOL|covidlonghaulers_k7lzmv_1|hc06ffae10082", "code": "A1.1.2", "analyst": "Violence", "domain": "damaging and destroying"}
+{"id": "POOL|covidlonghaulers_k7lzmv_6|hb32144e495e7", "code": "B1", "analyst": "Body", "domain": "anatomy and physiology"}
+{"id": "POOL|covidlonghaulers_k81cpq_2|habbda2f563b2", "code": "M1", "analyst": "Journey", "domain": "movement and travel"}
+{"id": "POOL|covidlonghaulers_kem4mo_4|hb78b16835545", "code": "W2", "analyst": "Other (outside crosswalk)", "domain": "fire and light"}
+{"id": "POOL|covidlonghaulers_kfa5j7_1|h9e0131ffd35a", "code": "G3", "analyst": "Violence", "domain": "warfare and defense"}
+{"id": "POOL|covidlonghaulers_kkvzt4_2|h9e90901e9d9b", "code": "Y2", "analyst": "Machine", "domain": "computing and technology"}
+{"id": "POOL|covidlonghaulers_kldmiy_4|h246ce04f7bb2", "code": "M3", "analyst": "Journey", "domain": "vehicle accidents"}
+{"id": "POOL|covidlonghaulers_kx3igs_3|h13e5f425346d", "code": "H2", "analyst": "Home/Shelter", "domain": "parts of buildings"}
+{"id": "POOL|covidlonghaulers_kypnki_0|h4b922c83e03a", "code": "N4", "analyst": "Other (outside crosswalk)", "domain": "linear order and shapes"}
+{"id": "POOL|covidlonghaulers_l20kfc_6|h59faef7befbf", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|covidlonghaulers_l20kfc_11|h2530b50c5b66", "code": "M5", "analyst": "Journey", "domain": "aircraft and flying"}
+{"id": "POOL|covidlonghaulers_l32ulv_1|ha9bf6ca052d1", "code": "M3", "analyst": "Journey", "domain": "long-distance trucking"}
+{"id": "POOL|covidlonghaulers_l8f8ik_0|h8f43fe5a8aed", "code": "M6", "analyst": "Journey", "domain": "location and direction"}
+{"id": "POOL|covidlonghaulers_l8f8ik_3|h54ceacd5d219", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|covidlonghaulers_la438q_0|h1f8248f61cd3", "code": "N3.5", "analyst": "Burden/Weight", "domain": "physical weight and pressure"}
+{"id": "POOL|covidlonghaulers_ld28y4_0|ha66f4f585e99", "code": "M6", "analyst": "Journey", "domain": "location and direction"}
+{"id": "POOL|covidlonghaulers_lfgv79_2|h8a97cd7d95a9", "code": "M3", "analyst": "Journey", "domain": "long distance travel"}
+{"id": "POOL|covidlonghaulers_lksgtk_3|h75c1bb5511e0", "code": "X4", "analyst": "Other (outside crosswalk)", "domain": "mental objects"}
+{"id": "POOL|covidlonghaulers_lrq22v_0|h6e553c3ca06a", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|covidlonghaulers_m4frid_0|h0fd333f6ea4a", "code": "A1.1.2", "analyst": "Violence", "domain": "damaging and destroying"}
+{"id": "POOL|covidlonghaulers_m6udxr_0|hc06ffae10082", "code": "G3", "analyst": "Violence", "domain": "warfare and weapons"}
+{"id": "POOL|covidlonghaulers_m6udxr_2|hd35ae216e692", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|covidlonghaulers_m9edp4_0|h33e260070b9f", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "POOL|covidlonghaulers_mkpj7m_0|hbc96129725f7", "code": "A1.1.1", "analyst": "Violence", "domain": "general actions, making"}
+{"id": "POOL|covidlonghaulers_mkpj7m_1|h68e7de9ee6e5", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "POOL|covidlonghaulers_mkpj7m_1|h21858e059aad", "code": "M4", "analyst": "Journey", "domain": "shipping and boating"}
+{"id": "POOL|covidlonghaulers_mkpj7m_6|h3659b8ffed62", "code": "T3", "analyst": "Time", "domain": "age and youth"}
+{"id": "POOL|covidlonghaulers_mmuusm_2|h4bb65f9dc711", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|covidlonghaulers_mn105e_0|hdac0a507175c", "code": "S9", "analyst": "Other (outside crosswalk)", "domain": "religion and supernatural"}
+{"id": "POOL|covidlonghaulers_mnllaq_0|h0d83b0fa2a96", "code": "M6", "analyst": "Journey", "domain": "location and direction"}
+{"id": "POOL|covidlonghaulers_mpafo1_0|h3982b674fdbb", "code": "M3", "analyst": "Journey", "domain": "long distance travel"}
+{"id": "POOL|covidlonghaulers_mpurad_1|h9ccf01a7d93f", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|covidlonghaulers_mxv2st_2|haa6a26887ccc", "code": "M4", "analyst": "Journey", "domain": "shipping and boating"}
+{"id": "POOL|covidlonghaulers_n81bm2_2|h4b11e8d70f5d", "code": "M8", "analyst": "Journey", "domain": "remaining stationary"}
+{"id": "POOL|covidlonghaulers_nb1idd_1|h3485fcf92387", "code": "S7.1", "analyst": "Other (outside crosswalk)", "domain": "power and control"}
+{"id": "POOL|covidlonghaulers_ne44jt_0|h796cfce06e6e", "code": "M2", "analyst": "Journey", "domain": "physical movement/pushing"}
+{"id": "POOL|covidlonghaulers_neq8cz_1|ha49983a26c8b", "code": "F2", "analyst": "Food/Eating", "domain": "alcoholic drinks"}
+{"id": "POOL|covidlonghaulers_nf0134_1|h26e44e017a63", "code": "M2", "analyst": "Journey", "domain": "physical movement/pushing"}
+{"id": "POOL|covidlonghaulers_nktr3j_0|hb9048498da1f", "code": "N3.5", "analyst": "Burden/Weight", "domain": "physical weight"}
+{"id": "POOL|covidlonghaulers_noduum_0|h0a0a03e1abdc", "code": "K5.2", "analyst": "Sports/Games", "domain": "board games"}
+{"id": "POOL|covidlonghaulers_nmbmx8_1|h7cae492ea614", "code": "A1.1.2", "analyst": "Violence", "domain": "damaging and destroying"}
+{"id": "POOL|covidlonghaulers_noduum_3|h90b3c92538ff", "code": "M2", "analyst": "Journey", "domain": "carrying heavy loads"}
+{"id": "POOL|covidlonghaulers_o7cx72_5|hf6a64b7827dc", "code": "M2", "analyst": "Journey", "domain": "physical movement/attachment"}
+{"id": "PLANT|ANCHOR_reframe-178|simmering hot milk on the stove", "code": "F1", "analyst": "Food/Eating", "domain": "cooking and food"}
+{"id": "PLANT|ANCHOR_reframe-185|parallels of hurricane storms with Covid", "code": "W4", "analyst": "Weather", "domain": "weather and storms"}
+{"id": "PLANT|ANCHOR_reframe-185|the horror and force of the hurricane itself", "code": "W4", "analyst": "Weather", "domain": "weather and storms"}
+{"id": "PLANT|ANCHOR_reframe-192|like a train journey", "code": "M3", "analyst": "Journey", "domain": "train travel"}
+{"id": "PLANT|ANCHOR_reframe-192|two lights appear and it's the train", "code": "M3", "analyst": "Journey", "domain": "train transport"}
+{"id": "PLANT|ANCHOR_reframe-199|dyke leaks", "code": "H2", "analyst": "Home/Shelter", "domain": "building structures"}
+{"id": "PLANT|ANCHOR_reframe-199|drop becomes a rivulet", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid flow"}
+{"id": "PLANT|ANCHOR_reframe-199|we are sunk", "code": "M4", "analyst": "Journey", "domain": "shipping and sinking"}
+{"id": "PLANT|ANCHOR_reframe-176|sailing", "code": "M4", "analyst": "Journey", "domain": "sailing and shipping"}
+{"id": "PLANT|ANCHOR_reframe-192|seen the lights come round the bend", "code": "M3", "analyst": "Journey", "domain": "train transport"}
+{"id": "PLANT|ANCHOR_reframe-192|the train slows down, safely, to get into the station", "code": "M3", "analyst": "Journey", "domain": "train and rail transport"}
+{"id": "PLANT|ANCHOR_reframe-199|rivulet becomes a stream", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid flow"}
+{"id": "PLANT|ANCHOR_reframe-201|flood defences", "code": "H2", "analyst": "Home/Shelter", "domain": "building structures"}
+{"id": "PLANT|ANCHOR_reframe-208|is a game of hide and seek", "code": "K5.2", "analyst": "Sports/Games", "domain": "games"}
+{"id": "PLANT|ANCHOR_reframe-207|making the invisible visible", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid substances"}
+{"id": "PLANT|ANCHOR_reframe-108|Flight C-19 will land eventually", "code": "M5", "analyst": "Journey", "domain": "aircraft and flying"}
+{"id": "PLANT|ANCHOR_reframe-117|playing chess with a monster genius", "code": "K5.2", "analyst": "Sports/Games", "domain": "games"}
+{"id": "PLANT|ANCHOR_reframe-173|pulling patients out of the river of Covid-19", "code": "M4", "analyst": "Journey", "domain": "water and shipping"}
+{"id": "PLANT|ANCHOR_reframe-178|‘simmer’ COVID", "code": "F1", "analyst": "Food/Eating", "domain": "cooking and food"}
+{"id": "PLANT|ANCHOR_reframe-181|The virus is the Dark Side", "code": "S9", "analyst": "Other (outside crosswalk)", "domain": "supernatural/fantasy fiction"}
+{"id": "PLANT|ANCHOR_reframe-191|bullet train", "code": "M3", "analyst": "Journey", "domain": "land transport vehicles"}
+{"id": "PLANT|ANCHOR_reframe-181|antiviral proteins” — Jedi knights", "code": "G3", "analyst": "Violence", "domain": "warfare and defense"}
+{"id": "PLANT|ANCHOR_reframe-192|the doors don't open", "code": "M3", "analyst": "Journey", "domain": "train transport"}
+{"id": "PLANT|ANCHOR_reframe-192|unholy scramble for the seats", "code": "M3", "analyst": "Journey", "domain": "land transport"}
+{"id": "PLANT|ANCHOR_reframe-192|the guard has to make sure it's safe to open the doors", "code": "M3", "analyst": "Journey", "domain": "train travel"}
+{"id": "PLANT|ANCHOR_reframe-202|continuous tsunami", "code": "W4", "analyst": "Weather", "domain": "weather and natural disasters"}
+{"id": "PLANT|ANCHOR_reframe-175|people on the sideline", "code": "K5.1", "analyst": "Sports/Games", "domain": "sports"}
+{"id": "PLANT|ANCHOR_reframe-192|the doors open", "code": "M3", "analyst": "Journey", "domain": "train transport"}
+{"id": "PLANT|ANCHOR_reframe-199|held the water out", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid water"}
+{"id": "PLANT|ANCHOR_reframe-201|waves just wash over us", "code": "M4", "analyst": "Journey", "domain": "water and waves"}
+{"id": "PLANT|MENU_10|invaded every part of you", "code": "G3", "analyst": "Violence", "domain": "warfare and invasion"}
+{"id": "PLANT|ANCHOR_reframe-126|human lung cell as a cramped office", "code": "I3.1", "analyst": "Other (outside crosswalk)", "domain": "work and office"}
+{"id": "PLANT|ANCHOR_reframe-173|wandered upstream", "code": "M1", "analyst": "Journey", "domain": "movement and travel"}
+{"id": "PLANT|ANCHOR_reframe-181|cellular defense system of hundreds of antiviral proteins — ", "code": "G3", "analyst": "Violence", "domain": "warfare and defense"}
+{"id": "PLANT|ANCHOR_reframe-185|battering, destroying and drenching indiscriminately", "code": "W4", "analyst": "Weather", "domain": "weather and storms"}
+{"id": "PLANT|ANCHOR_reframe-192|get on the train first", "code": "M3", "analyst": "Journey", "domain": "train transport"}
+{"id": "PLANT|ANCHOR_reframe-201|chunks of gravel can jump out and splash again", "code": "L2", "analyst": "Nature/Growth", "domain": "living creatures"}
+{"id": "PLANT|ANCHOR_reframe-207|is like dye", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid substances"}
+{"id": "POOL|covidlonghaulers_m8imry_1|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather conditions"}
+{"id": "PLANT|ANCHOR_reframe-108|disembark", "code": "M4", "analyst": "Journey", "domain": "shipping and travel"}
+{"id": "PLANT|ANCHOR_reframe-118|a coiled spring ready to get out", "code": "O2", "analyst": "Machine", "domain": "mechanical objects"}
+{"id": "PLANT|ANCHOR_reframe-127|actively encourage the fire", "code": "W4", "analyst": "Weather", "domain": "fire and burning"}
+{"id": "PLANT|ANCHOR_reframe-146|bottle it", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquids and bottling"}
+{"id": "PLANT|ANCHOR_reframe-149|harvest the wind", "code": "F4", "analyst": "Nature/Growth", "domain": "farming and horticulture"}
+{"id": "PLANT|ANCHOR_reframe-154|looking glasses", "code": "O2", "analyst": "Machine", "domain": "reflective objects"}
+{"id": "PLANT|ANCHOR_reframe-157|letting yourself get mugged", "code": "G2", "analyst": "Other (outside crosswalk)", "domain": "crime and robbery"}
+{"id": "PLANT|ANCHOR_reframe-157|unexpected and invisible mugger", "code": "G2", "analyst": "Other (outside crosswalk)", "domain": "crime and robbery"}
+{"id": "PLANT|ANCHOR_reframe-173|stop them falling in", "code": "M1", "analyst": "Journey", "domain": "movement and direction"}
+{"id": "PLANT|ANCHOR_reframe-178|spills over into a huge mess", "code": "F1", "analyst": "Food/Eating", "domain": "cooking and food"}
+{"id": "PLANT|ANCHOR_reframe-181|one specific Jedi", "code": "G3", "analyst": "Violence", "domain": "warfare and weapons"}
+{"id": "PLANT|ANCHOR_reframe-201|each person is an amplifier in a sound system", "code": "K3", "analyst": "Other (outside crosswalk)", "domain": "audio equipment"}
+{"id": "PLANT|PROBE_RHMD_38|Earth is concussion", "code": "W1", "analyst": "Other (outside crosswalk)", "domain": "natural elements"}
+{"id": "PLANT|PROBE_RHMD_23|rusting is the same as skin cancer", "code": "O1.1", "analyst": "Other (outside crosswalk)", "domain": "metal oxidation"}
+{"id": "PLANT|PROBE_RHMD_38|fire is heat stroke", "code": "W4", "analyst": "Weather", "domain": "weather and elements"}
+{"id": "PLANT|PROBE_RHMD_38|fire could also be burns", "code": "W4", "analyst": "Weather", "domain": "weather and elements"}
+{"id": "PLANT|PROBE_RHMD_38|water could also be frostbite", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid substances"}
+{"id": "PLANT|PROBE_RHMD_77|tumors of solid gold", "code": "O1.1", "analyst": "Other (outside crosswalk)", "domain": "solid materials"}
+{"id": "POOL|COVID19positive_hm7aii_2|h1e0f7ebe6871", "code": "A1.7", "analyst": "Other (outside crosswalk)", "domain": "constraint and confinement"}
+{"id": "POOL|covidlonghaulers_ja5vif_1|h78a6f39cdf4c", "code": "G3", "analyst": "Violence", "domain": "military strategy and warfare"}
+{"id": "PLANT|ANCHOR_reframe-120|knocked for six", "code": "K5.2", "analyst": "Sports/Games", "domain": "cricket games"}
+{"id": "PLANT|ANCHOR_reframe-130|attack the virus", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "PLANT|ANCHOR_reframe-135|plans to hang around", "code": "S1.1.3", "analyst": "Other (outside crosswalk)", "domain": "social participation"}
+{"id": "PLANT|ANCHOR_reframe-146|magic potion", "code": "F2", "analyst": "Food/Eating", "domain": "drinks and potions"}
+{"id": "PLANT|ANCHOR_reframe-148|hijacks", "code": "G2", "analyst": "Other (outside crosswalk)", "domain": "crime and law"}
+{"id": "PLANT|ANCHOR_reframe-151|is a marathon, not a sprint", "code": "K5.1", "analyst": "Sports/Games", "domain": "sports and athletics"}
+{"id": "PLANT|ANCHOR_reframe-159|we froze", "code": "O4.6", "analyst": "Other (outside crosswalk)", "domain": "temperature"}
+{"id": "PLANT|ANCHOR_reframe-175|the other side is probably about to get 3 more tries", "code": "K5.2", "analyst": "Sports/Games", "domain": "games and sports"}
+{"id": "PLANT|ANCHOR_reframe-184|storm that's affecting the world", "code": "W4", "analyst": "Weather", "domain": "weather and storms"}
+{"id": "PLANT|ANCHOR_reframe-186|be a good teammate", "code": "K5.2", "analyst": "Sports/Games", "domain": "games and sports"}
+{"id": "PLANT|ANCHOR_reframe-223|war", "code": "G3", "analyst": "Violence", "domain": "warfare and weapons"}
+{"id": "PLANT|ANCHOR_reframe-224|intensity of a war", "code": "G3", "analyst": "Violence", "domain": "warfare and weapons"}
+{"id": "PLANT|MENU_7|power it has", "code": "S7", "analyst": "Other (outside crosswalk)", "domain": "power and control"}
+{"id": "POOL|COVID19positive_gg9r63_0|h0929bb9470bb", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "POOL|covidlonghaulers_mv393r_1|h03f8a25a5cb0", "code": "M3", "analyst": "Journey", "domain": "land vehicle transport"}
+{"id": "POOL|covidlonghaulers_nktr3j_0|hd28247eedb72", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "POOL|covidlonghaulers_nktr3j_1|ha974ef91a1aa", "code": "N3.5", "analyst": "Burden/Weight", "domain": "physical weight"}
+{"id": "PLANT|ANCHOR_reframe-140|spiritual inoculation", "code": "B3", "analyst": "Body", "domain": "medical treatment"}
+{"id": "PLANT|ANCHOR_reframe-154|societies see their own reflection", "code": "O2", "analyst": "Machine", "domain": "mirrors and reflections"}
+{"id": "PLANT|ANCHOR_reframe-157|mugging people", "code": "G2", "analyst": "Other (outside crosswalk)", "domain": "crime and robbery"}
+{"id": "PLANT|ANCHOR_reframe-166|microscopic photocopy machine", "code": "Y2", "analyst": "Machine", "domain": "information technology and computing"}
+{"id": "PLANT|ANCHOR_reframe-166|assembly manual for a photocopier, model SARS-CoV-2", "code": "Y2", "analyst": "Machine", "domain": "information technology and computing"}
+{"id": "PLANT|PROBE_RHMD_42|teleport to random alternate realities", "code": "M1", "analyst": "Journey", "domain": "movement and travel"}
+{"id": "PLANT|ANCHOR_reframe-196|replicate figuratively", "code": "B2", "analyst": "Body", "domain": "health and disease"}
+{"id": "PLANT|PROBE_RHMD_62|cough in auto tune", "code": "K3", "analyst": "Other (outside crosswalk)", "domain": "recorded sound technology"}
+{"id": "PLANT|PROBE_RHMD_77|gold cancer", "code": "O1.1", "analyst": "Other (outside crosswalk)", "domain": "solid materials"}
+{"id": "PLANT|ANCHOR_reframe-117|horrific battle", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "PLANT|ANCHOR_reframe-107|It is a rapidly-evolving collaboration", "code": "S1.1.3", "analyst": "Other (outside crosswalk)", "domain": "social collaboration"}
+{"id": "PLANT|ANCHOR_reframe-127|all you’re left with is ashes", "code": "W4", "analyst": "Weather", "domain": "fire and burning"}
+{"id": "PLANT|ANCHOR_reframe-130|defeat COVID-19", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "PLANT|ANCHOR_reframe-130|aggressive and targeted tactics", "code": "G3", "analyst": "Violence", "domain": "warfare and military"}
+{"id": "PLANT|ANCHOR_reframe-131|playing 'Russian roulette'", "code": "G3", "analyst": "Violence", "domain": "weapons and warfare"}
+{"id": "PLANT|ANCHOR_reframe-142|turning a light switch on or off", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electrical equipment"}
+{"id": "PLANT|ANCHOR_reframe-147|a packet of data", "code": "Y2", "analyst": "Machine", "domain": "computing and data"}
+{"id": "PLANT|ANCHOR_reframe-148|breaks into", "code": "G3", "analyst": "Violence", "domain": "warfare and invasion"}
+{"id": "PLANT|ANCHOR_reframe-148|genetic machinery", "code": "I4", "analyst": "Other (outside crosswalk)", "domain": "industrial machinery"}
+{"id": "PLANT|ANCHOR_reframe-148|instructs it to produce new code", "code": "Y2", "analyst": "Machine", "domain": "computing and software"}
+{"id": "PLANT|ANCHOR_reframe-206|war", "code": "G3", "analyst": "Violence", "domain": "warfare and weapons"}
+{"id": "PLANT|ANCHOR_reframe-222|persistent low level threat", "code": "G3", "analyst": "Violence", "domain": "warfare and defense"}
+{"id": "PLANT|ANCHOR_reframe-206|battle against Covid-19", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "PLANT|ANCHOR_reframe-223|brutal honesty", "code": "G3", "analyst": "Violence", "domain": "warfare and weapons"}
+{"id": "PLANT|ANCHOR_reframe-223|weapon of any use", "code": "G3", "analyst": "Violence", "domain": "warfare and weapons"}
+{"id": "PLANT|ANCHOR_reframe-227|strong pillar of strength", "code": "H2", "analyst": "Home/Shelter", "domain": "building architecture"}
+{"id": "PLANT|ANCHOR_reframe-225|face an enemy", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "PLANT|ANCHOR_reframe-228|war", "code": "G3", "analyst": "Violence", "domain": "warfare and weapons"}
+{"id": "PLANT|ANCHOR_reframe-228|fight against", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "POOL|COVID19positive_g0bafk_0|hcb8b76c0960a", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|COVID19positive_g5aa18_2|h86cc0288a963", "code": "S1.1.1", "analyst": "Other (outside crosswalk)", "domain": "social behavior"}
+{"id": "POOL|COVID19positive_g7gr7j_2|h6adb3ddfe22c", "code": "S9", "analyst": "Other (outside crosswalk)", "domain": "fate and supernatural"}
+{"id": "POOL|COVID19positive_grzxn6_1|h338aae703e38", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|COVID19positive_gxwnq8_2|h1c529d288843", "code": "X2.4", "analyst": "Other (outside crosswalk)", "domain": "investigation and searching"}
+{"id": "POOL|COVID19positive_h177wp_1|hdf303d6f70e2", "code": "G3", "analyst": "Violence", "domain": "warfare and destruction"}
+{"id": "POOL|COVID19positive_hk34u4_0|he256a71dd37d", "code": "B1", "analyst": "Body", "domain": "physical disability"}
+{"id": "POOL|COVID19positive_hlvipt_0|h2d0453e2b37f", "code": "S9", "analyst": "Other (outside crosswalk)", "domain": "magic and supernatural"}
+{"id": "POOL|COVID19positive_hpb6nr_5|hbcb2a8a77983", "code": "K1", "analyst": "Sports/Games", "domain": "entertainment and games"}
+{"id": "POOL|COVID19positive_hqcyp1_1|h624f15ef4e37", "code": "I1.3", "analyst": "Other (outside crosswalk)", "domain": "economic value/cost"}
+{"id": "POOL|COVID19positive_hs5hw9_0|hb0c3b27fe64e", "code": "G3", "analyst": "Violence", "domain": "warfare and weapons"}
+{"id": "POOL|covidlonghaulers_kx3igs_0|h15b14197556a", "code": "S3.2", "analyst": "Other (outside crosswalk)", "domain": "sexual activity"}
+{"id": "POOL|covidlonghaulers_kx3igs_4|habc51d9491be", "code": "F1", "analyst": "Food/Eating", "domain": "food and eating"}
+{"id": "POOL|covidlonghaulers_l0ugdj_0|h43ff96d843c4", "code": "NONE", "analyst": "not metaphorical", "domain": "NONE"}
+{"id": "POOL|covidlonghaulers_lksgtk_2|ha3cd83f14701", "code": "M3", "analyst": "Journey", "domain": "long distance transport"}
+{"id": "POOL|covidlonghaulers_mfbvug_2|h42c55363293b", "code": "B2", "analyst": "Body", "domain": "health and disease"}
+{"id": "POOL|covidlonghaulers_mp3dks_0|h4d63ba1c9bd0", "code": "M3", "analyst": "Journey", "domain": "long distance travel"}
+{"id": "POOL|covidlonghaulers_mtn6ob_1|h96618399df58", "code": "F1", "analyst": "Food/Eating", "domain": "cooking and food"}
+{"id": "POOL|covidlonghaulers_nktr3j_1|hfed57d59ba6c", "code": "G3", "analyst": "Violence", "domain": "warfare and defense"}
+{"id": "POOL|covidlonghaulers_o9vopx_0|hc8f8949beb86", "code": "M2", "analyst": "Journey", "domain": "physical movement/removal"}
+{"id": "PLANT|MENU_5|walk the fine line of life", "code": "M1", "analyst": "Journey", "domain": "walking and movement"}
+{"id": "POOL|COVID19positive_gxjbqr_3|h6c8cb5ef2a21", "code": "O1.3", "analyst": "Other (outside crosswalk)", "domain": "gas bubbles"}
+{"id": "POOL|COVID19positive_gxjbqr_4|h65cee5b56461", "code": "F2", "analyst": "Food/Eating", "domain": "drinks and liquids"}
+{"id": "POOL|covidlonghaulers_l25isx_0|h3b8ae7d274b3", "code": "O4.5", "analyst": "Other (outside crosswalk)", "domain": "physical texture"}
+{"id": "POOL|COVID19positive_gffglr_1|h18449f51ab92", "code": "M2", "analyst": "Journey", "domain": "moving and transporting"}
+{"id": "POOL|COVID19positive_hialte_0|h6c455f776861", "code": "O2", "analyst": "Machine", "domain": "physical objects"}
+{"id": "POOL|COVID19positive_hkt30r_0|h1dbb7dabf276", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electricity and electronics"}
+{"id": "POOL|COVID19positive_hso1jk_1|h09b28c8afcfd", "code": "NONE", "analyst": "not metaphorical", "domain": "NONE"}
+{"id": "POOL|covidlonghaulers_kldmiy_2|h3794e78f87c3", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|covidlonghaulers_mtn8m3_1|h4c7b4ea44555", "code": "F1", "analyst": "Food/Eating", "domain": "food and taste"}
+{"id": "PLANT|ANCHOR_reframe-149|put my boat in the water", "code": "M4", "analyst": "Journey", "domain": "boating and sailing"}
+{"id": "PLANT|ANCHOR_reframe-160|shooting the rapids of a whitewater river", "code": "M4", "analyst": "Journey", "domain": "river navigation"}
+{"id": "PLANT|ANCHOR_reframe-191|freight train coming across the country", "code": "M3", "analyst": "Journey", "domain": "land transport vehicles"}
+{"id": "PLANT|ANCHOR_reframe-192|the train stops", "code": "M3", "analyst": "Journey", "domain": "land transport"}
+{"id": "POOL|COVID19positive_fu1qi1_2|h20b108b7a114", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "PLANT|ANCHOR_reframe-183|pick up that book we never had time to finish", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "PLANT|ANCHOR_reframe-199|mop it up quickly", "code": "B4", "analyst": "Other (outside crosswalk)", "domain": "cleaning and maintenance"}
+{"id": "POOL|COVID19positive_frrjy9_0|h561e508ea924", "code": "N3.5", "analyst": "Burden/Weight", "domain": "physical weight"}
+{"id": "POOL|COVID19positive_fug0sk_0|h4b20938cd7cc", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|COVID19positive_fzij0g_3|h4610c7e3ac3c", "code": "N3.5", "analyst": "Burden/Weight", "domain": "physical weight"}
+{"id": "POOL|COVID19positive_g1bpdm_1|h7f8a6ba70bc8", "code": "M4", "analyst": "Journey", "domain": "water and waves"}
+{"id": "POOL|COVID19positive_g9yiem_3|hdc2b3d94f2fa", "code": "W1", "analyst": "Other (outside crosswalk)", "domain": "astronomy and space"}
+{"id": "POOL|COVID19positive_gqoqlv_0|hb909541cae13", "code": "G3", "analyst": "Violence", "domain": "weapons and warfare"}
+{"id": "POOL|COVID19positive_gz1yng_1|h34abf89fd76e", "code": "M1", "analyst": "Journey", "domain": "movement and travel"}
+{"id": "POOL|COVID19positive_hlni9r_0|h5c747827f031", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|covidlonghaulers_ic5738_1|h451bda8f5eb0", "code": "L2", "analyst": "Nature/Growth", "domain": "animals and birds"}
+{"id": "POOL|covidlonghaulers_jkm1mq_4|h77b44737d08c", "code": "N3.5", "analyst": "Burden/Weight", "domain": "physical weight"}
+{"id": "POOL|covidlonghaulers_kip44q_0|hb8c365f3173f", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|covidlonghaulers_kxhvmz_0|h2196a295a1ad", "code": "O1.1", "analyst": "Other (outside crosswalk)", "domain": "solid materials"}
+{"id": "POOL|covidlonghaulers_la1kbs_0|hdf01cc88b908", "code": "M1", "analyst": "Journey", "domain": "movement and navigation"}
+{"id": "PLANT|ANCHOR_reframe-169|walk through lightly, with little luggage", "code": "M2", "analyst": "Journey", "domain": "transporting luggage"}
+{"id": "PLANT|ANCHOR_reframe-182|ship actually slowing up", "code": "M3", "analyst": "Journey", "domain": "land and sea transport"}
+{"id": "PLANT|ANCHOR_reframe-182|captain sending the signal down to the engine room", "code": "M3", "analyst": "Journey", "domain": "ship and nautical transport"}
+{"id": "POOL|COVID19positive_htgmz4_1|h83e351efa7eb", "code": "O4.6", "analyst": "Other (outside crosswalk)", "domain": "temperature and heat"}
+{"id": "POOL|covidlonghaulers_l8f8ik_5|hbcb93868c4b7", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid movement"}
+{"id": "POOL|covidlonghaulers_m7qzb7_4|h61c6ee5a3660", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid bubbles"}
+{"id": "PLANT|MENU_15|re-grow", "code": "F4", "analyst": "Nature/Growth", "domain": "farming and horticulture"}
+{"id": "PLANT|PROBE_RHMD_71|mini heart attack", "code": "B2", "analyst": "Body", "domain": "health and disease"}
+{"id": "POOL|COVID19positive_fog729_0|h76a5fa630f90", "code": "M4", "analyst": "Journey", "domain": "water and waves"}
+{"id": "POOL|COVID19positive_fv6qyc_1|hd489ce18ef01", "code": "NONE", "analyst": "not metaphorical", "domain": "NONE"}
+{"id": "POOL|COVID19positive_fviaqc_3|hd2674df90ad8", "code": "M4", "analyst": "Journey", "domain": "water and waves"}
+{"id": "POOL|covidlonghaulers_lye64q_1|h34abd363babb", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electrical equipment"}
+{"id": "POOL|covidlonghaulers_mv393r_0|h914f59d03978", "code": "B4", "analyst": "Other (outside crosswalk)", "domain": "cleaning and laundry"}
+{"id": "PLANT|ANCHOR_reframe-150|vomit on your shoes", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "PLANT|ANCHOR_reframe-162|The parachute has slowed our rate of descent", "code": "M5", "analyst": "Journey", "domain": "aircraft and flying"}
+{"id": "PLANT|ANCHOR_reframe-182|slow down the Titanic", "code": "M3", "analyst": "Journey", "domain": "land and sea transport"}
+{"id": "PLANT|ANCHOR_reframe-183|emotional storm", "code": "W4", "analyst": "Weather", "domain": "weather and storms"}
+{"id": "PLANT|ANCHOR_reframe-192|a couple miles down the tracks", "code": "M3", "analyst": "Journey", "domain": "train transport"}
+{"id": "PLANT|ANCHOR_reframe-192|you're standing on the station", "code": "M3", "analyst": "Journey", "domain": "train travel"}
+{"id": "PLANT|ANCHOR_reframe-192|the JCVI has very clearly said which people are going to nee", "code": "M3", "analyst": "Journey", "domain": "train travel"}
+{"id": "PLANT|ANCHOR_reframe-194|the ocean is receding and we can see all the fish flopping o", "code": "M4", "analyst": "Journey", "domain": "ocean and sea"}
+{"id": "PLANT|ANCHOR_reframe-207|oozing into the cracks", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid substances"}
+{"id": "PLANT|PROBE_RHMD_83|break out in handcuffs", "code": "G2.1", "analyst": "Other (outside crosswalk)", "domain": "law and order"}
+{"id": "POOL|COVID19positive_ht1mil_2|h8f49865efdd4", "code": "O2", "analyst": "Machine", "domain": "physical objects/parts"}
+{"id": "POOL|covidlonghaulers_n5hblb_5|h036012b71af3", "code": "N3.7", "analyst": "Other (outside crosswalk)", "domain": "physical length/extension"}
+{"id": "PLANT|ANCHOR_reframe-127|stamp out all the embers", "code": "A1.1.2", "analyst": "Violence", "domain": "extinguishing a fire"}
+{"id": "PLANT|ANCHOR_reframe-175|she scores", "code": "K5.2", "analyst": "Sports/Games", "domain": "games and sports"}
+{"id": "PLANT|ANCHOR_reframe-181|the virus fights back", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "PLANT|ANCHOR_reframe-202|wave after wave after wave", "code": "M4", "analyst": "Journey", "domain": "water and waves"}
+{"id": "PLANT|MENU_10|forced yourself to get out of bed and keep going", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|COVID19positive_fs2pl0_1|h5ec62170b633", "code": "M6", "analyst": "Journey", "domain": "location and direction"}
+{"id": "POOL|COVID19positive_fxjyaj_2|h01fc296dde8a", "code": "F1", "analyst": "Food/Eating", "domain": "food and nutrition"}
+{"id": "POOL|COVID19positive_fzqtme_0|h94902446da22", "code": "NONE", "analyst": "not metaphorical", "domain": "physical sensation"}
+{"id": "POOL|COVID19positive_hual1j_2|hcf428dc4ea98", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|COVID19positive_g7e04v_0|h19db72237234", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid movement"}
+{"id": "POOL|COVID19positive_hbfqki_1|h4a828b79a788", "code": "O2", "analyst": "Machine", "domain": "small sharp objects"}
+{"id": "POOL|COVID19positive_hufnti_0|h5fde8266c06e", "code": "NONE", "analyst": "not metaphorical", "domain": "NONE"}
+{"id": "POOL|covidlonghaulers_iebmrw_1|hd257b2b2ba3a", "code": "I1", "analyst": "Other (outside crosswalk)", "domain": "money and payment"}
+{"id": "POOL|covidlonghaulers_ja3ojo_0|ha157c088f816", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid movement"}
+{"id": "POOL|covidlonghaulers_kip44q_0|hcada79323bee", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electricity and electrical equipment"}
+{"id": "POOL|covidlonghaulers_l20kfc_10|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "PLANT|ANCHOR_reframe-124|a dial (more, then less, then maybe more)", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electrical equipment"}
+{"id": "POOL|covidlonghaulers_ldm9mz_0|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather conditions"}
+{"id": "POOL|covidlonghaulers_lpspan_3|h7d0275bd1867", "code": "A1.1.2", "analyst": "Violence", "domain": "damaging and destroying"}
+{"id": "PLANT|ANCHOR_reframe-127|putting them all in one room, standing guard with a fire ext", "code": "W4", "analyst": "Weather", "domain": "fire and burning"}
+{"id": "PLANT|ANCHOR_reframe-179|foot on the neck of this snake", "code": "L2", "analyst": "Nature/Growth", "domain": "living creatures"}
+{"id": "PLANT|ANCHOR_reframe-201|jumping beans", "code": "L2", "analyst": "Nature/Growth", "domain": "living creatures"}
+{"id": "PLANT|ANCHOR_reframe-183|something ominous approaching home", "code": "M1", "analyst": "Journey", "domain": "movement and travel"}
+{"id": "PLANT|ANCHOR_reframe-201|handful of gravel thrown into a pond", "code": "O1.1", "analyst": "Other (outside crosswalk)", "domain": "solid materials"}
+{"id": "PLANT|ANCHOR_reframe-227|hero tag", "code": "G3", "analyst": "Violence", "domain": "warfare and soldiers"}
+{"id": "PLANT|MENU_12|kept the key", "code": "H5", "analyst": "Home/Shelter", "domain": "household objects"}
+{"id": "PLANT|PROBE_RHMD_29|the fever is still alive", "code": "L2", "analyst": "Nature/Growth", "domain": "living creatures"}
+{"id": "POOL|covidlonghaulers_mdxdgx_0|h9d7e2836c3d5", "code": "I2.1", "analyst": "Other (outside crosswalk)", "domain": "business and accounting"}
+{"id": "PLANT|ANCHOR_reframe-121|in the second inning", "code": "K5.2", "analyst": "Sports/Games", "domain": "sports games"}
+{"id": "PLANT|ANCHOR_reframe-147|computer viruses", "code": "Y2", "analyst": "Machine", "domain": "computing and information technology"}
+{"id": "PLANT|ANCHOR_reframe-177|restrictions on travel", "code": "NONE", "analyst": "not metaphorical", "domain": "NONE"}
+{"id": "PLANT|ANCHOR_reframe-175|strategy", "code": "K5.2", "analyst": "Sports/Games", "domain": "games and strategy"}
+{"id": "PLANT|ANCHOR_reframe-177|storing all necessary supplies", "code": "NONE", "analyst": "not metaphorical", "domain": "NONE"}
+{"id": "PLANT|ANCHOR_reframe-177|testing everyone that comes through", "code": "H2", "analyst": "Home/Shelter", "domain": "parts of buildings"}
+{"id": "PLANT|ANCHOR_reframe-182|taking the brakes off", "code": "M3", "analyst": "Journey", "domain": "land vehicle transport"}
+{"id": "PLANT|ANCHOR_reframe-183|Call that friend we haven’t made time for recently", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "PLANT|ANCHOR_reframe-185|clean-up effort", "code": "W4", "analyst": "Weather", "domain": "weather and disasters"}
+{"id": "PLANT|ANCHOR_reframe-185|mitigate the storm’s effect", "code": "W4", "analyst": "Weather", "domain": "weather and storms"}
+{"id": "PLANT|ANCHOR_reframe-201|flood risk", "code": "W4", "analyst": "Weather", "domain": "weather and water"}
+{"id": "PLANT|ANCHOR_reframe-188|thrown in at the deep end", "code": "K5.1", "analyst": "Sports/Games", "domain": "swimming and sports"}
+{"id": "PLANT|ANCHOR_reframe-201|water metaphor", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid and water"}
+{"id": "PLANT|ANCHOR_reframe-204|dark winter", "code": "W4", "analyst": "Weather", "domain": "weather and seasons"}
+{"id": "PLANT|ANCHOR_reframe-231|no more room to cope", "code": "N3.4", "analyst": "Other (outside crosswalk)", "domain": "physical volume/space"}
+{"id": "PLANT|MENU_12|left the place in a bit of a mess", "code": "H4", "analyst": "Home/Shelter", "domain": "domestic residence"}
+{"id": "PLANT|MENU_3|go through the exact same route", "code": "M6", "analyst": "Journey", "domain": "location and direction"}
+{"id": "PLANT|MENU_5|hard to move forward", "code": "M1", "analyst": "Journey", "domain": "movement and travel"}
+{"id": "POOL|COVID19positive_gpo89g_0|he731ce2d34f5", "code": "S9", "analyst": "Other (outside crosswalk)", "domain": "supernatural experiences"}
+{"id": "POOL|COVID19positive_gg9r63_2|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|COVID19positive_hp8w5b_1|h90d78f75f4dc", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|COVID19positive_htgmz4_2|h2ad012f2c581", "code": "N3.5", "analyst": "Burden/Weight", "domain": "physical weight"}
+{"id": "POOL|covidlonghaulers_jx099j_0|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_kddw44_2|hfcbafa111b75", "code": "M8", "analyst": "Journey", "domain": "remaining stationary"}
+{"id": "POOL|covidlonghaulers_kem4mo_3|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_kem4mo_5|h727e5eb747d1", "code": "W2", "analyst": "Other (outside crosswalk)", "domain": "fire and light"}
+{"id": "POOL|covidlonghaulers_klqbpw_1|h01161a80ed62", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|covidlonghaulers_kr6dxm_0|hf135ad440e78", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "POOL|covidlonghaulers_krxyon_1|h33da562bb31e", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_kxhvmz_0|h23c1f3782976", "code": "Y1", "analyst": "Other (outside crosswalk)", "domain": "science and technology"}
+{"id": "POOL|covidlonghaulers_ldfkp6_1|hc7e49663299b", "code": "O4.6", "analyst": "Other (outside crosswalk)", "domain": "temperature and freezing"}
+{"id": "POOL|covidlonghaulers_lks441_0|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_m74jhs_0|h44f0cf1cd0f4", "code": "W2", "analyst": "Other (outside crosswalk)", "domain": "light and visibility"}
+{"id": "POOL|covidlonghaulers_mbmhlg_1|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_nsenv6_3|h45b64fd2a2df", "code": "M2", "analyst": "Journey", "domain": "physical force/pushing"}
+{"id": "POOL|covidlonghaulers_ods9nw_1|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "PLANT|ANCHOR_reframe-111|If this were a baseball game, it would be the second inning", "code": "K5.2", "analyst": "Sports/Games", "domain": "games and sports"}
+{"id": "PLANT|ANCHOR_reframe-117|every move we make, it gets overcome by Covid", "code": "K5.2", "analyst": "Sports/Games", "domain": "games and strategy"}
+{"id": "PLANT|ANCHOR_reframe-123|flashing at us like dashboard warnings in a passenger jet", "code": "M3", "analyst": "Journey", "domain": "aviation and aircraft"}
+{"id": "PLANT|ANCHOR_reframe-124|but a dial", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electrical equipment"}
+{"id": "PLANT|ANCHOR_reframe-124|will not be a switch", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electrical equipment"}
+{"id": "PLANT|ANCHOR_reframe-126|SARS-CoV-2 is an oily envelope stuck to the door", "code": "H2", "analyst": "Home/Shelter", "domain": "parts of buildings"}
+{"id": "PLANT|ANCHOR_reframe-127|too many sparks make it through", "code": "W4", "analyst": "Weather", "domain": "fire and burning"}
+{"id": "PLANT|ANCHOR_reframe-127|blaze outside the room", "code": "A1.1.2", "analyst": "Violence", "domain": "fire and destruction"}
+{"id": "PLANT|ANCHOR_reframe-128|firework", "code": "G3", "analyst": "Violence", "domain": "warfare and weapons"}
+{"id": "PLANT|ANCHOR_reframe-129|the goalkeeper can be beaten", "code": "K5.1", "analyst": "Sports/Games", "domain": "sports"}
+{"id": "PLANT|ANCHOR_reframe-129|getting to the end of the playoff final", "code": "K5.2", "analyst": "Sports/Games", "domain": "sports games"}
+{"id": "PLANT|ANCHOR_reframe-129|the first player goes up and scores a goal", "code": "K5.2", "analyst": "Sports/Games", "domain": "sports games"}
+{"id": "PLANT|ANCHOR_reframe-146|distil the very best of the psychic energy", "code": "F2", "analyst": "Food/Eating", "domain": "drinks and liquids"}
+{"id": "PLANT|ANCHOR_reframe-162|take it off now", "code": "M5", "analyst": "Journey", "domain": "aircraft and flying"}
+{"id": "PLANT|ANCHOR_reframe-163|economic 'coma'", "code": "B2", "analyst": "Body", "domain": "health and disease"}
+{"id": "PLANT|ANCHOR_reframe-169|is a portal", "code": "H2", "analyst": "Home/Shelter", "domain": "building parts/entrances"}
+{"id": "PLANT|ANCHOR_reframe-169|walk through it", "code": "M1", "analyst": "Journey", "domain": "movement and travel"}
+{"id": "PLANT|ANCHOR_reframe-169|our dead rivers and smoky skies", "code": "W5", "analyst": "Nature/Growth", "domain": "environmental pollution"}
+{"id": "PLANT|ANCHOR_reframe-169|a gateway between one world and the next", "code": "H2", "analyst": "Home/Shelter", "domain": "parts of buildings"}
+{"id": "PLANT|ANCHOR_reframe-170|climate change in a pressure cooker", "code": "H5", "analyst": "Home/Shelter", "domain": "household kitchen appliances"}
+{"id": "PLANT|ANCHOR_reframe-177|inside the gateway", "code": "H2", "analyst": "Home/Shelter", "domain": "parts of buildings"}
+{"id": "PLANT|ANCHOR_reframe-177|gates may be closed for awhile", "code": "H2", "analyst": "Home/Shelter", "domain": "parts of buildings"}
+{"id": "PLANT|ANCHOR_reframe-177|protected inside by not leaving the gates", "code": "H2", "analyst": "Home/Shelter", "domain": "building parts"}
+{"id": "PLANT|ANCHOR_reframe-179|Venomous snake", "code": "L2", "analyst": "Nature/Growth", "domain": "living creatures"}
+{"id": "PLANT|ANCHOR_reframe-181|one particular weapon", "code": "G3", "analyst": "Violence", "domain": "warfare and weapons"}
+{"id": "PLANT|ANCHOR_reframe-185|warm updraft", "code": "W4", "analyst": "Weather", "domain": "weather and meteorology"}
+{"id": "PLANT|ANCHOR_reframe-201|localised peaks", "code": "N3.2", "analyst": "Other (outside crosswalk)", "domain": "physical size and dimensions"}
+{"id": "PLANT|ANCHOR_reframe-221|The emperor -that is, the human race- was naked", "code": "B5", "analyst": "Other (outside crosswalk)", "domain": "clothes and dress"}
+{"id": "PLANT|ANCHOR_reframe-227|burden that we gave our soldiers fighting in the war", "code": "G3", "analyst": "Violence", "domain": "warfare and military"}
+{"id": "PLANT|ANCHOR_reframe-236|freeze this disease", "code": "O4.6", "analyst": "Other (outside crosswalk)", "domain": "temperature"}
+{"id": "PLANT|PROBE_RHMD_38|Wind is suffocation", "code": "W4", "analyst": "Weather", "domain": "weather and elements"}
+{"id": "PLANT|PROBE_RHMD_77|your entire body by volume is transformed into gold", "code": "O1.1", "analyst": "Other (outside crosswalk)", "domain": "solid materials"}
+{"id": "POOL|COVID19positive_frfc1s_2|hc84ca42b70e3", "code": "M2", "analyst": "Journey", "domain": "moving and transporting"}
+{"id": "POOL|COVID19positive_hig32y_1|h0c2e3e8233be", "code": "O1.3", "analyst": "Other (outside crosswalk)", "domain": "gas and bubbles"}
+{"id": "POOL|COVID19positive_hqtued_2|h721ee6cbe7e0", "code": "N5", "analyst": "Other (outside crosswalk)", "domain": "quantities and percentages"}
+{"id": "POOL|covidlonghaulers_mfbvug_3|h09a8780440cb", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|covidlonghaulers_lcqfwz_3|hdf58fd20336f", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electricity and electronics"}
+{"id": "POOL|covidlonghaulers_n5o0y5_1|h5e64037fdf50", "code": "X5.1", "analyst": "Burden/Weight", "domain": "attention and focus"}
+{"id": "PLANT|ANCHOR_reframe-108|flatten out", "code": "O4.4", "analyst": "Burden/Weight", "domain": "geometric shape"}
+{"id": "PLANT|ANCHOR_reframe-109|turning off the cell’s alarm system", "code": "O3", "analyst": "Other (outside crosswalk)", "domain": "electrical equipment"}
+{"id": "PLANT|ANCHOR_reframe-112|the beast", "code": "L2", "analyst": "Nature/Growth", "domain": "living creatures"}
+{"id": "PLANT|ANCHOR_reframe-111|early in this disease", "code": "K5.2", "analyst": "Sports/Games", "domain": "games and sports"}
+{"id": "PLANT|ANCHOR_reframe-113|bond that is being strengthened rather than weakened", "code": "O2", "analyst": "Machine", "domain": "physical objects/connections"}
+{"id": "PLANT|ANCHOR_reframe-114|a bond that is being strengthened rather than weakened", "code": "O2", "analyst": "Machine", "domain": "physical objects/connections"}
+{"id": "PLANT|ANCHOR_reframe-115|On this journey", "code": "M1", "analyst": "Journey", "domain": "travel and movement"}
+{"id": "PLANT|ANCHOR_reframe-116|break the chain", "code": "O2", "analyst": "Machine", "domain": "physical objects"}
+{"id": "PLANT|ANCHOR_reframe-122|welcome you home", "code": "H4", "analyst": "Home/Shelter", "domain": "residence and home"}
+{"id": "PLANT|ANCHOR_reframe-129|won the cup", "code": "K5.2", "analyst": "Sports/Games", "domain": "sports and games"}
+{"id": "PLANT|ANCHOR_reframe-130|win a football game", "code": "K5.2", "analyst": "Sports/Games", "domain": "sports and games"}
+{"id": "PLANT|ANCHOR_reframe-134|this is like the worst group project ever", "code": "P1", "analyst": "Other (outside crosswalk)", "domain": "education and schooling"}
+{"id": "PLANT|ANCHOR_reframe-135|has no interest in", "code": "X5.2", "analyst": "Burden/Weight", "domain": "interest and boredom"}
+{"id": "PLANT|ANCHOR_reframe-147|going viral", "code": "Y2", "analyst": "Machine", "domain": "information technology"}
+{"id": "PLANT|ANCHOR_reframe-145|no crystal ball", "code": "S9", "analyst": "Other (outside crosswalk)", "domain": "supernatural divination"}
+{"id": "PLANT|ANCHOR_reframe-155|fight the monster", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "PLANT|ANCHOR_reframe-169|imagine another world", "code": "M1", "analyst": "Journey", "domain": "travel and movement"}
+{"id": "PLANT|ANCHOR_reframe-175|team effort", "code": "K5.2", "analyst": "Sports/Games", "domain": "sports and games"}
+{"id": "PLANT|ANCHOR_reframe-177|wait inside", "code": "H2", "analyst": "Home/Shelter", "domain": "parts of buildings"}
+{"id": "PLANT|ANCHOR_reframe-177|lock the gates", "code": "H2", "analyst": "Home/Shelter", "domain": "parts of buildings"}
+{"id": "PLANT|ANCHOR_reframe-177|closing down cities and borders", "code": "H2", "analyst": "Home/Shelter", "domain": "building parts"}
+{"id": "PLANT|ANCHOR_reframe-178|gambling on immunity", "code": "K5.2", "analyst": "Sports/Games", "domain": "games of chance"}
+{"id": "PLANT|ANCHOR_reframe-180|the match is deadlocked", "code": "K5.2", "analyst": "Sports/Games", "domain": "games and sports"}
+{"id": "PLANT|ANCHOR_reframe-182|ship is clearly under control", "code": "M3", "analyst": "Journey", "domain": "land and sea transport"}
+{"id": "PLANT|ANCHOR_reframe-183|silver lining", "code": "W4", "analyst": "Weather", "domain": "weather and clouds"}
+{"id": "PLANT|ANCHOR_reframe-183|abstract enemy", "code": "G3", "analyst": "Violence", "domain": "warfare and conflict"}
+{"id": "PLANT|ANCHOR_reframe-183|break from our daily habits", "code": "A1.1.2", "analyst": "Violence", "domain": "damaging and destroying"}
+{"id": "PLANT|ANCHOR_reframe-183|look deeper inside ourselves", "code": "M6", "analyst": "Journey", "domain": "spatial location and direction"}
+{"id": "PLANT|ANCHOR_reframe-183|take up a new hobby altogether", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "PLANT|ANCHOR_reframe-185|calm before the storm", "code": "W4", "analyst": "Weather", "domain": "weather and storms"}
+{"id": "PLANT|ANCHOR_reframe-185|patching up individuals", "code": "H2", "analyst": "Home/Shelter", "domain": "building repair"}
+{"id": "PLANT|ANCHOR_reframe-187|playing your part", "code": "K4", "analyst": "Other (outside crosswalk)", "domain": "drama and theatre"}
+{"id": "PLANT|ANCHOR_reframe-193|last line of defence", "code": "G3", "analyst": "Violence", "domain": "warfare and defence"}
+{"id": "PLANT|ANCHOR_reframe-194|tsunami", "code": "W4", "analyst": "Weather", "domain": "weather and natural disasters"}
+{"id": "PLANT|ANCHOR_reframe-199|bits coming in", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid flow"}
+{"id": "PLANT|ANCHOR_reframe-201|ripple", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid movement"}
+{"id": "PLANT|ANCHOR_reframe-200|second wave", "code": "M4", "analyst": "Journey", "domain": "water and waves"}
+{"id": "PLANT|ANCHOR_reframe-203|dark winter", "code": "W4", "analyst": "Weather", "domain": "weather and seasons"}
+{"id": "PLANT|ANCHOR_reframe-205|spring will come", "code": "W4", "analyst": "Weather", "domain": "weather and seasons"}
+{"id": "PLANT|ANCHOR_reframe-222|military language", "code": "G3", "analyst": "Violence", "domain": "warfare and defense"}
+{"id": "PLANT|ANCHOR_reframe-224|running toward a fight", "code": "G3", "analyst": "Violence", "domain": "warfare and combat"}
+{"id": "PLANT|ANCHOR_reframe-227|heroes", "code": "G3", "analyst": "Violence", "domain": "warfare and soldiers"}
+{"id": "PLANT|ANCHOR_reframe-229|trolley service", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "PLANT|ANCHOR_reframe-229|stop the trolley", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "PLANT|MENU_10|taken control", "code": "S7.1", "analyst": "Other (outside crosswalk)", "domain": "power and organizing"}
+{"id": "PLANT|MENU_12|demanding attention", "code": "S2", "analyst": "Other (outside crosswalk)", "domain": "people and social interaction"}
+{"id": "PLANT|MENU_14|take on a new value", "code": "I1.3", "analyst": "Other (outside crosswalk)", "domain": "monetary value"}
+{"id": "PLANT|MENU_4|have been there before you", "code": "M1", "analyst": "Journey", "domain": "movement and travel"}
+{"id": "PLANT|MENU_4|are easier to handle when we are all in it together", "code": "O2", "analyst": "Machine", "domain": "physical objects"}
+{"id": "PLANT|PROBE_RHMD_11|restarting the cycle", "code": "T1.1", "analyst": "Time", "domain": "time and cycles"}
+{"id": "PLANT|PROBE_RHMD_25|Peanut butter addiction", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "PLANT|PROBE_RHMD_26|My OCD is so happy", "code": "E4.1", "analyst": "Emotion", "domain": "emotional states"}
+{"id": "PLANT|PROBE_RHMD_27|Siri having a stroke", "code": "B2", "analyst": "Body", "domain": "health and disease"}
+{"id": "PLANT|PROBE_RHMD_33|allergic to the cold", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "PLANT|PROBE_RHMD_44|Darth Vader", "code": "Z3", "analyst": "Other (outside crosswalk)", "domain": "fictional characters"}
+{"id": "PLANT|PROBE_RHMD_46|a shit ton of homework", "code": "N5", "analyst": "Other (outside crosswalk)", "domain": "quantity and amount"}
+{"id": "PLANT|PROBE_RHMD_49|addiction to crisps", "code": "B2", "analyst": "Body", "domain": "health and disease"}
+{"id": "PLANT|PROBE_RHMD_60|stopping my addiction to horror", "code": "F3", "analyst": "Other (outside crosswalk)", "domain": "drug addiction"}
+{"id": "PLANT|PROBE_RHMD_60|messed with my head", "code": "A1.1.2", "analyst": "Violence", "domain": "damaging and destroying"}
+{"id": "PLANT|PROBE_RHMD_70|super speed", "code": "K5.1", "analyst": "Sports/Games", "domain": "sports and athletics"}
+{"id": "PLANT|PROBE_RHMD_71|my chest is a bit tight", "code": "NONE", "analyst": "not metaphorical", "domain": "physical sensation"}
+{"id": "PLANT|PROBE_RHMD_71|my head just says fuck it", "code": "Q1.1", "analyst": "Other (outside crosswalk)", "domain": "linguistic communication"}
+{"id": "PLANT|PROBE_RHMD_72|murder scene", "code": "G2", "analyst": "Other (outside crosswalk)", "domain": "crime and law"}
+{"id": "PLANT|PROBE_RHMD_91|bitch slapped", "code": "A1.1.2", "analyst": "Violence", "domain": "physical violence/attack"}
+{"id": "POOL|COVID19positive_fph8mt_0|hf31e18e3b2a6", "code": "M4", "analyst": "Journey", "domain": "water and waves"}
+{"id": "POOL|COVID19positive_frfc1s_0|hdbd79b319f5c", "code": "M1", "analyst": "Journey", "domain": "movement and motion"}
+{"id": "POOL|COVID19positive_fu60i3_0|h8d584e093dc7", "code": "M2", "analyst": "Journey", "domain": "taking or receiving"}
+{"id": "POOL|COVID19positive_fuo1o0_0|h23847bc42e62", "code": "NONE", "analyst": "not metaphorical", "domain": "physical sensation"}
+{"id": "POOL|COVID19positive_fvhsxe_0|hc546e44b313f", "code": "O4.5", "analyst": "Other (outside crosswalk)", "domain": "physical texture"}
+{"id": "POOL|COVID19positive_fvlksm_0|h94c12b9bb19d", "code": "E3", "analyst": "Other (outside crosswalk)", "domain": "violent emotional state"}
+{"id": "POOL|COVID19positive_fx84bj_6|hefcc0b6b8256", "code": "M8", "analyst": "Journey", "domain": "remaining stationary"}
+{"id": "POOL|COVID19positive_fxjyaj_2|hc6f01674e5c7", "code": "Q1.1", "analyst": "Other (outside crosswalk)", "domain": "communication"}
+{"id": "POOL|COVID19positive_fyde6v_2|h01744644109d", "code": "NONE", "analyst": "not metaphorical", "domain": "physical sensation"}
+{"id": "POOL|COVID19positive_fzij0g_1|h15fb495852c4", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|COVID19positive_g0dbha_1|hb2ec8b4c2cc7", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|COVID19positive_g6oh9a_4|h9e751a5b90a1", "code": "K5.2", "analyst": "Sports/Games", "domain": "gambling and games"}
+{"id": "POOL|COVID19positive_g6w6z8_0|hb78b16835545", "code": "W4", "analyst": "Weather", "domain": "fire and weather"}
+{"id": "POOL|COVID19positive_gaqwmd_1|h406dcf551b11", "code": "L2", "analyst": "Nature/Growth", "domain": "animals/birds"}
+{"id": "POOL|COVID19positive_gfasx1_1|hb78b16835545", "code": "W2", "analyst": "Other (outside crosswalk)", "domain": "fire and light"}
+{"id": "POOL|COVID19positive_ggrp2e_4|h62e3a7bd781b", "code": "B1", "analyst": "Body", "domain": "anatomy and physiology"}
+{"id": "POOL|COVID19positive_ggrp2e_4|h68d0c78e4b9f", "code": "O1.1", "analyst": "Other (outside crosswalk)", "domain": "physical breaking point"}
+{"id": "POOL|COVID19positive_gq3xtx_4|h025c8a39243a", "code": "A1.7", "analyst": "Other (outside crosswalk)", "domain": "physical constraint"}
+{"id": "POOL|COVID19positive_gqaax2_2|h63a3efbc9fb9", "code": "K5", "analyst": "Sports/Games", "domain": "sports and fitness"}
+{"id": "POOL|COVID19positive_gqaax2_2|h3d815db87a39", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|COVID19positive_gskcy4_0|h1848be658edf", "code": "W4", "analyst": "Weather", "domain": "fire and weather"}
+{"id": "POOL|COVID19positive_gvyio9_0|hb8d053e9d9c8", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|COVID19positive_gwbuyz_1|h435232b3a548", "code": "G3", "analyst": "Violence", "domain": "warfare and attack"}
+{"id": "POOL|COVID19positive_gwbuyz_1|h90f2600ffec3", "code": "W2", "analyst": "Other (outside crosswalk)", "domain": "light"}
+{"id": "POOL|COVID19positive_gzeuot_2|hed38aaaf7c29", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|COVID19positive_gxinr3_1|h92975a0be214", "code": "M3", "analyst": "Journey", "domain": "vehicles and transport"}
+{"id": "POOL|COVID19positive_gzeuot_3|h58af98dd2598", "code": "N3.3", "analyst": "Other (outside crosswalk)", "domain": "physical distance"}
+{"id": "POOL|COVID19positive_gzeuot_6|hb735666a3605", "code": "M8", "analyst": "Journey", "domain": "remaining stationary"}
+{"id": "POOL|COVID19positive_hc80qp_1|h7f389195820f", "code": "K3", "analyst": "Other (outside crosswalk)", "domain": "recorded sound media"}
+{"id": "POOL|COVID19positive_hfxxlg_1|he3d7bde07f9d", "code": "W4", "analyst": "Weather", "domain": "weather"}
+{"id": "POOL|COVID19positive_hgjj3b_1|hd606e2fe8fde", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|COVID19positive_hizo14_1|hced2e3755a70", "code": "M4", "analyst": "Journey", "domain": "water rescue"}
+{"id": "POOL|COVID19positive_hn7pac_1|h2b51451125a1", "code": "W2", "analyst": "Other (outside crosswalk)", "domain": "light and visibility"}
+{"id": "POOL|COVID19positive_hlvtkq_0|h9d35e8d8f39b", "code": "M6", "analyst": "Journey", "domain": "location and direction"}
+{"id": "POOL|COVID19positive_hnnwxl_1|h608113bc195d", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|COVID19positive_hpb6nr_1|h3edd6ca78b27", "code": "M3", "analyst": "Journey", "domain": "horse riding/transport"}
+{"id": "POOL|COVID19positive_hqcyp1_0|hde54f1bad028", "code": "S9", "analyst": "Other (outside crosswalk)", "domain": "religion and supernatural"}
+{"id": "POOL|COVID19positive_hqs479_1|h961f495395a6", "code": "M1", "analyst": "Journey", "domain": "movement and travel"}
+{"id": "POOL|COVID19positive_htr4yj_2|h2820493b2d2d", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|COVID19positive_huflwa_1|h720adc8b70c3", "code": "NONE", "analyst": "not metaphorical", "domain": "physical sensation"}
+{"id": "POOL|COVID19positive_hvckh0_2|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|COVID19positive_hx5xht_0|hbd8628e83bf3", "code": "N3.4", "analyst": "Other (outside crosswalk)", "domain": "volume and capacity"}
+{"id": "POOL|covidlonghaulers_ic5738_1|hf82c8b41c86d", "code": "O4.3", "analyst": "Other (outside crosswalk)", "domain": "color and patterns"}
+{"id": "POOL|covidlonghaulers_ic5738_2|hfd5b6fc2c4b1", "code": "N3.5", "analyst": "Burden/Weight", "domain": "physical weight"}
+{"id": "POOL|covidlonghaulers_iexcxy_0|he12bd851236e", "code": "T1.1", "analyst": "Time", "domain": "time and chronology"}
+{"id": "POOL|covidlonghaulers_im276a_0|hf252008a10b2", "code": "O4.6", "analyst": "Other (outside crosswalk)", "domain": "temperature"}
+{"id": "POOL|covidlonghaulers_im276a_2|ha9f7f9277f9f", "code": "L2", "analyst": "Nature/Growth", "domain": "animal movement"}
+{"id": "POOL|covidlonghaulers_im276a_3|hd36205da6b05", "code": "E3", "analyst": "Other (outside crosswalk)", "domain": "violent emotion/intensity"}
+{"id": "POOL|covidlonghaulers_j2bly9_4|hfdacc72094c0", "code": "G3", "analyst": "Violence", "domain": "warfare and attack"}
+{"id": "POOL|covidlonghaulers_ja5vif_1|h3a7ddc3f3840", "code": "M1", "analyst": "Journey", "domain": "movement and unfolding"}
+{"id": "POOL|covidlonghaulers_ja3ojo_2|ha6e2044eb995", "code": "N3.2", "analyst": "Other (outside crosswalk)", "domain": "physical size/level"}
+{"id": "POOL|covidlonghaulers_k1vssr_1|hd0b78d99eb46", "code": "M1", "analyst": "Journey", "domain": "movement and driving"}
+{"id": "POOL|covidlonghaulers_k1vssr_3|hfe6bbf7a0c75", "code": "T1.1", "analyst": "Time", "domain": "time and duration"}
+{"id": "POOL|covidlonghaulers_k7ui8v_0|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_kfa5j7_0|hac3e33389382", "code": "A15", "analyst": "Burden/Weight", "domain": "safety and danger"}
+{"id": "POOL|covidlonghaulers_kgcxv8_1|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_kjjqet_1|haef01da19481", "code": "O1.2", "analyst": "Other (outside crosswalk)", "domain": "liquid movement"}
+{"id": "POOL|covidlonghaulers_kjjqet_2|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_kldmiy_0|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_kmryf8_1|h8d8d846aac48", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_kmryp6_1|h60a8457b1bc0", "code": "W2", "analyst": "Other (outside crosswalk)", "domain": "fire and light"}
+{"id": "POOL|covidlonghaulers_kr6dxm_2|h13e5f425346d", "code": "W2", "analyst": "Other (outside crosswalk)", "domain": "light and vision"}
+{"id": "POOL|covidlonghaulers_kx2t8a_1|hf5b93adbdc42", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|covidlonghaulers_kyuzu1_0|h7fc94feaaf92", "code": "S9", "analyst": "Other (outside crosswalk)", "domain": "religion and supernatural"}
+{"id": "POOL|covidlonghaulers_l0ugdj_2|h97e9db05675f", "code": "N2", "analyst": "Other (outside crosswalk)", "domain": "mathematics"}
+{"id": "POOL|covidlonghaulers_l0wupl_0|h3749c9ee7e7d", "code": "W4", "analyst": "Weather", "domain": "weather and atmosphere"}
+{"id": "POOL|covidlonghaulers_l49b1p_0|h6a48dd5a4a71", "code": "N3.4", "analyst": "Other (outside crosswalk)", "domain": "volume and quantity"}
+{"id": "POOL|covidlonghaulers_l8f8ik_6|h86c6165256a0", "code": "S9", "analyst": "Other (outside crosswalk)", "domain": "religious practice"}
+{"id": "POOL|covidlonghaulers_ldfkp6_1|hc139a55b8f1f", "code": "NONE", "analyst": "not metaphorical", "domain": "none"}
+{"id": "POOL|covidlonghaulers_lfesox_0|hfda0e349329b", "code": "A1.1.2", "analyst": "Violence", "domain": "damaging and destroying"}

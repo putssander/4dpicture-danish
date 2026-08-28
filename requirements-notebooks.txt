@@ -1,0 +1,27 @@
+# Everything needed to run the notebooks in metaphor_extraction/notebooks/.
+# Deliberately minimal: the walkthroughs read pre-computed result files that ship with the
+# repo, so no model, GPU, API key or network access is involved.
+#
+#   python3 -m venv .venv
+#   .venv/bin/pip install -r requirements-notebooks.txt
+#   .venv/bin/jupyter lab            # or select .venv as the kernel in VS Code
+#
+# Verified 2026-08-19 on Python 3.14: ranker_walkthrough.ipynb and paper_A_walkthrough.ipynb
+# both execute end to end with zero errors and render 4 figures each.
+
+matplotlib>=3.8
+numpy>=1.26
+jupyterlab>=4.0
+nbconvert>=7.0
+ipykernel>=6.0
+
+# Only needed to REBUILD the shipped benchmark from raw run artifacts
+# (metaphor_extraction/evals/build_public_benchmark.py). Not needed to read the notebooks.
+# openpyxl>=3.1
+
+# run-it-yourself notebooks (pipeline/ and lexicon_pipeline/)
+spacy
+nltk
+sentence-transformers
+scikit-learn
+openai

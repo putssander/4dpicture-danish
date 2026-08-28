@@ -1,0 +1,11 @@
+# Top-level Python dependencies for transcribe-faster-whisper.ipynb
+#
+# torch / torchaudio are intentionally NOT listed here. They are reconciled
+# automatically by the notebook to match whatever CUDA build the machine's
+# torch already uses, so this file stays machine-independent (no CUDA pins).
+speechbrain>=1.0
+pyannote.audio>=3.3
+faster-whisper
+python-docx
+tqdm
+numpy

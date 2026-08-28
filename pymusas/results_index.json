@@ -1,0 +1,604 @@
+{
+ "compiled_utc": "2026-08-16T10:03:07.029271+00:00",
+ "protocol": "exact top-1, labelled non-punctuation tokens (*_np refs)",
+ "fair_comparison_rule": {
+  "source_file": "par_matrix_np_full.log",
+  "convo_dan": {
+   "UNION": {
+    "acc": 68.4,
+    "coverage": 91.2
+   },
+   "UNION_exp": {
+    "acc": 68.7,
+    "coverage": 92.7
+   }
+  },
+  "health_dan": {
+   "UNION": {
+    "acc": 59.0,
+    "coverage": 85.3
+   },
+   "UNION_exp": {
+    "acc": 59.6,
+    "coverage": 90.5
+   }
+  },
+  "convo_nld": {
+   "UNION": {
+    "acc": 68.5,
+    "coverage": 91.8
+   },
+   "UNION_exp": {
+    "acc": 69.0,
+    "coverage": 93.8
+   },
+   "legacy_dut": {
+    "acc": 40.8,
+    "coverage": 71.6
+   }
+  },
+  "health_nld": {
+   "UNION": {
+    "acc": 59.9,
+    "coverage": 88.5
+   },
+   "UNION_exp": {
+    "acc": 61.3,
+    "coverage": 92.6
+   },
+   "legacy_dut": {
+    "acc": 34.3,
+    "coverage": 61.9
+   }
+  },
+  "convo_eng": {
+   "en_handbuilt": {
+    "acc": 74.8,
+    "coverage": 97.9
+   }
+  },
+  "convo_fin": {
+   "fin_manual": {
+    "acc": 56.6,
+    "coverage": 76.1
+   },
+   "fin_qwen_wiki": {
+    "acc": 47.6,
+    "coverage": 74.4
+   }
+  },
+  "health_eng": {
+   "en_handbuilt": {
+    "acc": 71.2,
+    "coverage": 94.5
+   }
+  },
+  "health_fin": {
+   "fin_manual": {
+    "acc": 51.3,
+    "coverage": 69.6
+   },
+   "fin_qwen_wiki": {
+    "acc": 41.4,
+    "coverage": 69.9
+   }
+  }
+ },
+ "committee_stats": {
+  "source_file": "stats_<leg>.json",
+  "convo_eng": {
+   "tokens": 837,
+   "unanimous_pct": 81.5,
+   "majority": 141,
+   "single_vote": 14
+  },
+  "convo_dan": {
+   "tokens": 775,
+   "unanimous_pct": 83.1,
+   "majority": 117,
+   "single_vote": 14
+  },
+  "convo_nld": {
+   "tokens": 749,
+   "unanimous_pct": 82.0,
+   "majority": 114,
+   "single_vote": 21
+  },
+  "convo_fin": {
+   "tokens": 569,
+   "unanimous_pct": 80.3,
+   "majority": 94,
+   "single_vote": 18
+  },
+  "health_eng": {
+   "tokens": 968,
+   "unanimous_pct": 79.0,
+   "majority": 186,
+   "single_vote": 17
+  },
+  "health_dan": {
+   "tokens": 906,
+   "unanimous_pct": 81.2,
+   "majority": 151,
+   "single_vote": 19
+  },
+  "health_nld": {
+   "tokens": 976,
+   "unanimous_pct": 79.1,
+   "majority": 179,
+   "single_vote": 25
+  },
+  "health_fin": {
+   "tokens": 681,
+   "unanimous_pct": 79.1,
+   "majority": 118,
+   "single_vote": 24
+  }
+ },
+ "bem": {
+  "source_file": "neural_bem_par_scores.json",
+  "convo_eng|PyMUSAS-Neural-Multilingual-Base-BEM": {
+   "acc": 0.7256515775034293,
+   "n": 729
+  },
+  "convo_dan|PyMUSAS-Neural-Multilingual-Base-BEM": {
+   "acc": 0.5757121439280359,
+   "n": 667
+  },
+  "convo_nld|PyMUSAS-Neural-Multilingual-Base-BEM": {
+   "acc": 0.6157337367624811,
+   "n": 661
+  },
+  "convo_fin|PyMUSAS-Neural-Multilingual-Base-BEM": {
+   "acc": 0.36324786324786323,
+   "n": 468
+  },
+  "health_eng|PyMUSAS-Neural-Multilingual-Base-BEM": {
+   "acc": 0.7260115606936416,
+   "n": 865
+  },
+  "health_dan|PyMUSAS-Neural-Multilingual-Base-BEM": {
+   "acc": 0.5162907268170426,
+   "n": 798
+  },
+  "health_nld|PyMUSAS-Neural-Multilingual-Base-BEM": {
+   "acc": 0.5338600451467269,
+   "n": 886
+  },
+  "health_fin|PyMUSAS-Neural-Multilingual-Base-BEM": {
+   "acc": 0.3870967741935484,
+   "n": 589
+  },
+  "convo_eng|PyMUSAS-Neural-English-Base-BEM": {
+   "acc": 0.7050754458161865,
+   "n": 729
+  },
+  "health_eng|PyMUSAS-Neural-English-Base-BEM": {
+   "acc": 0.7248554913294798,
+   "n": 865
+  }
+ },
+ "hybrid": {
+  "source_file": "hybrid_bem_par_scores.json",
+  "convo_eng": {
+   "hybrid_acc": 0.7599451303155007,
+   "rule_acc": 0.747599451303155,
+   "bem_filled": 15,
+   "n": 729
+  },
+  "convo_dan": {
+   "hybrid_acc": 0.712143928035982,
+   "rule_acc": 0.6836581709145427,
+   "bem_filled": 59,
+   "n": 667
+  },
+  "convo_nld": {
+   "hybrid_acc": 0.7095310136157338,
+   "rule_acc": 0.6853252647503782,
+   "bem_filled": 54,
+   "n": 661
+  },
+  "convo_fin": {
+   "hybrid_acc": 0.6047008547008547,
+   "rule_acc": 0.5662393162393162,
+   "bem_filled": 112,
+   "n": 468
+  },
+  "health_eng": {
+   "hybrid_acc": 0.7421965317919075,
+   "rule_acc": 0.7121387283236994,
+   "bem_filled": 48,
+   "n": 865
+  },
+  "health_dan": {
+   "hybrid_acc": 0.6428571428571429,
+   "rule_acc": 0.5902255639097744,
+   "bem_filled": 117,
+   "n": 798
+  },
+  "health_nld": {
+   "hybrid_acc": 0.6410835214446953,
+   "rule_acc": 0.5993227990970654,
+   "bem_filled": 102,
+   "n": 886
+  },
+  "health_fin": {
+   "hybrid_acc": 0.5925297113752123,
+   "rule_acc": 0.5127334465195246,
+   "bem_filled": 179,
+   "n": 589
+  }
+ },
+ "hybrid_site_vs_open": {
+  "source_file": "hybrid_bem_par_scores_site_vs_open.json",
+  "convo_dan:semantic_lexicon_da_fixed": {
+   "hybrid_acc": 0.6956521739130435,
+   "rule_acc": 0.6326836581709145,
+   "bem_filled": 104,
+   "n": 667
+  },
+  "convo_dan:semantic_lexicon_da_open": {
+   "hybrid_acc": 0.7136431784107946,
+   "rule_acc": 0.6866566716641679,
+   "bem_filled": 57,
+   "n": 667
+  },
+  "convo_nld:official_dut": {
+   "hybrid_acc": 0.5431164901664145,
+   "rule_acc": 0.4084720121028744,
+   "bem_filled": 188,
+   "n": 661
+  },
+  "convo_nld:semantic_lexicon_nl_open": {
+   "hybrid_acc": 0.708018154311649,
+   "rule_acc": 0.6822995461422088,
+   "bem_filled": 53,
+   "n": 661
+  },
+  "health_dan:semantic_lexicon_da_fixed": {
+   "hybrid_acc": 0.6203007518796992,
+   "rule_acc": 0.5288220551378446,
+   "bem_filled": 183,
+   "n": 798
+  },
+  "health_dan:semantic_lexicon_da_open": {
+   "hybrid_acc": 0.6453634085213033,
+   "rule_acc": 0.5939849624060151,
+   "bem_filled": 115,
+   "n": 798
+  },
+  "health_nld:official_dut": {
+   "hybrid_acc": 0.5056433408577878,
+   "rule_acc": 0.3431151241534989,
+   "bem_filled": 338,
+   "n": 886
+  },
+  "health_nld:semantic_lexicon_nl_open": {
+   "hybrid_acc": 0.6433408577878104,
+   "rule_acc": 0.6038374717832957,
+   "bem_filled": 95,
+   "n": 886
+  }
+ },
+ "hybrid_fin_open": {
+  "source_file": "hybrid_bem_par_scores_fin_open.json",
+  "convo_fin:semantic_lexicon_fin_open_wn": {
+   "hybrid_acc": 0.5299145299145299,
+   "rule_acc": 0.4807692307692308,
+   "bem_filled": 116,
+   "n": 468
+  },
+  "health_fin:semantic_lexicon_fin_open_wn": {
+   "hybrid_acc": 0.4906621392190153,
+   "rule_acc": 0.4159592529711375,
+   "bem_filled": 172,
+   "n": 589
+  }
+ },
+ "hybrid_coffee": {
+  "source_file": "hybrid_bem_par_scores_coffee.json",
+  "coffee_dan:semantic_lexicon_da_open": {
+   "hybrid_acc": 0.6085192697768763,
+   "rule_acc": 0.5777552400270453,
+   "bem_filled": 390,
+   "n": 2958
+  },
+  "coffee_nld:semantic_lexicon_nl_open": {
+   "hybrid_acc": 0.630894800483676,
+   "rule_acc": 0.6106408706166868,
+   "bem_filled": 290,
+   "n": 3308
+  }
+ },
+ "master_table_runs": {
+  "source_file": "master_table_runs.log",
+  "dan:da_fixed": {
+   "dan": {
+    "acc": 50.3,
+    "coverage": 77.8
+   },
+   "convo_dan_np": {
+    "acc": 63.3,
+    "coverage": 84.4
+   },
+   "health_dan_np": {
+    "acc": 52.9,
+    "coverage": 77.1
+   }
+  },
+  "dan:dan_qwen": {
+   "dan": {
+    "acc": 56.3,
+    "coverage": 83.1
+   },
+   "convo_dan_np": {
+    "acc": 67.0,
+    "coverage": 88.2
+   },
+   "health_dan_np": {
+    "acc": 57.5,
+    "coverage": 82.2
+   }
+  },
+  "dan:dan_open_wn": {
+   "dan": {
+    "acc": 57.7,
+    "coverage": 86.6
+   },
+   "convo_dan_np": {
+    "acc": 68.7,
+    "coverage": 91.5
+   },
+   "health_dan_np": {
+    "acc": 59.1,
+    "coverage": 85.1
+   }
+  },
+  "dan:dan_open_dannet": {
+   "dan": {
+    "acc": 57.8,
+    "coverage": 86.8
+   },
+   "convo_dan_np": {
+    "acc": 68.7,
+    "coverage": 91.5
+   },
+   "health_dan_np": {
+    "acc": 59.4,
+    "coverage": 85.6
+   }
+  },
+  "dan:dan_UNION_wn": {
+   "dan": {
+    "acc": 57.7,
+    "coverage": 87.0
+   },
+   "convo_dan_np": {
+    "acc": 68.7,
+    "coverage": 91.6
+   },
+   "health_dan_np": {
+    "acc": 59.1,
+    "coverage": 85.3
+   }
+  },
+  "dan:dan_UNION_dannet": {
+   "dan": {
+    "acc": 57.8,
+    "coverage": 87.1
+   },
+   "convo_dan_np": {
+    "acc": 68.7,
+    "coverage": 91.6
+   },
+   "health_dan_np": {
+    "acc": 59.4,
+    "coverage": 85.8
+   }
+  },
+  "nld:nld_qwen": {
+   "nld": {
+    "acc": 57.1,
+    "coverage": 83.7
+   },
+   "convo_nld_np": {
+    "acc": 60.8,
+    "coverage": 82.3
+   },
+   "health_nld_np": {
+    "acc": 54.2,
+    "coverage": 81.5
+   }
+  },
+  "nld:nld_open_wn": {
+   "nld": {
+    "acc": 61.1,
+    "coverage": 91.2
+   },
+   "convo_nld_np": {
+    "acc": 68.2,
+    "coverage": 92.0
+   },
+   "health_nld_np": {
+    "acc": 60.4,
+    "coverage": 89.3
+   }
+  },
+  "nld:nld_UNION_wn": {
+   "nld": {
+    "acc": 61.2,
+    "coverage": 91.6
+   },
+   "convo_nld_np": {
+    "acc": 68.4,
+    "coverage": 92.1
+   },
+   "health_nld_np": {
+    "acc": 60.5,
+    "coverage": 89.5
+   }
+  },
+  "fin:fin_qwen": {
+   "default": {
+    "acc": 36.2,
+    "coverage": 62.5
+   },
+   "convo_fin_np": {
+    "acc": 44.0,
+    "coverage": 69.4
+   },
+   "health_fin_np": {
+    "acc": 38.7,
+    "coverage": 64.7
+   }
+  },
+  "fin:fin_open_wn": {
+   "default": {
+    "acc": 40.4,
+    "coverage": 72.1
+   },
+   "convo_fin_np": {
+    "acc": 48.1,
+    "coverage": 75.2
+   },
+   "health_fin_np": {
+    "acc": 41.6,
+    "coverage": 70.8
+   }
+  },
+  "dan:da_open": {
+   "dan_unanimous": {
+    "acc": 65.4,
+    "coverage": 88.4
+   }
+  },
+  "nld:nl_open": {
+   "nld_unanimous": {
+    "acc": 70.1,
+    "coverage": 93.4
+   }
+  }
+ },
+ "ladder_fin_gold": {
+  "manual_handbuilt": {
+   "acc": 58.4,
+   "coverage": 76.0,
+   "source": "published (Moore & Rayson), reproduced"
+  },
+  "googletranslate": {
+   "acc": 31.5,
+   "coverage": 57.3,
+   "source_file": "usas_wsd_fin_rule_fin_googletranslate.json"
+  },
+  "gpt-5-mini": {
+   "acc": 39.9,
+   "coverage": 62.5,
+   "source_file": "usas_wsd_fin_rule_fin_gpt-5-mini.json"
+  },
+  "open_wn": {
+   "acc": 40.4,
+   "coverage": 72.1,
+   "source_file": "usas_wsd_fin_rule_fin_open_wn.json"
+  },
+  "open_wn_exp": {
+   "acc": 40.4,
+   "coverage": 74.6,
+   "source_file": "usas_wsd_fin_rule_fin_open_wn_exp.json"
+  },
+  "qwen": {
+   "acc": 36.2,
+   "coverage": 62.5,
+   "source_file": "usas_wsd_fin_rule_fin_qwen.json"
+  },
+  "qwen_ctx": {
+   "acc": 34.8,
+   "coverage": 62.5,
+   "source_file": "usas_wsd_fin_rule_fin_qwen_ctx.json"
+  },
+  "qwen_multi": {
+   "acc": 38.0,
+   "coverage": 63.7,
+   "source_file": "usas_wsd_fin_rule_fin_qwen_multi.json"
+  },
+  "qwen_wiki": {
+   "acc": 39.9,
+   "coverage": 71.0,
+   "source_file": "usas_wsd_fin_rule_fin_qwen_wiki.json"
+  },
+  "site": {
+   "acc": 58.4,
+   "coverage": 76.4,
+   "source_file": "usas_wsd_fin_rule_fin_site.json"
+  },
+  "site_exp": {
+   "acc": 57.7,
+   "coverage": 78.0,
+   "source_file": "usas_wsd_fin_rule_fin_site_exp.json"
+  },
+  "site_wn": {
+   "acc": 52.1,
+   "coverage": 77.2,
+   "source_file": "usas_wsd_fin_rule_fin_site_wn.json"
+  },
+  "site_wnsafe": {
+   "acc": 57.9,
+   "coverage": 77.2,
+   "source_file": "usas_wsd_fin_rule_fin_site_wnsafe.json"
+  }
+ },
+ "oov_autopsy_dan": {
+  "source": "evals/oov_autopsy.py run 2026-08-14",
+  "convo": {
+   "oov_tokens": 59,
+   "unique": 58,
+   "compound_recoverable": 17,
+   "inflection_recoverable": 20,
+   "residual": 21,
+   "compound_examples": [
+    "holdf\u00f8lelse",
+    "hurtigopkald",
+    "kropsmasse"
+   ],
+   "residual_examples": [
+    "chimpanserne",
+    "Etiopien",
+    "80'erne"
+   ]
+  },
+  "health": {
+   "oov_tokens": 117,
+   "unique": 105,
+   "compound_recoverable": 49,
+   "inflection_recoverable": 24,
+   "residual": 32,
+   "compound_examples": [
+    "blodforgiftning",
+    "denguefeber",
+    "biosikkerhed",
+    "bakteriesygdomme"
+   ],
+   "residual_examples": [
+    "ECDC",
+    "Clostridium difficile",
+    "Caribien"
+   ]
+  }
+ },
+ "calibration": {
+  "source": "GOLD_STRATEGY.md pilots + gpt56_calib_*_answers_api.json (2026-08-14)",
+  "single_annotator_exact_vs_gold": {
+   "fable_fin": 76.7,
+   "sol_fin_api": 71.4,
+   "sol_eng_api": 78.5,
+   "gemini_fin": 69.1
+  },
+  "committee_unanimous_precision": {
+   "two_model": 86.5,
+   "three_model": 87.7
+  },
+  "handbuilt_lexicon_reference": {
+   "fin": 58.4,
+   "eng": 72.4
+  }
+ }
+}

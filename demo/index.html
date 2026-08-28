@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore how candidate illness metaphors are found, ranked and reviewed in the Metaphor Menu research workflow.">
+  <title>Metaphor discovery — public English demo</title>
+  <link rel="stylesheet" href="demo.css">
+</head>
+<body class="demo-home">
+  <header class="site-header" aria-label="Demo navigation">
+    <a class="brand" href="index.html" aria-label="Metaphor discovery demo home">
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <span>Metaphor discovery</span>
+    </a>
+    <nav class="site-nav" aria-label="Sections">
+      <a href="#approach">Approach</a>
+      <a href="#workflow">Human review</a>
+      <a class="nav-output" href="english_demo_working_copy_project_team.html">Ranked output <span aria-hidden="true">&#8599;</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="home-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">FROM EXTRACTION TO HUMAN DECISION</p>
+        <h1>Finding the language people use to live through illness.</h1>
+        <p class="hero-lede">A local model proposes possible metaphors. A second model checks each phrase. A ranker brings the most promising expressions forward. People make the final call.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="english_demo_working_copy_project_team.html">Explore the ranked output <span aria-hidden="true">&#8599;</span></a>
+          <a class="text-link" href="https://wp.lancs.ac.uk/melc/the-metaphor-menu/" target="_blank" rel="noopener">See the original Metaphor Menu <span aria-hidden="true">&#8599;</span></a>
+        </div>
+      </div>
+      <div class="hero-proof" aria-label="Public demo summary">
+        <div class="proof-kicker">What this demo contains</div>
+        <div class="proof-number">415</div>
+        <div class="proof-label">ranked expressions from open-licensed English text</div>
+        <div class="mini-metrics">
+          <div><strong>75</strong><span>passed both topic screens</span></div>
+          <div><strong>47</strong><span>phrases from known-good checks</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="principle" aria-label="Approach summary">
+      <span class="principle-index">01</span>
+      <p><strong>The software orders attention; it does not decide meaning.</strong> Ranking helps a finite review effort reach better candidates sooner. Reviewers still decide what belongs.</p>
+    </section>
+
+    <section class="section-block approach-section" id="approach">
+      <div class="menu-goal">
+        <div>
+          <p class="eyebrow">THE GOAL</p>
+          <h2>A new Menu built from patients' own language—not a translation.</h2>
+          <p>The original Metaphor Menu lets people living with cancer explore images other patients have used, such as a journey, a fight or an unwelcome lodger. We are building the same kind of resource for other languages, starting with Danish.</p>
+        </div>
+        <a class="button menu-link" href="https://wp.lancs.ac.uk/melc/the-metaphor-menu/" target="_blank" rel="noopener">Visit the original Metaphor Menu <span aria-hidden="true">&#8599;</span></a>
+      </div>
+
+      <div class="section-heading compact-heading">
+        <div>
+          <p class="eyebrow">HOW IT WORKS</p>
+          <h2>Software finds and orders. People decide.</h2>
+        </div>
+      </div>
+
+      <p class="method-example"><strong>One example:</strong> in “Cancer arrived as an unwelcome lodger,” cancer is what is being described and a difficult house guest is the borrowed image. The search looks for this illness-to-image relation—not metaphorical words in general.</p>
+
+      <div class="method-steps compact-steps" aria-label="Three prompts in the metaphor discovery method">
+        <article class="method-step">
+          <span class="method-number">01 · PROPOSE</span>
+          <div>
+            <h3>Ask broadly first</h3>
+            <blockquote>“Find every metaphorical expression in this passage, including everyday ones. Return the exact phrase and the category of the borrowed image.”</blockquote>
+            <p><strong>Why this may help:</strong> illness is often implied rather than named. Broad prompting is intended to reduce missed expressions. The older narrow route also filtered passages before prompting, so the comparison does not isolate prompt wording.</p>
+          </div>
+        </article>
+        <article class="method-step">
+          <span class="method-number">02 · CONFIRM</span>
+          <div>
+            <h3>Ask a second model</h3>
+            <blockquote>“Is this exact expression used metaphorically in this passage?”</blockquote>
+            <p><strong>Why this may help:</strong> a different model family independently checks each phrase proposed by the first model. Only verified expressions move forward.</p>
+          </div>
+        </article>
+        <article class="method-step human-step">
+          <span class="method-number">03 · SCREEN</span>
+          <div>
+            <h3>Ask one question at a time</h3>
+            <blockquote>“Is it about illness?”<br>“Is it about lived experience?”<br>“How Menu-like is it?”</blockquote>
+            <p><strong>Why this helps:</strong> the answers remain visible instead of becoming one opaque score. They set the order; image categories reveal recurring patterns. People still decide what belongs.</p>
+          </div>
+        </article>
+      </div>
+
+      <p class="method-note"><strong>A small feasibility check:</strong> across nine previously identified passages from five Danish interviews, the broad route surfaced all nine before verification. Second-model verification retained seven while removing about two thirds of all suggestions. This does not estimate recall, precision or Menu suitability. All private-text models run on project hardware.</p>
+    </section>
+
+    <section class="section-block" id="workflow">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE REVIEW WORKFLOW</p>
+          <h2>Three views, each with a different job.</h2>
+        </div>
+        <p>Stages one and two conceal the rank on purpose. Only after the independent decisions are complete does the project team see the system's ordering.</p>
+      </div>
+
+      <div class="workflow-grid">
+        <a class="workflow-card" href="english_demo_stage1_for_researchers.html">
+          <span class="step-number">01</span>
+          <span class="step-audience">Researchers</span>
+          <h3>Filter</h3>
+          <p>Review a shuffled sample from across the list. The hidden rank prevents the software's judgement from influencing the reviewers.</p>
+          <span class="card-link">Open blinded filtering <span aria-hidden="true">&#8594;</span></span>
+        </a>
+        <a class="workflow-card" href="english_demo_stage2_for_PPI_panel.html">
+          <span class="step-number">02</span>
+          <span class="step-audience">PPI panel</span>
+          <h3>Vote</h3>
+          <p>Decide independently which expressions belong on a menu for people living with illness. Rank and score remain hidden.</p>
+          <span class="card-link">Open panel voting <span aria-hidden="true">&#8594;</span></span>
+        </a>
+        <a class="workflow-card featured" href="english_demo_working_copy_project_team.html">
+          <span class="step-number">03</span>
+          <span class="step-audience">Project team</span>
+          <h3>Inspect the ranking</h3>
+          <p>See every candidate in rank order, explore the source domains, and check where retained and known-good expressions surfaced.</p>
+          <span class="card-link">View the project output <span aria-hidden="true">&#8599;</span></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section-block evidence-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">WHY RANKING MATTERS</p>
+          <h2>Finding everything is not the same as delivering it.</h2>
+        </div>
+      </div>
+      <div class="evidence-grid">
+        <a class="evidence-card" href="plant_check.html">
+          <span class="evidence-label">Evaluation</span>
+          <span class="evidence-value">77%</span>
+          <h3>Do known-good metaphors surface?</h3>
+          <p>Published Metaphor Menu entries were planted as a positive control. Most landed in the top tenth of the full ranking.</p>
+          <span class="card-link">See the recovery check <span aria-hidden="true">&#8594;</span></span>
+        </a>
+        <a class="evidence-card dark" href="why_ranking.html">
+          <span class="evidence-label">Method</span>
+          <span class="evidence-value">2 routes</span>
+          <h3>Why rank instead of search harder?</h3>
+          <p>A simple comparison-word search misses most relevant expressions. The two-model workflow searches more broadly, then ranks what people review first.</p>
+          <span class="card-link">Compare the approaches <span aria-hidden="true">&#8594;</span></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="data-note">
+      <p class="eyebrow">A SAFE PUBLIC VIEW</p>
+      <h2>Why this demonstration uses COVID-19 material.</h2>
+      <p>The visible examples come from English entries in <strong>#ReframeCovid</strong>: a crowdsourced, multilingual collection of alternatives to war language and other ways of framing COVID-19. It lets us show the workflow with text we may redistribute; it is not a patient cohort and does not validate a cancer Menu. The extraction, checks, categories and ranking were added by this project—not by the original dataset publishers.</p>
+      <a class="button dataset-link" href="https://docs.google.com/spreadsheets/d/1TZqICUdE2CvKqZrN67LcmKspY51Kug7aU8oGvK5WEbA/edit" target="_blank" rel="noopener">Open the original #ReframeCovid collection <span aria-hidden="true">&#8599;</span></a>
+      <p class="data-fineprint">This 415-item view contains 368 #ReframeCovid expressions and 47 phrases extracted from published Metaphor Menu check items. Reddit benchmark text is not reproduced.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Metaphor discovery research demo</span>
+    <a href="english_demo_working_copy_project_team.html">Explore all 415 candidates <span aria-hidden="true">&#8594;</span></a>
+  </footer>
+</body>
+</html>

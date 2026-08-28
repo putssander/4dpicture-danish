@@ -1,0 +1,53 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why ranking — two ways to find metaphors</title><style>
+:root { --ink:#1a1a1a; --mut:#5f5f5f; --line:#e2e2e2; --bg:#fff; --card:#fafafa; --acc:#2a78d6; --warn:#eb6834; }
+@media (prefers-color-scheme: dark) { :root { --ink:#e8e8e8; --mut:#a0a0a0; --line:#333; --bg:#151515; --card:#1e1e1e; } }
+body { font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink);
+  background:var(--bg); max-width:820px; margin:0 auto; padding:28px 20px; }
+h1 { font-size:23px; margin:0 0 6px; } h2 { font-size:17px; margin:30px 0 10px; }
+.lede { color:var(--mut); margin:0 0 20px; }
+table { border-collapse:collapse; width:100%; font-size:14px; margin:10px 0; }
+th,td { text-align:right; padding:8px 9px; border-bottom:1px solid var(--line); }
+th:first-child, td:first-child { text-align:left; }
+th { color:var(--mut); font-weight:600; font-size:12.5px; }
+tr.hi td { font-weight:700; }
+.tw { overflow-x:auto; }
+.note { border-left:3px solid var(--acc); padding:11px 15px; background:var(--card);
+  border-radius:0 8px 8px 0; font-size:14.5px; margin:16px 0; }
+a { color:var(--acc); }
+</style><link rel="stylesheet" href="demo.css"></head><body class="method-page">
+<header class="site-header" aria-label="Demo navigation"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">M</span><span>Metaphor discovery</span></a><span class="header-tag">Method</span></header>
+<h1>Why ranking, and not simply a better search</h1>
+<p class="lede">Two practical routes were run over the same English passages. A simple
+comparison-word search is precise but misses most relevant expressions. The two-model
+workflow searches more broadly, then orders what people inspect. Both analyses were added
+by this project; neither was part of the original #ReframeCovid dataset release.</p>
+
+<div class="tw"><table>
+<tr><th>How candidates are found</th><th>candidates</th><th>worth keeping</th><th>strong</th><th>known-good items found</th></tr>
+<tr><td>Look for comparison words<br><span style="color:var(--mut);font-size:13px">"feels like", "as if", "like a" — a regular expression</span></td><td>286</td><td>24.5%</td><td>31</td><td><strong>3 of 17</strong></td></tr>
+<tr class="hi"><td>Broad proposal, then second-model verification<br><span style="color:var(--mut);font-size:13px">one model proposes; another checks each phrase</span></td><td>1,665</td><td>24.6%</td><td>123</td><td>17 of 17</td></tr>
+</table></div>
+<p class="lede"><strong>Candidate recovery only:</strong> 17 of 17 means that every known-good item produced a candidate somewhere in the pool. Four Menu entries named in the Menu-likeness prompt were excluded from all ranking-based reference results, so this does not show that all 17 ranked highly.</p>
+
+<h2>Simple but narrow</h2>
+<p>Searching for comparison words is remarkably precise: judged one at a time, an expression
+found this way is as likely to be worth keeping as one from the full search — 24.5% against
+24.6%. The problem is reach. Only 12% of English passages contain such a marker, and under
+4% of Danish ones, because people describing illness rarely announce the comparison. It finds
+three of the seventeen known-good items and cannot reach the rest at any effort.</p>
+
+<h2>Why ordering is the answer</h2>
+<div class="note">The simple search is limited by how people happen to phrase things: most
+metaphors do not announce themselves with “like” or “as if”. Broad prompting produces a
+larger pool. Second-model verification and the recorded screens set its provisional order;
+reviewers decide what to retain.</div>
+
+<p class="lede">One practical note: the comparison-word route needs no model, no GPU and no
+paid service. A team with no computing resources at all can run it and obtain 70 candidates
+that pass every check, 31 of them strong — provided everyone understands it will miss four
+fifths of the material.</p>
+
+<p><a href="index.html">← back to the demo</a></p>
+</body></html>
