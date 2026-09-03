@@ -40,7 +40,7 @@ import json
 import re
 import statistics as st
 import unicodedata
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 
 ap = argparse.ArgumentParser()
@@ -111,6 +111,12 @@ ap.add_argument("--vehicle-layers", default="",
     help="JSONL from vehicle_layers.py: per-id head word, WordNet, FrameNet and LLM concept layers")
 ap.add_argument("--ranked-page", default="",
     help="filename of the stage-3 ranked page; blind pages link to it from their banner")
+ap.add_argument("--demo-theme", action="store_true",
+    help="use the public demo shell and shared demo.css presentation layer")
+ap.add_argument("--theme-tag", default="",
+    help="header tag text for the themed shell (default: 'Public English demo' / 'Blinded review')")
+ap.add_argument("--theme-private", action="store_true",
+    help="themed shell for a PRIVATE corpus: no public-data strip, data-handling note kept")
 ap.add_argument("--blind-seed", type=int, default=20260819)
 ap.add_argument("--top", type=int, default=500)
 ap.add_argument("--bottom", type=int, default=50)
@@ -422,8 +428,8 @@ for r in chosen:
         n_old += 1
     elif prov == "new":
         n_new += 1
-    tier = ("kept + experiential" if r["tier"] == 0 else
-            "kept only" if r["tier"] == 1 else "verify-rejected")
+    tier = ("illness + lived experience" if r["tier"] == 0 else
+            "about illness" if r["tier"] == 1 else "remaining candidate")
     provpill = ({"both": f'<span class="pill old">also found by {html.escape(A.old_label)}</span>',
                  "new": '<span class="pill new">target-screened only</span>',
                  "plant": '<span class="pill plant">PLANTED check item · Menu entry</span>'})[prov]
@@ -532,7 +538,7 @@ PURPOSE = {
              "the menu was in the top few hundred. Not for collecting judgements. "
              "<strong>Data:</strong> {data}."),
 }[A.stage]
-purpose = PURPOSE.format(data=html.escape(A.source_note or A.corpus))
+purpose = PURPOSE.format(data=html.escape(A.source_note or A.corpus).rstrip("."))
 
 ROLE_OPTS = (("ppi", "PPI panel member"), ("researcher", "Researcher"),
              ("clinician", "Clinician"), ("other", "Other"))
@@ -571,7 +577,7 @@ if A.blind:
                 f"their own experience? There are no right answers, and your view may differ "
                 f"from other panel members. That is the point.")
 else:
-    lede = (f"{N:,} candidates ordered by cross-family agreement (a cost filter) then three screens: strict tenor verify, experiential tenor, and a menu-likeness score, with vividness as tiebreak. " + html.escape(A.source_note))
+    lede = (f"{N:,} candidates ordered after second-family verification, then recorded screens for illness relevance, lived experience, and menu resemblance, with vividness as tiebreak. " + html.escape(A.source_note))
 # ---- status block: the first thing on the page, in bold, two lines ------------------
 _rank_link = (f'<a href="{html.escape(A.ranked_page)}">the ranked list (stage 3)</a>' if A.ranked_page
               else 'stage 3')
@@ -588,6 +594,114 @@ STATUS = {
 }[A.stage]
 status_block = ('<div class="status"><div class="l1">' + STATUS[0] + '</div><div class="l2">' + STATUS[1]
                 + '</div><div class="l3">' + STATUS[2] + '</div></div>')
+
+# The public English demo is also a project showcase. Its shared presentation layer keeps
+# the ranked output easy to explore, while the normal self-contained pages remain suitable
+# for private, offline hand-off in Danish and Dutch.
+theme_link = '<link rel="stylesheet" href="demo.css">' if A.demo_theme else ''
+body_class = ('ranked-page' if A.stage == 'explore' else 'review-page') if A.demo_theme else ''
+site_header = ('' if not A.demo_theme else
+    '<header class="site-header" aria-label="Demo navigation">'
+    '<a class="brand" href="index.html" aria-label="Back to the metaphor discovery demo">'
+    '<span class="brand-mark" aria-hidden="true">M</span><span>Metaphor discovery</span></a>'
+    f'<span class="header-tag">{html.escape(A.theme_tag) if A.theme_tag else ("Public English demo" if A.stage == "explore" else "Blinded review")}</span>'
+    '</header>')
+if A.demo_theme and A.stage == "explore":
+    tier0 = sum(1 for r in chosen if r["tier"] == 0)
+    plant_phrases = sum(1 for r in chosen if r["cls"] == "plant")
+    site_header += f'''
+<section class="rank-hero">
+  <div>
+    <p class="eyebrow">PROJECT OUTPUT · RANKED VIEW</p>
+    <h1>What the models found, in the order people would see it.</h1>
+    <p class="hero-lede">Explore every {"" if A.theme_private else "public "}candidate, from the strongest signals to the weakest. Open the context, filter the list, or group expressions by the image they borrow.</p>
+    <div class="hero-actions">
+      <a class="button primary" href="#candidates">Browse the ranking <span aria-hidden="true">&#8595;</span></a>
+      <button class="button secondary" id="labelToggle" type="button" aria-pressed="false">Switch to labelling</button>
+    </div>
+  </div>
+  <div class="rank-metrics" aria-label="Ranked output summary">
+    <div class="rank-metric"><strong>{len(chosen):,}</strong><span>{"" if A.theme_private else "public "}candidate expressions</span></div>
+    <div class="rank-metric"><strong>{tier0:,}</strong><span>kept and experiential</span></div>
+    <div class="rank-metric"><strong>{plant_phrases:,}</strong><span>phrases from known-good checks</span></div>
+  </div>
+</section>'''
+
+data_note = ('''<div class="note"><strong>Public demonstration.</strong> This page contains
+open-licensed text from #ReframeCovid and published Metaphor Menu entries. Patient and
+participant text from the project's Danish and Dutch corpora is not redistributed here.</div>'''
+             if A.demo_theme and not A.theme_private else '''<div class="note"><strong>Data handling.</strong> This page contains verbatim
+patient/participant text and is <strong>local-only tier</strong>: keep it on local machines
+and approved infrastructure — no cloud storage, no external API, no artifact host. Rephrase
+before publication.</div>''')
+candidate_heading = ('<h2 id="candidates">The ranked candidates</h2>\n'
+                     '<p class="lede">Rank 1 is the first expression a reviewer would meet. '
+                     'Use the controls to narrow the list, and open any row to read the '
+                     'expression in context.</p>'
+                     if A.demo_theme and A.stage == "explore" else '<h2>Candidates</h2>')
+label_mode_js = ('''const labelToggle = document.getElementById('labelToggle');
+function setLabelling(on) {
+  document.body.classList.toggle('labelling', on);
+  labelToggle.setAttribute('aria-pressed', String(on));
+  labelToggle.textContent = on ? 'Return to explore mode' : 'Switch to labelling';
+}
+labelToggle.onclick = () => setLabelling(!document.body.classList.contains('labelling'));
+setLabelling(Object.keys(L).length > 0);'''
+                 if A.demo_theme and A.stage == "explore" else '')
+dataset_strip = ""
+if A.demo_theme and A.stage == "explore" and not A.theme_private:
+    reframe_count = sum(1 for r in chosen if r["stratum"] == "ReframeCovid")
+    menu_phrase_count = sum(1 for r in chosen if r["cls"] == "plant")
+    dataset_strip = f'''
+<aside class="dataset-strip" aria-labelledby="covid-data-title">
+  <div>
+    <p class="eyebrow">ABOUT THE PUBLIC DATA</p>
+    <h2 id="covid-data-title">COVID-19 metaphors make the method inspectable.</h2>
+    <p><strong>#ReframeCovid</strong> is a crowdsourced, multilingual collection of alternatives to war language and other ways of framing COVID-19. This demo uses its English entries because they may be redistributed. It is not a patient cohort and does not validate a cancer Menu. The extraction, checks, categories and ranking were added by this project—not by the original dataset publishers.</p>
+  </div>
+  <div class="dataset-summary">
+    <span><strong>{reframe_count:,}</strong> #ReframeCovid expressions</span>
+    <span><strong>{menu_phrase_count:,}</strong> phrases from Menu check items</span>
+    <a href="https://docs.google.com/spreadsheets/d/1TZqICUdE2CvKqZrN67LcmKspY51Kug7aU8oGvK5WEbA/edit" target="_blank" rel="noopener">Open the original collection <span aria-hidden="true">&#8599;</span></a>
+    <small>Reddit benchmark text is not reproduced.</small>
+  </div>
+</aside>'''
+rank_logic = ""
+if A.demo_theme and A.stage == "explore":
+    tier_counts = {i: sum(1 for r in chosen if r["tier"] == i) for i in (0, 1, 2)}
+    category_counts = Counter(
+        VEH[r["id"]][0] for r in chosen
+        if r["id"] in VEH and VEH[r["id"]][0]
+        and VEH[r["id"]][0] not in {"Other (outside crosswalk)", "not metaphorical"})
+    category_examples = "".join(
+        f'<span>{html.escape(name)} <b>{count}</b></span>'
+        for name, count in category_counts.most_common(3))
+    rank_logic = f'''
+<section class="rank-logic" aria-labelledby="rank-logic-title">
+  <div>
+    <p class="eyebrow">TWO WAYS TO EXPLORE</p>
+    <h2 id="rank-logic-title">Rank by strength. Browse by pattern.</h2>
+    <p>The ranking brings strong individual candidates forward. Category frequencies reveal recurring images across the list.</p>
+  </div>
+  <div class="output-routes">
+    <div class="rank-route">
+      <span class="route-label">Ranked view</span>
+      <ol class="tier-key">
+        <li class="tier-top"><span>First</span><strong>{tier_counts[0]:,}</strong><p>illness + lived experience</p></li>
+        <li><span>Next</span><strong>{tier_counts[1]:,}</strong><p>about illness</p></li>
+        <li><span>Last</span><strong>{tier_counts[2]:,}</strong><p>remaining candidates</p></li>
+      </ol>
+    </div>
+    <a class="category-route" href="#veh">
+      <span class="route-label">Category view</span>
+      <strong>Recurring images</strong>
+      <p>Frequency shows patterns worth inspecting; it does not make an image better.</p>
+      <div class="category-preview">{category_examples}</div>
+      <span class="route-link">Browse categories &#8595;</span>
+    </a>
+  </div>
+  <a class="rank-method-link" href="index.html#approach">See how the prompts work <span aria-hidden="true">&#8594;</span></a>
+</section>'''
 # ---- "How this list was made" — provenance the reviewer can see -----------------
 prov_box = ""
 if A.provenance:
@@ -622,19 +736,21 @@ else:
     rank_filters = (
         f'<label>{html.escape(A.stratum_noun)} <select id="fs">'
         f'<option value="">all</option>{opts}</select></label>'
-        f'<label>tier <select id="ft"><option value="">all</option>'
-        f'<option value="0">kept + experiential</option>'
-        f'<option value="1">kept only</option>'
-        f'<option value="2">verify-rejected</option></select></label>'
+        f'<label>screen result <select id="ft"><option value="">all</option>'
+        f'<option value="0">illness + lived experience</option>'
+        f'<option value="1">about illness</option>'
+        f'<option value="2">remaining candidates</option></select></label>'
         + (('<label>source domain <select id="fv"><option value="">all</option>'
-            + "".join(f'<option value="{k}">{html.escape(k)} ({c})</option>'
-                      for k, c in sorted(__import__("collections").Counter(
-                          v[0] for v in VEH.values()).items(), key=lambda kv: -kv[1]))
+            + "".join(f'<option value="{html.escape(k)}">{html.escape(k)} ({c})</option>'
+                      for k, c in sorted(Counter(
+                          VEH[r["id"]][0] for r in chosen
+                          if r["id"] in VEH and VEH[r["id"]][0]).items(), key=lambda kv: -kv[1]))
             + '</select></label>') if VEH else '')
         + (('<label>USAS code <select id="fc"><option value="">all</option>'
             + "".join(f'<option value="{html.escape(k)}">{html.escape(k)} — {html.escape(_CD.get(k.rstrip("+-"), ""))} ({c})</option>'
-                      for k, c in sorted(__import__("collections").Counter(
-                          v[2] for v in VEH.values() if v[2]).items(), key=lambda kv: -kv[1]))
+                      for k, c in sorted(Counter(
+                          VEH[r["id"]][2] for r in chosen
+                          if r["id"] in VEH and VEH[r["id"]][2]).items(), key=lambda kv: -kv[1]))
             + '</select></label>') if VEH else '')
         + (f'<label>expression <select id="fm"><option value="">all</option>'
            f'<option value="1">with a comparison marker</option>'
@@ -679,20 +795,16 @@ if (VEH or LAYERS) and not A.blind:
         _alltags = {}
     _used = {v[2] for v in list(VEH.values()) + list(VEH2.values()) if v[2]}
     _used |= {m.group(0) for c in list(_used) for m in [re.match(r"[A-Z]+\d*", c)] if m}
-    CODE_DESC = {c: str(_alltags.get(c.rstrip("+-"), "")).lower() for c in _used}
+    CODE_DESC = {c: str(_alltags.get(c.rstrip("+-"), "")).lower() for c in sorted(_used)}
     code_desc_js = json.dumps(CODE_DESC, ensure_ascii=False)
     _sel2 = '<option value="">— nothing —</option>' + "".join(
         f'<option value="{k}"{" disabled" if not n else ""}{" selected" if k == _sub_default else ""}>{lbl}</option>'
         for k, lbl, n in _opts if k != "usas")
-    veh_section = (f'<div id="veh"><h2>Source domains (vehicles)</h2>'
-                   f'<p class="lede">What image does each metaphor borrow from? Five ways to group the same '
-                   f'candidates, from coarse to fine: USAS codes (main code with its sub-codes), USAS categories '
-                   f'(comparable with the literature), the head word of the vehicle phrase, its WordNet hypernym, its FrameNet '
-                   f'frame, or a short concept named in context by a local model (raw, or with near-duplicate '
-                   f'labels merged by sentence-embedding similarity, or grouped more broadly) — and any two can be '
-                   f'combined, e.g. the USAS category with the finer model concept underneath it. Counts are for the top '
-                   f'<em>X</em> of the ranking; set <em>X</em> to the total for everything. Click a row to '
-                   f'show only those candidates.</p>'
+    veh_section = (f'<div id="veh"><h2>What illness is compared to</h2>'
+                   f'<p class="lede">Explore the image each metaphor borrows. Group candidates by a broad '
+                   f'category, a key word, WordNet or FrameNet, or a concept named by a local model. Counts use '
+                   f'the top <em>X</em> candidates; set <em>X</em> to the total for the full list. Click a row '
+                   f'to filter the candidates below.</p>'
                    f'<div id="vehctl">{_fam_sel}<div class="ctlrow"><label>group by <select id="vlayer">{_sel}</select></label> '
                    f'<label>then by <select id="vlayer2">{_sel2}</select></label> '
                    f'<label>top <input id="vtop" type="number" min="1" max="{len(chosen)}" value="{len(chosen)}" size="5"> of {len(chosen):,}</label> '
@@ -703,6 +815,7 @@ if (VEH or LAYERS) and not A.blind:
 
 page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Explore real metaphor candidates and the human review workflow used to evaluate them.">
 <title>{html.escape(A.corpus)} — {mode_title}</title><style>
 :root {{ --ink:#1a1a1a; --mut:#5f5f5f; --line:#e2e2e2; --bg:#fff; --card:#fafafa;
   --acc:#2a78d6; --warn:#c2571f; --ok:#1a7f4b; --alt:#7a4fc9; }}
@@ -793,16 +906,19 @@ mark {{ background:transparent; color:var(--ink); font-weight:700; border-bottom
 .lbl button.sel {{ background:var(--acc); color:#fff; border-color:var(--acc); }}
 textarea {{ width:100%; height:110px; margin-top:10px; display:none;
   font-family:ui-monospace,monospace; font-size:12px; }}
-</style></head><body>
+</style>{theme_link}</head><body{' class="' + body_class + '"' if body_class else ''}>
 
+{site_header}
 {stage_strip}
+{dataset_strip}
+{rank_logic}
 <h1>{html.escape(A.corpus)} — {mode_title}</h1>
 {status_block}
-{prov_box}
 {veh_section}
+{prov_box}
 
 <div id="rater">
-  <strong>Before you start — who is labelling?</strong><br>
+  <strong>{"Optional labelling mode" if A.demo_theme and A.stage == "explore" else "Before you start — who is labelling?"}</strong><br>
   <label>Name <input id="rname" placeholder="your name" size="18"></label>
   {role_field}
   <span id="rstate" style="color:var(--mut);font-size:13px"></span>
@@ -832,15 +948,12 @@ compressed near the bottom of the 0–10 range (mean {st.mean(scores):.2f}, medi
 differences. Planted items are translations and may read more formally than spontaneous
 language.</div>
 
-<div class="note"><strong>Data handling.</strong> This page contains verbatim
-patient/participant text and is <strong>local-only tier</strong>: keep it on local machines
-and approved infrastructure — no cloud storage, no external API, no artifact host. Rephrase
-before publication.</div>
+{data_note}
 
-<h2>Candidates</h2>
-{"" if A.blind else '<div class="legend"><span class="pill plant">planted check item</span>'
- '<span class="pill s0">kept + experiential</span><span class="pill s1">kept only</span>'
- '<span class="pill s2">rejected by topic screen</span>'
+{candidate_heading}
+{"" if A.blind else '<div class="legend"><span class="pill plant">known-good check</span>'
+ '<span class="pill s0">illness + lived experience</span><span class="pill s1">about illness</span>'
+ '<span class="pill s2">remaining candidate</span>'
  '<span class="pill new">target-screened only</span>'
  '<span class="pill old">descriptive (source, register, domain, marker)</span></div>'}
 <div id="bar">
@@ -924,7 +1037,7 @@ function famKey(layer) {{   // which data attribute holds this layer for the cho
 }}
 function famName() {{
   const el = document.getElementById('vfam'); if (!el) return '';
-  return ' (' + el.options[el.selectedIndex].text.replace(/ \(.*\)$/, '') + ')';
+  return ' (' + el.options[el.selectedIndex].text.replace(/ \\(.*\\)$/, '') + ')';
 }}
 const SHOW_SUB = 8;                      // sub-rows shown per group before "more"
 const OPEN = new Set();                  // groups expanded to show all sub-rows
@@ -1032,6 +1145,7 @@ document.getElementById('ex').onclick = () => {{
   a.href = u; a.download = 'labels_' + rn.value.replace(/\\W+/g,'_') + '_' + rr.value + '.json';
   a.click();
 }};
+{label_mode_js}
 rows.forEach(paint); apply();
 </script></body></html>"""
 

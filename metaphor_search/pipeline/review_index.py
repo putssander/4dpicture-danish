@@ -29,6 +29,9 @@ h1 { font-size:23px; margin:0 0 6px; } h2 { font-size:16px; margin:28px 0 10px; 
 .card { display:block; border:1px solid var(--line); border-radius:10px; padding:15px 17px;
   margin-bottom:12px; text-decoration:none; color:inherit; background:var(--card); }
 a.card:hover { border-color:var(--acc); }
+.card.hero { border:2px solid var(--acc); margin:18px 0 26px; padding:18px 20px; }
+.card.hero h3 { font-size:21px; }
+.card.hero p { color:var(--ink); font-size:15px; }
 .card h3 { margin:0 0 4px; font-size:17px; color:var(--acc); }
 .card p { margin:0; color:var(--mut); font-size:14px; }
 .who { font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:var(--mut); }
@@ -79,6 +82,63 @@ def card(num, who, title, text, href):
             f'</em></p></div>')
 
 
+def render_demo_index(title, lede, stage_hrefs, background, data_note, tag, page_title=None):
+    """Themed landing page for a language's review pages: same shell as the public demo
+    (demo.css must sit next to the pages). stage_hrefs as in render_index."""
+    s1, s2, s3 = stage_hrefs.get("1"), stage_hrefs.get("2"), stage_hrefs.get("3")
+    def s1_links():
+        if isinstance(s1, (list, tuple)):
+            return " &middot; ".join(f'<a href="{html.escape(h)}">{html.escape(l)}</a>' for l, h in s1)
+        return ""
+    def card(num, who, name, txt, href, links="", featured=False, pending=False):
+        cls = "workflow-card" + (" featured" if featured else "")
+        inner = (f'<span class="step-number">{num}</span><span class="step-audience">{who}</span>'
+                 f'<h3>{name}</h3><p>{txt}</p>' + (f'<p>{links}</p>' if links else ''))
+        if pending:
+            return f'<div class="{cls}" style="opacity:.65">{inner}<span class="card-link">Prepared after stage 1</span></div>'
+        if isinstance(href, str) and href:
+            return f'<a class="{cls}" href="{html.escape(href)}">{inner}<span class="card-link">Open &#8594;</span></a>'
+        return f'<div class="{cls}">{inner}</div>'
+    cards = (card("01", "Researchers", "Filter",
+                  "Review a shuffled sample from across the list. The hidden rank prevents the software's judgement from influencing the reviewers.",
+                  s1 if isinstance(s1, str) else None, s1_links())
+             + card("02", "PPI panel", "Vote",
+                    "Decide independently which expressions belong on a menu. Rank and score remain hidden.",
+                    s2, pending=not s2)
+             + card("03", "Project team", "Retrospective",
+                    "The full ranked list with every score and screen verdict, the reference items marked, and the source-domain tables.",
+                    s3, featured=True))
+    bgs = "".join(f'<a class="workflow-card" href="{html.escape(h)}"><span class="step-audience">{html.escape(w)}</span>'
+                  f'<h3>{html.escape(x)}</h3><p>{html.escape(q)}</p><span class="card-link">Open &#8594;</span></a>'
+                  for h, w, x, q in background)
+    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{html.escape(page_title or title)}</title>
+<link rel="stylesheet" href="demo.css"></head><body class="demo-home">
+<header class="site-header" aria-label="Navigation">
+  <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">M</span><span>Metaphor discovery</span></a>
+  <span class="header-tag">{html.escape(tag)}</span>
+</header>
+<main>
+<section class="home-hero"><div class="hero-copy">
+  <p class="eyebrow">FROM EXTRACTION TO HUMAN DECISION</p>
+  <h1>{html.escape(title)}</h1>
+  <p class="hero-lede">{lede}</p>
+  <div class="hero-actions"><a class="button primary" href="{html.escape(s3 or '#')}">Explore the ranked output <span aria-hidden="true">&#8599;</span></a></div>
+</div></section>
+<section class="section-block" id="workflow">
+  <div class="section-heading"><div><p class="eyebrow">THE REVIEW WORKFLOW</p>
+  <h2>Three views, each with a different job.</h2></div>
+  <p>Stages one and two conceal the rank on purpose. Only after the independent decisions are complete does the project team see the system's ordering.</p></div>
+  <div class="workflow-grid">{cards}</div>
+</section>
+{f'<section class="section-block"><div class="section-heading"><div><p class="eyebrow">BACKGROUND</p><h2>How the ranking was checked.</h2></div></div><div class="workflow-grid">{bgs}</div></section>' if bgs else ''}
+<section class="section-block"><div class="note">{data_note}</div></section>
+</main>
+<footer class="site-footer">4D PICTURE &middot; private review pages &middot; keep on project machines</footer>
+</body></html>"""
+
+
 def render_index(title, lede, stage_hrefs, background, data_note, page_title=None):
     """stage_hrefs: {'1': href|None, '2': ..., '3': ...}; background: [(href, who, h3, p)]."""
     cards = "".join(card(n, who, t, txt, stage_hrefs.get(n))
@@ -87,17 +147,19 @@ def render_index(title, lede, stage_hrefs, background, data_note, page_title=Non
         f'<a class="card bg" href="{html.escape(h)}"><span class="who">{html.escape(w)}</span>'
         f'<h3>{html.escape(t)}</h3><p>{html.escape(p)}</p></a>' for h, w, t, p in background)
     s3 = stage_hrefs.get("3")
-    ranked_note = (f'<div class="note"><strong>Looking for the ranking?</strong> Stages 1 and 2 show '
-                   f'candidates in random order on purpose — reviewers must not see the ordering they are '
-                   f'testing. The full ranked list, with every score and screen verdict, is '
-                   f'<a href="{html.escape(s3)}">stage 3, the project team\'s working copy</a>.</div>'
-                   if s3 else "")
+    hero = (f'<a class="card hero" href="{html.escape(s3)}"><span class="who">start here</span>'
+            f'<h3>&#9654; The ranked list — what the software found, best first</h3>'
+            f'<p>Every candidate with its score and screen verdicts, the planted check items marked, and the '
+            f'source-domain tables (USAS, head word, WordNet, model concept) to browse what illness is compared to. '
+            f'Stages 1 and 2 below are the blinded review pages: they show the same candidates in random order '
+            f'on purpose, so reviewers cannot see the ordering they are testing.</p></a>'
+            if s3 else "")
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(page_title or title)}</title><style>{CSS}</style></head><body>
 <h1>{html.escape(title)}</h1>
 <p class="lede">{lede}</p>
-{ranked_note}
+{hero}
 
 <h2>The three stages</h2>
 {cards}
@@ -139,9 +201,14 @@ if __name__ == "__main__":
         "no sign-in; everything stays on this computer."))
     ap.add_argument("--background", nargs=4, action="append", default=[],
                     metavar=("HREF", "WHO", "TITLE", "TEXT"))
+    ap.add_argument("--demo-theme", action="store_true",
+                    help="use the public demo shell (demo.css next to the pages)")
+    ap.add_argument("--theme-tag", default="Private review",
+                    help="header tag for the themed shell")
     A = ap.parse_args()
     hrefs = find_stage_files(A.dir)
     out = Path(A.dir) / "index.html"
-    out.write_text(render_index(A.title, html.escape(A.lede), hrefs, A.background,
-                                html.escape(A.data)), encoding="utf-8")
+    render = (lambda *a, **k: render_demo_index(*a, tag=A.theme_tag, **k)) if A.demo_theme else render_index
+    out.write_text(render(A.title, html.escape(A.lede), hrefs, A.background,
+                          html.escape(A.data)), encoding="utf-8")
     print(f"{out}: " + ", ".join(f"stage {k}: {v or 'pending'}" for k, v in hrefs.items()))
