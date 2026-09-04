@@ -38,7 +38,10 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements-notebooks.txt
 
 ## Privacy rules the tools enforce
 
-Aggregation prints counts, rates and ranks — never a phrase or a passage. Review pages
-embed text and are as private as the corpus they were built from: send reviewers the
-files, keep them on project machines. Published Menu entries are planted into every corpus
+Aggregation prints counts, rates and ranks — never a phrase or a passage. Reviewing is
+one public page, [`demo/review.html`](demo/review.html): a reviewer opens the small
+`.json` list they were e-mailed and the page shows it in their language (English, Danish,
+Dutch) — the list is read in the browser, nothing is uploaded, and the exported labels hold
+candidate ids and verdicts only. A list embeds text and is as private as the corpus it was
+built from: send it to named reviewers, keep it on project machines. Published Menu entries are planted into every corpus
 as check items, so a ranking that does not surface them near the top is not to be trusted.
