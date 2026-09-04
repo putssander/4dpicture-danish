@@ -20,19 +20,29 @@ spaCy model (`da_core_news_sm`, `nl_core_news_sm`).
 
 ## How well do they work
 
-Exact top-1 accuracy @ coverage. Danish and Dutch have no human-labelled USAS test set, so
-the "own reference" column uses a model committee calibrated on Finnish human gold; it
-supports comparison between dictionaries, not absolute accuracy claims. The two PAR columns
-are the same 50 sentences in every language.
+Exact top-1 accuracy @ coverage (share of words that got any answer). Danish and Dutch
+have no human-labelled USAS test set, so the reference is a three-model committee
+(Claude, GPT, Gemini) calibrated on Finnish and English human gold: where all three
+agree, the label matched the human one 85.5% (Finnish) and 88.2% (English) of the time;
+where they disagree it is about a coin flip. The **unanimous** column is therefore the
+primary comparison; the "all tokens" column includes the weaker labels. The two PAR
+columns are the same 50 sentences in every language. All numbers compare dictionaries
+within one language; they are not absolute accuracy claims.
 
-| Lexicon | Own reference | Talks (PAR) | Health (PAR) |
-|---|---|---|---|
-| Danish, 2024 official release | 50.3 @ 77.8 | 63.3 @ 84.4 | 52.9 @ 77.1 |
-| **Danish `da_open`** | **57.8 @ 86.8** | **68.7 @ 91.5** | **59.4 @ 85.6** |
-| Dutch, current official | 38.2 @ 67.7 | 40.8 @ 71.6 | 34.3 @ 61.9 |
-| **Dutch `nl_open`** | **61.1 @ 91.2** | **68.2 @ 92.0** | **60.4 @ 89.3** |
-| English hand-built (ceiling reference) | 72.4 | 74.8 @ 97.9 | 71.2 @ 94.5 |
+| Lexicon | Own reference, unanimous tokens | Own reference, all tokens | Talks (PAR) | Health (PAR) |
+|---|---|---|---|---|
+| Danish, 2024 official release | 55.9 @ 78.7 | 50.3 @ 77.8 | 63.3 @ 84.4 | 52.9 @ 77.1 |
+| **Danish `da_open`** | **65.4 @ 88.4** | **57.8 @ 86.8** | **68.7 @ 91.5** | **59.4 @ 85.6** |
+| Dutch, current official (4,220 entries) | 44.5 @ 70.4 | 38.2 @ 67.7 | 40.8 @ 71.6 | 34.3 @ 61.9 |
+| **Dutch `nl_open`** | **70.1 @ 93.4** | **61.1 @ 91.2** | **68.2 @ 92.0** | **60.4 @ 89.3** |
+| English hand-built (ceiling reference, human gold) | — | 72.4 | 74.8 @ 97.9 | 71.2 @ 94.5 |
 
-Adding a neural fallback for words the dictionary does not cover (lexicon + BEM) raises
-Danish to 71.4 / 64.5 and Dutch to 70.8 / 64.3 on the PAR sets. How every number was
-obtained is in [`../build_a_language.ipynb`](../build_a_language.ipynb).
+Unanimous tokens: 2,182 of 2,958 (Danish), 2,522 of 3,307 (Dutch). Adding a neural
+fallback for words the dictionary does not cover (lexicon + BEM) raises Danish to
+71.4 / 64.5 and Dutch to 70.8 / 64.3 on the PAR sets.
+
+Known limits, stated once: every Danish and Dutch test token is translated text (the
+Dutch text was rewritten by a native speaker, the Danish text was not), and no native
+speaker checked the semantic labels. The calibration itself is reproducible offline with
+`../lexicon_pipeline/score_calibration_classes.py`; how every other number was obtained
+is in [`../build_a_language.ipynb`](../build_a_language.ipynb).

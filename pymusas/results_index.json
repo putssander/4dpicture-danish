@@ -1,5 +1,5 @@
 {
- "compiled_utc": "2026-08-16T10:03:07.029271+00:00",
+ "compiled_utc": "2026-09-04T10:12:08.816372+00:00",
  "protocol": "exact top-1, labelled non-punctuation tokens (*_np refs)",
  "fair_comparison_rule": {
   "source_file": "par_matrix_np_full.log",
@@ -585,16 +585,52 @@
   }
  },
  "calibration": {
-  "source": "GOLD_STRATEGY.md pilots + gpt56_calib_*_answers_api.json (2026-08-14)",
-  "single_annotator_exact_vs_gold": {
-   "fable_fin": 76.7,
-   "sol_fin_api": 71.4,
-   "sol_eng_api": 78.5,
-   "gemini_fin": 69.1
+  "source": "evals/score_calibration_classes.py: {fable,gpt56,gemini}_calib_{fin,eng}_answers_api.json (API, 2026-08-14) vs USAS-WSD human gold; scored 2026-09-04",
+  "fin": {
+   "tokens": 2068,
+   "single_annotator_exact_vs_gold": {
+    "fable": 75.2,
+    "gpt56": 71.4,
+    "gemini": 69.8
+   },
+   "classes": {
+    "unanimous": {
+     "share_pct": 69.1,
+     "precision_exact": 85.5
+    },
+    "majority": {
+     "share_pct": 26.5,
+     "precision_exact": 48.4
+    },
+    "single_vote": {
+     "share_pct": 4.4,
+     "precision_exact": 46.7
+    }
+   },
+   "combined_reference_exact": 74.0
   },
-  "committee_unanimous_precision": {
-   "two_model": 86.5,
-   "three_model": 87.7
+  "eng": {
+   "tokens": 3468,
+   "single_annotator_exact_vs_gold": {
+    "fable": 81.3,
+    "gpt56": 78.5,
+    "gemini": 77.3
+   },
+   "classes": {
+    "unanimous": {
+     "share_pct": 79.0,
+     "precision_exact": 88.2
+    },
+    "majority": {
+     "share_pct": 19.0,
+     "precision_exact": 56.2
+    },
+    "single_vote": {
+     "share_pct": 2.0,
+     "precision_exact": 35.3
+    }
+   },
+   "combined_reference_exact": 81.1
   },
   "handbuilt_lexicon_reference": {
    "fin": 58.4,
