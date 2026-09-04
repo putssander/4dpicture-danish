@@ -27,6 +27,39 @@
   function setLang(l) { LANG = I18N[l] ? l : 'en'; T = I18N[LANG]; document.documentElement.lang = LANG; }
   function browserLang() { const l = ((navigator.language || 'en').slice(0, 2)).toLowerCase(); return I18N[l] ? l : 'en'; }
 
+  // Official 4D PICTURE icon, kept inline so the review page remains self-contained and
+  // makes no network request when a reviewer opens it.
+  function projectMark() {
+    return `<svg class="project-logo" viewBox="0 0 127.854 101.619" aria-hidden="true" focusable="false"><path d="M671.28,254.561H641.325V291.6a3.575,3.575,0,1,0,7.15,0V261.712h22.8a20.643,20.643,0,0,1,20.618,20.62V328.4a20.642,20.642,0,0,1-20.62,20.62H635.415a.205.205,0,0,1-.205-.2v-84.5a9.742,9.742,0,0,0-17.493-5.905l-44.525,57.682a9.737,9.737,0,0,0,7.645,15.634l0,.007h36.591a3.575,3.575,0,1,0,0-7.15H580.948a2.592,2.592,0,0,1-2.068-4.156L623.4,262.747a2.436,2.436,0,0,1,2-1.03,2.857,2.857,0,0,1,.888.143,2.521,2.521,0,0,1,1.764,2.458v84.5a7.364,7.364,0,0,0,7.356,7.354h35.864a27.8,27.8,0,0,0,27.77-27.77V282.332A27.8,27.8,0,0,0,671.28,254.561Z" transform="translate(-571.195 -254.556)"/></svg>`;
+  }
+  function euMark() {
+    const points = [[27,7],[32.5,8.47],[36.53,12.5],[38,18],[36.53,23.5],[32.5,27.53],[27,29],[21.5,27.53],[17.47,23.5],[16,18],[17.47,12.5],[21.5,8.47]];
+    return `<svg class="eu-logo" viewBox="0 0 54 36" aria-hidden="true" focusable="false"><rect width="54" height="36" rx="1.5"/><g>${points.map(([x, y]) => `<path d="M0-3 .7-1 2.85-.93 1.14.37 1.76 2.43 0 1.2-1.76 2.43-1.14.37-2.85-.93-.7-1Z" transform="translate(${x} ${y}) scale(.62)"/>`).join('')}</g></svg>`;
+  }
+  function siteHeader(controls, actionClass) {
+    return `<header class="site-header" aria-label="${esc(t('header_label'))}">
+  <a class="brand" href="https://4dpicture.eu/" target="_blank" rel="noopener noreferrer" aria-label="${esc(t('project_site'))}">
+    <span class="project-logo-wrap">${projectMark()}</span><span class="brand-copy"><strong>4D PICTURE <span class="brand-tool">/ ${esc(t('brand'))}</span></strong><small>${esc(t('project_work_package'))}</small></span>
+  </a>
+  <div class="header-actions${actionClass ? ' ' + esc(actionClass) : ''}">${controls || ''}</div>
+</header>`;
+  }
+  function projectContext() {
+    return `<aside class="project-context" aria-label="${esc(t('project_context_label'))}">
+  <span class="project-context-number" aria-hidden="true">WP3</span>
+  <div class="project-context-copy"><strong>${esc(t('project_context_title'))}</strong><p>${esc(t('project_context_text'))}</p></div>
+  <a class="project-context-link" href="https://4dpicture.eu/workpackage/text-mining-and-citizen-science/" target="_blank" rel="noopener noreferrer">${esc(t('project_link'))} <span aria-hidden="true">&#8599;</span></a>
+</aside>`;
+  }
+  function siteFooter() {
+    return `<footer class="site-footer">
+  <div class="funding-mark">${euMark()}<div><strong>${esc(t('funding_title'))}</strong><span>${esc(t('funding_reference'))}</span></div></div>
+  <div class="footer-links"><a href="https://4dpicture.eu/" target="_blank" rel="noopener noreferrer">${esc(t('project_site'))}</a><a href="https://4dpicture.eu/workpackage/text-mining-and-citizen-science/" target="_blank" rel="noopener noreferrer">${esc(t('project_link'))}</a></div>
+  <p class="footer-disclaimer">${esc(t('funding_disclaimer'))}</p>
+  <p class="footer-privacy">${esc(t('footer'))}</p>
+</footer>`;
+  }
+
   // ------------------------------------------------------------------ start screen ---
   function renderLoader(lang, error) {
     setLang(lang);
@@ -35,10 +68,8 @@
     const langs = Object.keys(I18N).map(l =>
       `<button type="button" class="langbtn${l === LANG ? ' on' : ''}" data-lang="${l}">${esc(I18N[l].lang_name)}</button>`).join('');
     document.getElementById('app').innerHTML = `
-<header class="site-header" aria-label="Navigation">
-  <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">M</span><span>${esc(t('brand'))}</span></a>
-  <span class="langswitch" role="group" aria-label="Language">${langs}</span>
-</header>
+${siteHeader(`<span class="langswitch" role="group" aria-label="${esc(t('language_label'))}">${langs}</span>`, 'language-actions')}
+${projectContext()}
 <section class="loader">
   <p class="eyebrow">${esc(t('loader_eyebrow'))}</p>
   <h1>${esc(t('loader_title'))}</h1>
@@ -55,7 +86,7 @@
   </ol>
   <p class="privacy">${esc(t('loader_privacy'))}</p>
 </section>
-<footer class="site-footer">${esc(t('footer'))}</footer>`;
+${siteFooter()}`;
     document.querySelectorAll('.langbtn').forEach(b => b.onclick = () => renderLoader(b.dataset.lang, false));
     const inp = document.getElementById('file');
     inp.onchange = () => { if (inp.files[0]) loadFile(inp.files[0]); };
@@ -95,10 +126,8 @@
     document.title = t('app_title');
     const noCrypto = !(window.crypto && crypto.subtle);
     document.getElementById('app').innerHTML = `
-<header class="site-header" aria-label="Navigation">
-  <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">M</span><span>${esc(t('brand'))}</span></a>
-  <button type="button" class="button secondary" id="reload">${esc(t('loader_other'))}</button>
-</header>
+${siteHeader(`<button type="button" class="button secondary" id="reload">${esc(t('loader_other'))}</button>`)}
+${projectContext()}
 <section class="loader">
   <p class="eyebrow">${esc(t('pass_eyebrow'))}</p>
   <h1>${esc(t('pass_title'))}</h1>
@@ -113,7 +142,7 @@
   </form>`}
   <p class="privacy">${esc(t('loader_privacy'))}</p>
 </section>
-<footer class="site-footer">${esc(t('footer'))}</footer>`;
+${siteFooter()}`;
     document.getElementById('reload').onclick = () => renderLoader(LANG, false);
     const f = document.getElementById('passform'); if (!f) return;
     document.getElementById('passshow').onchange = ev => { document.getElementById('pass').type = ev.target.checked ? 'text' : 'password'; };
@@ -145,10 +174,7 @@
   // ------------------------------------------------------------------ page blocks ---
   function header(B, blind) {
     const tag = B.header_tag || ((blind ? t('header_tag_blind') : t('header_tag_ranked')) + (B.private ? t('header_tag_private') : ''));
-    return `<header class="site-header" aria-label="Navigation">
-  <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">M</span><span>${esc(t('brand'))}</span></a>
-  <span class="header-tag">${esc(tag)}</span>${B._fromFile ? `<button type="button" class="button secondary" id="reload">${esc(t('loader_other'))}</button>` : ''}
-</header>`;
+    return siteHeader(`<span class="header-tag">${esc(tag)}</span>${B._fromFile ? `<button type="button" class="button secondary" id="reload">${esc(t('loader_other'))}</button>` : ''}`);
   }
   function stageStrip(stage) {
     const cur = { filter: 1, vote: 2, explore: 3 }[stage];
@@ -322,7 +348,7 @@
     document.body.className = blind ? 'review-page' : 'ranked-page';
     document.title = B.corpus + ' — ' + t('mode_' + B.stage);
     const btns = t('btn_' + B.stage);
-    const h = [header(B, blind), stageStrip(B.stage)];
+    const h = [header(B, blind), projectContext(), stageStrip(B.stage)];
     if (!blind) { h.push(hero(B)); if (B.dataset_strip_html) h.push(B.dataset_strip_html); h.push(rankLogic(B)); }
     h.push(`<h1>${esc(B.corpus)} — ${esc(t('mode_' + B.stage))}</h1>`, statusBlock(B));
     if (!blind) h.push(vehSection(B));
@@ -333,7 +359,7 @@
     if (!blind) h.push(`<div class="legend"><span class="pill plant">${esc(t('legend_plant'))}</span><span class="pill s0">${esc(t('legend_s0'))}</span><span class="pill s1">${esc(t('legend_s1'))}</span><span class="pill s2">${esc(t('legend_s2'))}</span><span class="pill new">${esc(t('legend_new'))}</span><span class="pill old">${esc(t('legend_old'))}</span></div>`);
     h.push(bar(B, blind), '<div id="returnbox" hidden></div>');   // confirmation sits right under the sticky bar with the export button
     h.push(B.rows.map(r => rowHtml(B, r, blind, btns)).join(''));
-    h.push('<textarea id="out"></textarea>', `<footer class="site-footer">${esc(t('footer'))}</footer>`);
+    h.push('<textarea id="out"></textarea>', siteFooter());
     document.getElementById('app').innerHTML = h.join('\n');
     behaviour(B, blind);
     const rl = document.getElementById('reload'); if (rl) rl.onclick = () => renderLoader(LANG, false);
