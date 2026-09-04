@@ -70,12 +70,62 @@
     rd.onload = () => {
       let B = null;
       try { B = JSON.parse(rd.result); } catch (e) { B = null; }
+      if (B && B.format === 'metaphor-review-bundle-encrypted') { renderPassScreen(B, file.name, ''); return; }
       if (!B || B.format !== 'metaphor-review-bundle' || !Array.isArray(B.rows)) { renderLoader(LANG, true); return; }
       B._fromFile = true;
       render(B);
       window.scrollTo(0, 0);
     };
     rd.readAsText(file);
+  }
+
+  // ---- encrypted lists: PBKDF2-SHA256 → AES-256-GCM, decrypted here with WebCrypto ----
+  function b64(s) { const bin = atob(s); const u = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); return u; }
+  async function decryptBundle(E, pass) {
+    const enc = new TextEncoder();
+    const km = await crypto.subtle.importKey('raw', enc.encode(pass.normalize('NFKC').trim()), 'PBKDF2', false, ['deriveKey']);
+    const key = await crypto.subtle.deriveKey({ name: 'PBKDF2', salt: b64(E.kdf.salt), iterations: E.kdf.iterations, hash: E.kdf.hash },
+      km, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+    const pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64(E.cipher.iv) }, key, b64(E.data));
+    return JSON.parse(new TextDecoder().decode(pt));
+  }
+  function renderPassScreen(E, fname, error) {
+    setLang(E.lang);
+    document.body.className = 'review-page loader-page';
+    document.title = t('app_title');
+    const noCrypto = !(window.crypto && crypto.subtle);
+    document.getElementById('app').innerHTML = `
+<header class="site-header" aria-label="Navigation">
+  <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">M</span><span>${esc(t('brand'))}</span></a>
+  <button type="button" class="button secondary" id="reload">${esc(t('loader_other'))}</button>
+</header>
+<section class="loader">
+  <p class="eyebrow">${esc(t('pass_eyebrow'))}</p>
+  <h1>${esc(t('pass_title'))}</h1>
+  <p class="lede">${esc(t('pass_lede', { file: fname }))}</p>
+  ${E.corpus ? `<p class="lede"><strong>${esc(E.corpus)}</strong> · <code>${esc(E.list_id || '')}</code></p>` : ''}
+  ${error ? `<div class="note loader-error" role="alert">${esc(error)}</div>` : ''}
+  ${noCrypto ? `<div class="note loader-error" role="alert">${esc(t('pass_nocrypto'))}</div>` : `
+  <form id="passform" class="passform">
+    <label>${esc(t('pass_label'))} <input id="pass" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" size="32" autofocus></label>
+    <label class="showpass"><input type="checkbox" id="passshow"> ${esc(t('pass_show'))}</label>
+    <button type="submit" class="button primary" id="passgo">${esc(t('pass_button'))}</button>
+  </form>`}
+  <p class="privacy">${esc(t('loader_privacy'))}</p>
+</section>
+<footer class="site-footer">${esc(t('footer'))}</footer>`;
+    document.getElementById('reload').onclick = () => renderLoader(LANG, false);
+    const f = document.getElementById('passform'); if (!f) return;
+    document.getElementById('passshow').onchange = ev => { document.getElementById('pass').type = ev.target.checked ? 'text' : 'password'; };
+    f.onsubmit = async ev => {
+      ev.preventDefault();
+      const btn = document.getElementById('passgo'); btn.disabled = true;
+      try {
+        const B = await decryptBundle(E, document.getElementById('pass').value);
+        if (!B || B.format !== 'metaphor-review-bundle' || !Array.isArray(B.rows)) throw new Error('not a bundle');
+        B._fromFile = true; render(B); window.scrollTo(0, 0);
+      } catch (e) { renderPassScreen(E, fname, t('pass_error')); }
+    };
   }
 
   // ---------------------------------------------------------------------- helpers ---
@@ -458,5 +508,5 @@
   if (emb && emb.textContent.trim()) {
     try { render(JSON.parse(emb.textContent)); } catch (e) { console.error(e); renderLoader(browserLang(), true); }
   } else renderLoader(browserLang(), false);
-  window.__review = { render, renderLoader, loadFile };
+  window.__review = { render, renderLoader, loadFile, decryptBundle };
 })();

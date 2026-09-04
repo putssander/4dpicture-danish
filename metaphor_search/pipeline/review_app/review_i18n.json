@@ -228,7 +228,15 @@
   "rl_recurring": "Recurring images",
   "rl_freq": "Frequency shows patterns worth inspecting; it does not make an image better.",
   "rl_browse": "Browse categories",
-  "rl_method": "See how the prompts work"
+  "rl_method": "See how the prompts work",
+  "pass_eyebrow": "THIS LIST IS PROTECTED",
+  "pass_title": "Enter the passphrase for this file.",
+  "pass_lede": "The file {file} is encrypted. You received its passphrase separately (by phone or message). Type it exactly as given; the list is decrypted on this computer only.",
+  "pass_label": "Passphrase",
+  "pass_show": "show",
+  "pass_button": "Open the list",
+  "pass_error": "That passphrase does not open this file. Check it and try again.",
+  "pass_nocrypto": "This browser cannot decrypt the file. Please use a current version of Edge, Chrome, Firefox or Safari."
  },
  "da": {
   "lang_name": "Dansk",
@@ -459,7 +467,15 @@
   "rl_recurring": "Tilbagevendende billeder",
   "rl_freq": "Hyppighed viser mønstre, der er værd at se nærmere på; den gør ikke et billede bedre.",
   "rl_browse": "Gennemse kategorier",
-  "rl_method": "Se hvordan prompterne virker"
+  "rl_method": "Se hvordan prompterne virker",
+  "pass_eyebrow": "DENNE LISTE ER BESKYTTET",
+  "pass_title": "Indtast adgangssætningen til filen.",
+  "pass_lede": "Filen {file} er krypteret. Du har fået adgangssætningen tilsendt separat (pr. telefon eller besked). Skriv den præcis, som du har fået den; listen dekrypteres kun på denne computer.",
+  "pass_label": "Adgangssætning",
+  "pass_show": "vis",
+  "pass_button": "Åbn listen",
+  "pass_error": "Den adgangssætning åbner ikke filen. Tjek den og prøv igen.",
+  "pass_nocrypto": "Denne browser kan ikke dekryptere filen. Brug venligst en nyere version af Edge, Chrome, Firefox eller Safari."
  },
  "nl": {
   "lang_name": "Nederlands",
@@ -690,6 +706,14 @@
   "rl_recurring": "Terugkerende beelden",
   "rl_freq": "Frequentie toont patronen die het bekijken waard zijn; ze maakt een beeld niet beter.",
   "rl_browse": "Blader door categorieën",
-  "rl_method": "Zie hoe de prompts werken"
+  "rl_method": "Zie hoe de prompts werken",
+  "pass_eyebrow": "DEZE LIJST IS BEVEILIGD",
+  "pass_title": "Voer de wachtwoordzin voor dit bestand in.",
+  "pass_lede": "Het bestand {file} is versleuteld. U heeft de wachtwoordzin apart ontvangen (per telefoon of bericht). Typ die precies zoals u die kreeg; de lijst wordt alleen op deze computer ontsleuteld.",
+  "pass_label": "Wachtwoordzin",
+  "pass_show": "toon",
+  "pass_button": "Lijst openen",
+  "pass_error": "Die wachtwoordzin opent dit bestand niet. Controleer de zin en probeer opnieuw.",
+  "pass_nocrypto": "Deze browser kan het bestand niet ontsleutelen. Gebruik een recente versie van Edge, Chrome, Firefox of Safari."
  }
 }
