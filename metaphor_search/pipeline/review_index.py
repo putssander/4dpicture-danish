@@ -82,9 +82,39 @@ def card(num, who, title, text, href):
             f'</em></p></div>')
 
 
-def render_demo_index(title, lede, stage_hrefs, background, data_note, tag, page_title=None):
+def theme_css_tag(out_dir):
+    """Inline demo.css when it sits next to the pages, so the index is one self-contained
+    file (mail attachments, zip previews and USB sticks lose sibling files)."""
+    css = Path(out_dir) / "demo.css"
+    if css.exists():
+        return '<style data-theme="demo.css">\n' + css.read_text(encoding="utf-8") + "\n</style>"
+    return '<link rel="stylesheet" href="demo.css">'
+
+
+# Windows Explorer lets people open index.html from inside a zip without extracting it; the
+# browser then gets a lone temporary copy and every link answers "file cannot be found".
+# The guard recognises that location and says what to do instead of leaving a dead link.
+ZIP_GUARD = """<script>
+(function () {
+  var p = decodeURIComponent(location.pathname || "");
+  var inZip = /\\.zip[\\/]/i.test(p) || /[\\/]Temp\\d*_[^\\/]*[\\/]/i.test(p);
+  if (!inZip) return;
+  var d = document.createElement("div");
+  d.className = "note zip-guard";
+  d.setAttribute("role", "alert");
+  d.innerHTML = "<strong>This page was opened from inside the zip file.</strong> Links from here will fail with "
+    + "\u201cfile cannot be found\u201d. Please extract the zip first (Windows: right-click the zip \u2192 "
+    + "<em>Extract All\u2026</em>; Mac: double-click it), then open <code>index.html</code> in the extracted folder.";
+  var m = document.querySelector("main");
+  (m || document.body).insertBefore(d, (m || document.body).firstChild);
+})();
+</script>"""
+
+
+def render_demo_index(title, lede, stage_hrefs, background, data_note, tag, page_title=None,
+                      out_dir="."):
     """Themed landing page for a language's review pages: same shell as the public demo
-    (demo.css must sit next to the pages). stage_hrefs as in render_index."""
+    (demo.css next to the pages is inlined). stage_hrefs as in render_index."""
     s1, s2, s3 = stage_hrefs.get("1"), stage_hrefs.get("2"), stage_hrefs.get("3")
     def s1_links():
         if isinstance(s1, (list, tuple)):
@@ -114,7 +144,7 @@ def render_demo_index(title, lede, stage_hrefs, background, data_note, tag, page
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(page_title or title)}</title>
-<link rel="stylesheet" href="demo.css"></head><body class="demo-home">
+{theme_css_tag(out_dir)}</head><body class="demo-home">
 <header class="site-header" aria-label="Navigation">
   <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">M</span><span>Metaphor discovery</span></a>
   <span class="header-tag">{html.escape(tag)}</span>
@@ -134,8 +164,10 @@ def render_demo_index(title, lede, stage_hrefs, background, data_note, tag, page
 </section>
 {f'<section class="section-block"><div class="section-heading"><div><p class="eyebrow">BACKGROUND</p><h2>How the ranking was checked.</h2></div></div><div class="workflow-grid">{bgs}</div></section>' if bgs else ''}
 <section class="section-block"><div class="note">{data_note}</div></section>
+<section class="section-block"><div class="note"><strong>Trouble opening a page?</strong> If a link says the file cannot be found, the zip was not extracted: extract it first (Windows: right-click the zip &#8594; <em>Extract All&#8230;</em>; Mac: double-click it), then open <code>index.html</code> in the extracted folder. Each review page is also a complete file on its own: double-clicking it directly always works.</div></section>
 </main>
 <footer class="site-footer">4D PICTURE &middot; private review pages &middot; keep on project machines</footer>
+{ZIP_GUARD}
 </body></html>"""
 
 
@@ -208,7 +240,8 @@ if __name__ == "__main__":
     A = ap.parse_args()
     hrefs = find_stage_files(A.dir)
     out = Path(A.dir) / "index.html"
-    render = (lambda *a, **k: render_demo_index(*a, tag=A.theme_tag, **k)) if A.demo_theme else render_index
+    render = ((lambda *a, **k: render_demo_index(*a, tag=A.theme_tag, out_dir=A.dir, **k))
+              if A.demo_theme else render_index)
     out.write_text(render(A.title, html.escape(A.lede), hrefs, A.background,
                           html.escape(A.data)), encoding="utf-8")
     print(f"{out}: " + ", ".join(f"stage {k}: {v or 'pending'}" for k, v in hrefs.items()))

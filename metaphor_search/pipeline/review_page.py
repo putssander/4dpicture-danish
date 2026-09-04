@@ -25,8 +25,8 @@ Two things it does beyond displaying a ranking:
     as JSON.
 
     PRIVACY BY DESIGN: the export contains **candidate ids and verdicts only — never any
-    candidate or segment text** — so rater files can be emailed and merged without moving
-    participant data. The page itself does contain text and stays local-only.
+    segment text** (an id is `<passage ref>|<short expression>`) — so rater files can be
+    emailed and merged without moving participant passages. The page itself does contain text and stays local-only.
 
 Usage:
   review_page.py --stack /work/speech/eval/danish_t4 --ranking danish_final_ranking.json \\
@@ -254,7 +254,8 @@ if A.vehicle_tags:
             VEH_LABEL[_l] = _d.lower()
 
 try:
-    _CD = {c: str(d).lower() for c, d in json.loads((Path(__file__).resolve().parent / "usas_tags.json").read_text(encoding="utf-8")).items()}
+    _CD = {c: str(d).lower() for c, d in json.loads((Path(__file__).resolve().parent.parent.parent
+           / "resources/usas/usas_tags.json").read_text(encoding="utf-8")).items()}
 except Exception:
     _CD = {}
 LAYERS = {}
@@ -598,7 +599,16 @@ status_block = ('<div class="status"><div class="l1">' + STATUS[0] + '</div><div
 # The public English demo is also a project showcase. Its shared presentation layer keeps
 # the ranked output easy to explore, while the normal self-contained pages remain suitable
 # for private, offline hand-off in Danish and Dutch.
-theme_link = '<link rel="stylesheet" href="demo.css">' if A.demo_theme else ''
+# Every page must stay a single self-contained file (reviewers open them from mail
+# attachments, zip previews and USB sticks, where a sibling demo.css is not found), so the
+# shared presentation layer is inlined when demo.css sits next to the output; the link is
+# only a fallback for builds that do not ship the stylesheet.
+def theme_css_tag(out_dir):
+    css = Path(out_dir) / "demo.css"
+    if css.exists():
+        return '<style data-theme="demo.css">\n' + css.read_text(encoding="utf-8") + "\n</style>"
+    return '<link rel="stylesheet" href="demo.css">'
+theme_link = theme_css_tag(B) if A.demo_theme else ''
 body_class = ('ranked-page' if A.stage == 'explore' else 'review-page') if A.demo_theme else ''
 site_header = ('' if not A.demo_theme else
     '<header class="site-header" aria-label="Demo navigation">'
@@ -924,8 +934,8 @@ textarea {{ width:100%; height:110px; margin-top:10px; display:none;
   <span id="rstate" style="color:var(--mut);font-size:13px"></span>
   <p class="lede" style="margin:8px 0 0">Your labels are saved in this browser and never
   leave it until you press <em>Export</em>. The exported file contains <strong>only
-  candidate numbers and your verdicts — no quoted text</strong>, so it is safe to email back
-  for merging.</p>
+  candidate reference numbers (each carrying the short expression it stands for) and your
+  verdicts — never the surrounding passages</strong>, so it is safe to email back for merging.</p>
 </div>
 
 {"" if A.blind else "<h2>How the ranking behaved on this corpus</h2>"}
@@ -968,7 +978,8 @@ language.</div>
 {''.join(rows_html)}
 <textarea id="out"></textarea>
 <script>
-const KEY = "labels::{html.escape(A.corpus)}";
+const KEY = {json.dumps("labels::" + A.corpus + ("" if A.stage == "filter" else "::" + A.stage)
+                        + (("::" + STREAM_NAME) if STREAM_NAME else ""))};  // one store per page: stage-1 streams and the stage-2 vote never share labels
 let L = {{}};
 try {{ L = JSON.parse(localStorage.getItem(KEY) || "{{}}"); }} catch(e) {{ L = {{}}; }}
 const rn = document.getElementById('rname'), rr = document.getElementById('rrole');
@@ -1128,7 +1139,7 @@ document.getElementById('fr').onclick = () => {{
 document.getElementById('ex').onclick = () => {{
   if (!rn.value || !rr.value) {{ alert("Please enter your name and role first."); return; }}
   // one label per shown row; identical phrasings were merged, so the same verdict is
-  // written for every underlying candidate id (data-members) — the export stays ids + verdicts only
+  // written for every underlying candidate id (data-members) — the export stays ids + verdicts, no passages
   const ALL = {{}};
   for (const r of rows) {{
     const v = L[r.dataset.id]; if (!v) continue;
@@ -1138,7 +1149,7 @@ document.getElementById('ex').onclick = () => {{
   const blob = JSON.stringify({{
     corpus: {json.dumps(A.corpus)}, stage: {json.dumps(A.stage)}, stream: {json.dumps(STREAM_NAME)},
     rater: {{ name: rn.value, role: rr.value }},
-    n_labelled: Object.keys(L).length, n_candidate_ids: Object.keys(ALL).length, labels: ALL }}, null, 1);
+    n_labelled: rows.filter(r => L[r.dataset.id]).length, n_candidate_ids: Object.keys(ALL).length, labels: ALL }}, null, 1);
   const t = document.getElementById('out'); t.style.display = 'block'; t.value = blob; t.select();
   const u = URL.createObjectURL(new Blob([blob], {{type:'application/json'}}));
   const a = document.createElement('a');
