@@ -4,7 +4,7 @@ Deliverables of the Danish team of the [4DPICTURE](https://4dpicture.eu) project
 toward a Danish counterpart to Lancaster University's
 [Metaphor Menu for people living with cancer](https://wp.lancs.ac.uk/melc/the-metaphor-menu/).
 
-**▶ Live demo: https://putssander.github.io/4dpicture-danish/** — the ranked output and the
+**▶ Live demo: https://4dpicture.github.io/4dpicture-danish/** — the ranked output and the
 blinded review workflow on public English data. Nothing to install.
 
 Only final, reusable material is here. No patient or participant text is included; every
@@ -14,7 +14,7 @@ demo runs on public, open-licensed data.
 |---|---|---|
 | **Results** | One-page summary of what was done and what was found | [`RESULTS.md`](RESULTS.md) |
 | **Method** | How the metaphor finder works, in plain language | [`METHOD.md`](METHOD.md) |
-| **Demo** | **[Open the live demo](https://putssander.github.io/4dpicture-danish/)** (GitHub Pages) — the ranked output first, then the three review stages (filtering → PPI voting → ranked retrospective with source-domain tables). The same pages work offline from [`demo/index.html`](demo/index.html). | [`demo/`](demo/) |
+| **Demo** | **[Open the live demo](https://4dpicture.github.io/4dpicture-danish/)** (GitHub Pages) — the ranked output first, then the three review stages (filtering → PPI voting → ranked retrospective with source-domain tables). The same pages work offline from [`demo/index.html`](demo/index.html). | [`demo/`](demo/) |
 | **Metaphor search** | *Understand it*: [`ranker_walkthrough.ipynb`](metaphor_search/ranker_walkthrough.ipynb) — the pipeline step by step on the public benchmark, no GPU. *Run it*: [`run_on_your_data.ipynb`](metaphor_search/run_on_your_data.ipynb) — runs the whole pipeline on a public corpus (dry-run without any model, or live against your own Ollama server), then on your own texts. Code in [`pipeline/`](metaphor_search/pipeline/). | [`metaphor_search/`](metaphor_search/) |
 | **USAS dictionaries** | Final PyMUSAS-format semantic dictionaries for **Danish** (43,169 entries) and **Dutch** (58,303), built from open sources only, plus the Danish idiom list | [`pymusas/lexicons/`](pymusas/lexicons/) |
 | **Build a dictionary for a new language** | *Understand it*: [`build_a_language.ipynb`](pymusas/build_a_language.ipynb) — how the dictionaries were built and evaluated, with the measured numbers, no GPU. *Run it*: [`build_your_language.ipynb`](pymusas/build_your_language.ipynb) — the six stages as runnable cells (smoke setting: minutes; the committee stage is optional and costs about $20 per language in API calls). The committee's calibration against human gold re-scores offline from shipped files. Code in [`lexicon_pipeline/`](pymusas/lexicon_pipeline/). | [`pymusas/`](pymusas/) |
