@@ -25,11 +25,12 @@ have no human-labelled USAS test set, so the reference is a three-model committe
 (Claude, GPT, Gemini) calibrated on Finnish and English human gold: where all three
 agree, the label matched the human one 85.5% (Finnish) and 88.2% (English) of the time;
 where they disagree it is about a coin flip. The **unanimous** column is therefore the
-primary comparison; the "all tokens" column includes the weaker labels. The two PAR
-columns are the same 50 sentences in every language. All numbers compare dictionaries
+primary comparison; the "all tokens" column includes the weaker labels. The talks and health
+samples are the same 50 TED2020 and ECDC sentences in every language; the test texts are
+described in [`../README.md`](../README.md). All numbers compare dictionaries
 within one language; they are not absolute accuracy claims.
 
-| Lexicon | Own reference, unanimous tokens | Own reference, all tokens | Talks (PAR) | Health (PAR) |
+| Lexicon | Coffee text, unanimous words | Coffee text, all words | Talks sample | Health sample |
 |---|---|---|---|---|
 | Danish, 2024 official release | 55.9 @ 78.7 | 50.3 @ 77.8 | 63.3 @ 84.4 | 52.9 @ 77.1 |
 | **Danish `da_open`** | **65.4 @ 88.4** | **57.8 @ 86.8** | **68.7 @ 91.5** | **59.4 @ 85.6** |
@@ -39,7 +40,7 @@ within one language; they are not absolute accuracy claims.
 
 Unanimous tokens: 2,182 of 2,958 (Danish), 2,522 of 3,307 (Dutch). Adding a neural
 fallback for words the dictionary does not cover (lexicon + BEM) raises Danish to
-71.4 / 64.5 and Dutch to 70.8 / 64.3 on the PAR sets.
+71.4 / 64.5 and Dutch to 70.8 / 64.3 on the talks / health samples.
 
 Known limits, stated once: every Danish and Dutch test token is translated text (the
 Dutch text was rewritten by a native speaker, the Danish text was not), and no native

@@ -1,0 +1,50 @@
+Vanhukset_T3 ovat_A3 myös_Z5 muita_Z8 alttiimpia_A15 vakavalle_A11.1 yleisinfektiolle_B2
+Turistien_M1 mukana_Z5 tautia_B2 on_Z5 kulkeutunut_M1 useisiin_N5 Euroopan_Z2 maihin_M7
+Sukupuolitaudit_B2 ovat_A3 ryhmä_A4.1 tauteja_B2 jotka_Z8 tarttuvat_B2 sukupuoliyhdynnässä_S3.2 emättimen_B1 suun_B1 tai_Z5 peräaukon_B1 kautta_Z5
+ECDC:n_Z3 keräämää_A9 asiantuntemusta_X2.2 tarjotaan_A9 myös_Z5 niille_Z8 maille_M7 joilla_Z8 on_A9 jotakin_Z8 erityisiä_A4.2 kehitettävää_A2.1 omissa_A9 tartuntatautien_B2 valvontajärjestelmissään_X2.4
+Pandeeminen_B2 influenssa_B2 on_A3 sellaisen_Z8 uuden_T3 influenssakannan_B2 maailmanlaajuinen_M7 leviäminen_M1 jolle_Z8 väestö_S2 ei_Z6 ole_A3 immuuni_B2
+Olen_A3 ylpeä_E4.1 siitä_Z8 että_Z5 saan_S7.4 työskennellä_I3.1 heidän_Z8 kanssaan_Z5
+Kuuroudesta_B2 on_Z5 ilmoitettu_Q2.2 sairauden_B2 yleisenä_A6.2 jälkiseurauksena_A2.2
+Kun_Z5 ihmisten_S2 immuniteetti_B2 lisääntyy_N5 ja_Z5 pandeeminen_B2 virus_B2 muuttuu_A2.1 pandeeminen_B2 kanta_B2 yhdistyy_A1.8 tavallisiin_A6.2 kausi-influenssaviruksiin_B2 joita_Z8 se_Z8 usein_N6 hallitsee_S7.1
+Klamydiainfektio_B2 on_A3 useissa_N5 Euroopan_Z2 maissa_M7 yleisin_A6.2 bakteerien_L2 aiheuttama_A2.2 sukupuolitauti_B2
+Oireellisissa_B2 tapauksissa_A4.1 itämisaika_T1.3 vaihtelee_A6.3 kahdesta_N1 seitsemään_N1 viikkoon_T1.3
+Tarvittaessa_S6 ECDC:n_Z3 asiantuntijat_X9.1 osallistuvat_S1.1.3 ministerikokouksia_G1.1 valmistelevien_A1.1.1 virkamieskomiteoiden_S5 työskentelyyn_I3.1
+ECDC_Z3 on_A3 vastuussa_S6 tartuntatautien_B2 seurannasta_X2.4 Euroopan_Z2 unionissa_Z3 ja_Z5 se_Z8 myös_Z5 ylläpitää_A1.1.1 epidemiaseurannan_X2.4 tietokantoja_Y2
+Infektio_B2 voi_A7 toisinaan_N6 muuttua_A2.1 krooniseksi_B2 ja_Z5 johtaa_A2.2 sydänläpän_B1 maksan_B1 ja_Z5 muiden_A6.1 elinten_B1 tulehduksiin_B2
+Sen_Z8 jälkeen_T1.1.1 kun_Z5 antibiootit_B3 keksittiin_A1.1.1 ne_Z8 ovat_Z5 mullistaneet_A2.1 bakteeri-infektioiden_B2 hoidon_B3 ja_Z5 vähentäneet_N5 bakteeritaudeista_B2 johtuvaa_A2.2 kuolleisuutta_L1 ja_Z5 sairastuneisuutta_B2
+Käsittää_A1.8 vaarojen_A15 tunnistamisen_X2.4 riskinarvioinnin_X2.4 ja_Z5 riskien_A15 hallinnan_S7.1 sekä_Z5 bioturvallisuuden_A15 että_Z5 laboratorioiden_H1 biomateriaalin_O1 suojaamisen_A15 osalta_Z5
+Taudille_B2 ovat_A3 tyypillisiä_A6.2 toistuvat_N6 kuumevaiheet_B2 joihin_Z8 liittyy_A2.2 usein_N6 päänsärkyä_B2 lihas-_B1 ja_Z5 nivelkipuja_B2 ja_Z5 pahoinvointia_B2
+Tautiin_B2 liittyy_A2.2 voimakas_A13.3 yskä_B2 joka_Z8 saattaa_A7 kestää_T1.3 kaksi_N1 kuukautta_T1.3 tai_Z5 pidempäänkin_T1.3
+Kolmessa_N1 Isossa-Britanniassa_Z2 ilmenneessä_A10 tapauksessa_A4.1 tartunnan_B2 syyksi_A2.2 arvellaan_X2.1 oireettomalta_B2 kantajalta_B2 saatua_A9 verta_B1
+Clostridium_Z3 difficile_Z3 on_A3 bakteeri_L2 jota_Z8 esiintyy_A3 runsaasti_N5 maaperässä_O1.1 ja_Z5 eläinten_L2 suolistossa_B1
+Tähän_Z8 mennessä_T1.1.2 on_Z5 tunnistettu_X2.4 kuusi_N1 muuta_A6.1 lyssavirusta_B2 joiden_Z8 kyky_X9.1 aiheuttaa_A2.2 sairaus_B2 ihmisissä_S2 vaihtelee_A6.3 ja_Z5 joiden_Z8 reservoaarina_B2 ovat_Z5 lepakot_L2
+Kansainvälisiä_M7 matkailijoita_M1 uhkaavat_A15 tilanteet_A3 huomioidaan_X5.1 vain_A14 siinä_Z8 tapauksessa_A4.1 että_Z5 maahantulo_M1 aiheuttaa_A2.2 merkittävän_A11.1 sekundääristen_N4 tapausten_A4.1 uhkan_A15
+Trikinelloosin_B2 ehkäisy_A1.9 perustuu_A2.2 kaikkien_N5.1 teurastettujen_L1 sikojen_L2 ja_Z5 hevosten_L2 asianmukaiseen_A1.2 tarkastukseen_X2.4 joka_Z8 on_A3 pakollinen_S6 kaikissa_N5.1 EU-maissa_M7
+Taudin_B2 itämisaika_T1.3 on_A3 todennäköisesti_A7 noin_A13.4 2–4_N1 päivää_T1.3 minkä_Z8 jälkeen_Z5 oireet_B2 ilmenevät_A10 ja_Z5 kehittyvät_A2.1 yleensä_A6.2 nopeasti_N3.8
+Myöhemmässä_T4 vaiheessa_T1.3 voi_A7 esiintyä_A3 voimakasta_A13.3 mielialan_E1 vaihtelua_A6.3 ja_Z5 potilas_B2 voi_A7 muuttua_A2.1 sekavaksi_X2.5 ja_Z5 väkivaltaiseksi_E3
+Salmonella_Z3 typhi_Z3 -bakteerin_L2 aiheuttamaan_A2.2 tautiin_B2 voi_A7 liittyä_A2.2 suolen_B1 puhkeaminen_A1.1.2 ja_Z5 verenvuotoa_B2
+Meningokokkisairaudet_B2 aiheuttaa_A2.2 Neisseria_Z3 meningitidis_Z3 -bakteeri_L2 jonka_Z8 ainoa_A14 reservoaari_B2 ovat_A3 ihmiset_S2
+Miten_Z5 voit_X9.1 tarkastella_X2.4 tietojasi_X2.2 ja_Z5 korjata_A5.3 niitä_Z8 tarvittaessa_S6
+Riketsiooseja_B2 esiintyy_A3 eri_A6.1 puolella_M6 maailmaa_W1 mutta_Z5 bakteerilajit_L2 ja_Z5 niiden_Z8 ihmisissä_S2 aiheuttamat_A2.2 taudit_B2 vaihtelevat_A6.3 maantieteellisen_W3 alueen_M7 mukaan_Z5
+Taudin_B2 kaikki_N5.1 kliiniset_B3 muodot_A4.1 voidaan_A7 hoitaa_B3 pitkällä_T1.3 antibioottikuurilla_B3 mutta_Z5 vakavimmissa_A11.1 tapauksissa_A4.1 paranemismahdollisuudet_A7 ovat_A3 heikot_S1.2.5
+Silloin_T1.1 virus_B2 voi_A7 vaikuttaa_A2.1 kaikkiin_N5.1 sikiön_B1 elimiin_B1 ja_Z5 aiheuttaa_A2.2 sikiön_B1 kuoleman_L1 keskenmenon_B2 tai_Z5 synnynnäisen_B2 epämuodostuman_B2
+HIV-infektio_B2 on_A3 edelleen_T1.1.2 merkittävä_A11.1 kansanterveydellinen_B2 ongelma_A12 EU-_Z3 ja_Z5 ETA-valtioissa_G1.1
+Jälkimmäiset_N4 luokitellaan_A4.1 edelleen_Z5 serotyppeihin_A4.1 Useimpien_N5.1 ihmisellä_S2 todettujen_X2.4 infektioiden_B2 aiheuttaja_A2.2 on_A3 haemophilus_Z3 influenzae_Z3 serotyyppi_A4.1 b_Z3 -bakteeri_L2 joka_Z8 aiheuttaa_A2.2 hengitystieinfektioita_B2 silmätulehduksia_B2 verenmyrkytystä_B2 sepsis_B2 ja_Z5 aivokalvotulehdusta_B2
+Muita_A6.1 riskitekijöitä_A15 ovat_A3 uinti_M4 saastuneessa_W5 pintavedessä_O1.2 ja_Z5 suora_O4.4 kosketus_X3.3 tartunnan_B2 saaneeseen_A9 eläimeen_L2
+ECDC_Z3 koordinoi_S7.1 toimintaa_A1.1.1 Euroopassa_Z2 ja_Z5 tuki_S8 jäsenvaltioita_G1.1 valmiustoimissa_A1.1.1
+Lievissä_A13.6 tapauksissa_A4.1 oireet_B2 ovat_A3 influenssan_B2 kaltaisia_A6.1 ja_Z5 potilaat_B2 paranevat_B2 kokonaan_N5.1
+Riketsiooseja_B2 levittävät_M1 pääasiassa_A14 puutiaispunkit_L2 mutta_Z5 myös_Z5 kirput_L2 täit_L2 ja_Z5 muut_A6.1 punkit_L2 voivat_A7 levittää_M1 niitä_Z8
+Vuoden_T1.3 2009_N1 ensimmäisellä_N4 vuosipuoliskolla_T1.3 edellä_M6 mainitut_Q2.1 kurssit_P1 on_A3 tarkoitus_X7 järjestää_S7.1 uudelleen_N6
+Näillä_Z8 sivuilla_Y2 annettuihin_A9 henkilötietoihin_X2.2 sovelletaan_A1.5.1 edellä_M6 mainitussa_Q2.1 asetuksessa_G2.1 esitettyjä_Q2.1 periaatteita_X4.1
+Kävelymatka_M1 bussipysäkiltä_M3 ECDC:hen_Z3 kestää_T1.3 noin_A13.4 viisi_N1 minuuttia_T1.3
+ECDC:hen_Z3 linkitettyä_A2.2 tietoa_X2.2 ei_Z6 saa_S7.4 esittää_A10 mainosten_I2.2 rinnalla_M6
+Kiistatapauksissa_Q2.2 virallisesti_G1.1 hyväksytty_S7.4 teksti_Q1.2 on_A3 todistusvoimainen_A5.4
+Denguekuumetta_B2 esiintyy_A3 Aasiassa_Z2 Tyynenmeren_Z2 ja_Z5 Karibianmeren_Z2 alueella_M7 Amerikassa_Z2 ja_Z5 Afrikassa_Z2
+Laboratoriolaatu_A5.1 viittaa_Q1.1 laboratoriolääketieteen_B3 vaatimuksiin_S6 diagnostisten_B3 taudinmääritykseen_B3 liittyvien_A2.2 menetelmien_X4.2 täsmällisyydestä_A5.3 tarkkuudesta_A5.3 spesifiydestä_A4.2 ja_Z5 vertailukelpoisuudesta_A6.1 eri_A6.1 laboratorioiden_Y1 välillä_Z5
+Tartunnan_B2 ehkäisy_A1.9 perustuu_A2.2 rokotteen_B3 yleiseen_A6.2 käyttöön_A1.5.1 ja_Z5 infektoituneiden_B2 haavojen_B2 asianmukaiseen_A1.2 hoitoon_B3
+Myrkyn_O1 voimakkuuden_S1.2.5 takia_A2.2 botulismi_B2 on_Z5 sisällytetty_A1.8 mahdollisiin_A7 bioterroriuhkiin_G3
+EU:ssa_Z3 on_A3 runsaasti_N5 bioriskien_A15 hallinnan_S7.1 asiantuntemusta_X9.1 joka_Z8 voidaan_A7 ottaa_A1.5.1 käyttöön_A1.5.1 viestinnän_Q1.1 ja_Z5 parhaiden_A5.1 käytäntöjen_X4.2 jakamisen_A9 tueksi_S8
+Tavoitteenamme_X7 on_Z5 pitää_A9 tiedot_X2.2 ajantasaisina_T3 ja_Z5 virheettöminä_A5.3
+Hoidon_B3 onnistumisaste_X9.2 EU-/ETA-valtiossa_G1.1 on_A3 liian_N5.2 alhainen_N5 maailmanlaajuisiin_M7 tavoitteisiin_X7 nähden_Z5
+Tauti_B2 on_Z5 yleisin_A6.2 trooppisilla_W4 alueilla_M7 mutta_Z5 sitä_Z8 esiintyy_A3 myös_Z5 lauhkealla_W4 vyöhykkeellä_W3 myös_Z5 Euroopassa_Z2
+Kansanterveyteen_B2 vaikuttavia_A2.2 tilanteita_A3 koskeva_A2.2 suunnitelma_X7 on_Z5 luotu_A1.1.1 johtamiskäytännön_S7.1 pohjalta_Z5 Johtamiskäytännön_S7.1 perustana_A2.2 ovat_A3 ECDC:n_Z3 hallinnointisyklin_S7.1 strategiset_X7 ohjeet_Q2.2

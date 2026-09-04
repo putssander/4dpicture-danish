@@ -1,0 +1,50 @@
+Ældre_T3 patienter_B2 er_A3 også_Z5 mere_A13.3 udsat_A15 for_Z5 at_Z5 udvikle_A2.1 svær_A13.3 blodforgiftning_B2
+Importerede_M2 tilfælde_A4.1 hos_Z5 turister_M1 er_Z5 blevet_Z5 konstateret_A10 i_Z5 flere_N5 europæiske_Z2 lande_M7
+Seksuelt_S3.2 overførte_M2 infektioner_B2 er_A3 infektioner_B2 der_Z8 kan_A7 overføres_M2 ved_Z5 vaginalt_B1 oralt_B1 og_Z5 analt_B1 samleje_S3.2
+ECDC_Z3 tilbyder_A9 også_A1.8 sin_Z8 samlede_N5.1 ekspertise_X9.1 til_Z5 de_Z5 lande_M7 som_Z8 har_A9 behov_S6 for_Z5 at_Z5 forbedre_A5.1 visse_A4.2 aspekter_A4.2 af_Z5 deres_Z8 kontrolsystemer_S7.1 vedrørende_Z5 smitsomme_B2 sygdomme_B2
+Pandemisk_B2 influenza_B2 er_A3 en_Z5 global_W1 spredning_M1 af_Z5 en_Z5 ny_T3 influenzastamme_B2 som_Z8 den_Z5 almindelige_A6.2 befolkning_S2 ikke_Z6 er_A3 immun_B2 mod_Z5
+Og_Z5 jeg_Z8 er_A3 stolt_E4.1 af_Z5 at_Z5 arbejde_I3.1 sammen_Z5 med_Z5 dem_Z8
+Døvhed_B2 er_Z5 en_Z5 almindelig_A6.2 følgevirkning_A2.2 af_Z5 sygdommen_B2
+Efterhånden_T1.1 som_Z5 immuniteten_B2 i_Z5 befolkningen_S2 øges_N5 og_Z5 det_Z5 pandemiske_B2 virus_B2 ændrer_A2.1 sig_Z8 bliver_A2.1 den_Z5 pandemiske_B2 stamme_B2 en_Z5 del_N5.1 af_Z5 mikset_A6.3 af_Z5 sæsonbetingede_T1.3 influenzavirus_B2 og_Z5 vil_T1.1.3 være_A3 tilbøjelig_A7 til_Z5 at_Z5 dominere_S7.1
+LGV_B2 er_A3 nu_T1.1.2 også_Z5 i_Z5 stigning_N5 i_Z5 den_Z5 vestlige_M6 verden_W1 efter_Z5 indtil_Z5 for_Z5 nylig_T3 kun_A14 at_Z5 have_Z5 optrådt_A10 sporadisk_N6
+For_Z5 symptomgivende_B2 tilfælde_A4.1 er_A3 inkubationstiden_T1.3 mellem_Z5 to_N1 og_Z5 syv_N1 uger_T1.3
+ECDC's_Z3 eksperter_X9.1 deltager_S1.1.3 når_Z5 det_Z8 er_A3 relevant_A1.2 i_Z5 de_Z5 embedsmandsudvalg_G1.1 som_Z8 forbereder_A1.1.1 ministermøderne_G1.1
+ECDC_Z3 er_Z5 ansvarlig_S6 for_Z5 overvågning_X2.4 af_Z5 smitsomme_B2 sygdomme_B2 i_Z5 EU_Z3 og_Z5 skal_S6 vedligeholde_A1.1.1 databaser_Y2 for_Z5 epidemiologisk_B2 overvågning_X2.4
+Undertiden_N6 antager_A9 infektionen_B2 et_Z5 langstrakt_T1.3 forløb_T1.3 med_Z5 infektion_B2 af_Z5 hjerteklapper_B1 lever_B1 og_Z5 andre_A6.1 organer_B1
+Siden_Z5 antibiotika_B3 blev_Z5 opfundet_A1.1.1 har_Z5 de_Z8 revolutioneret_A2.1 behandlingen_B3 af_Z5 patienter_B2 med_Z5 bakterielle_B2 infektioner_B2 og_Z5 har_Z5 medvirket_S8 til_Z5 at_Z5 mindske_A2.1 dødeligheden_L1 og_Z5 frekvensen_N6 af_Z5 bakteriesygdomme_B2
+Omfatter_A1.8 fareidentifikation_X2.4 risikovurdering_X2.4 og_Z5 risikokontrol_A1.7 både_Z5 inden_Z5 for_Z5 biosikkerhed_A15 og_Z5 laboratoriebiosikkerhed_A15
+Sygdommen_B2 er_Z5 karakteriseret_A4.1 ved_Z5 tilbagevendende_N6 episoder_T1.3 med_Z5 feber_B2 der_Z8 ofte_N6 er_Z5 ledsaget_A2.2 af_Z5 hovedpine_B2 muskel-_B1 og_Z5 ledsmerter_B2 og_Z5 kvalme_B2
+Sygdommen_B2 er_Z5 karakteriseret_A4.2 af_Z5 svær_A13.3 hoste_B2 der_Z8 undertiden_N6 varer_T1.3 to_N1 måneder_T1.3 eller_Z5 længere_T1.3
+I_Z5 tre_N1 tilfælde_A4.1 som_Z8 er_Z5 rapporteret_Q2.2 i_Z5 Storbritannien_Z2 menes_X2.1 smitten_B2 at_Z5 være_Z5 overført_M2 ved_Z5 modtagelse_A9 af_Z5 blod_B1 fra_Z5 en_Z5 inficeret_B2 donor_A9 uden_Z5 symptomer_B2
+Clostridium_Z3 difficile_Z3 er_A3 en_Z5 bakterie_L2 der_Z8 er_A3 vidt_A13.3 udbredt_M2 i_Z5 jord_O1.1 og_Z5 i_Z5 dyrs_L2 tarmsystemer_B1
+Der_Z5 er_Z5 nu_T1.1.2 identificeret_X2.2 seks_N1 andre_A6.1 lyssavirus_B2 som_Z8 i_Z5 varierende_A6.3 grad_A13.1 har_A9 sygdomsfremkaldende_B2 potentiale_X9.1 hos_Z5 mennesker_S2 og_Z5 har_A9 flagermus_L2 som_Z5 reservoir_B2
+Hændelser_A1.1.1 der_Z8 udgør_A3 en_Z5 trussel_A15 mod_Z5 internationale_M7 rejsende_M1 medtages_A1.8 ikke_Z6 hvis_Z7 der_Z5 ikke_Z6 er_A3 signifikant_A11.1 risiko_A15 for_Z5 sekundære_N4 tilfælde_A4.1 efter_Z5 import_M2
+Forebyggelse_A1.9 af_Z5 trikinose_B2 bygger_A2.2 på_Z5 nøje_A1.3 kontrol_X2.4 af_Z5 alle_N5.1 slagtede_L1 svin_L2 og_Z5 heste_L2 hvilket_Z8 er_Z5 påbudt_S6 i_Z5 EU_Z3
+Børn_T3 begynder_T2 at_Z5 vise_A10 symptomer_B2 på_Z5 meningitis_B2 efter_Z5 en_Z5 sandsynlig_A7 inkubationstid_T1.3 på_Z5 2-4_N1 dage_T1.3 og_Z5 de_Z5 kliniske_B3 manifestationer_A10 udvikler_A2.1 sig_Z8 ofte_N6 hurtigt_N3.8
+Senere_T4 i_Z5 forløbet_T1.3 kan_A7 der_Z5 optræde_A3 bratte_T1.2 stemningsskift_E1 og_Z5 patienten_B2 kan_A7 blive_A2.1 omtåget_X2.5 og_Z5 aggressiv_E3
+Når_Z5 årsagen_A2.2 er_A3 Salmonella_Z3 typhi_Z3 kan_A7 der_Z5 forekomme_A3 tarmperforation_B2 og_Z5 blødning_B2
+Meningokoksygdom_B2 skyldes_A2.2 Neisseria_Z3 meningitidis_Z3 en_Z5 bakterie_B2 der_Z8 har_A9 mennesker_S2 som_Z5 sit_Z8 eneste_A14 reservoir_B2
+Sådan_Z5 kan_A7 du_Z8 få_A9 adgang_A10 til_Z5 dine_Z8 oplysninger_X2.2 kontrollere_X2.4 rigtigheden_A5.3 af_Z5 dem_Z8 og_Z5 om_Z7 nødvendigt_S6 få_A9 dem_Z8 rettet_A5.3
+De_Z8 findes_A3 mange_N5 steder_M7 i_Z5 verden_W1 men_Z5 arterne_L2 og_Z5 de_Z5 dermed_Z5 forbundne_A2.2 kliniske_B3 sygdomme_B2 hos_Z5 mennesker_S2 varierer_A6.3 efter_Z5 geografisk_W3 område_M7
+Alle_N5.1 de_Z5 kliniske_B2 former_A4.1 kan_A7 behandles_B3 med_Z5 langvarige_T1.3 antibiotikakure_B3 men_Z5 de_Z5 alvorligste_A11.1 af_Z5 dem_Z8 har_A9 en_Z5 dårlig_A5.1 prognose_X2.6
+I_Z5 denne_Z8 situation_A3 kan_A7 virusset_B2 angribe_A1.1.2 alle_N5.1 fosterets_B1 organer_B1 med_Z5 fosterdød_L1 abort_B2 eller_Z5 medfødte_B2 misdannelser_B2 til_Z5 følge_A2.2
+Hiv-smitte_B2 er_A3 stadig_T1.1.2 vigtig_A11.1 i_Z5 forhold_A2.2 til_Z5 folkesundheden_B2 i_Z5 EU_Z3 EØS_Z3
+Sidstnævnte_N4 klassificeres_A4.1 yderligere_N5 i_Z5 serotyper_A4.1 hvor_Z5 Haemophilus_Z3 influenzae_Z3 serotype_A4.1 b_Z3 er_A3 den_Z5 mest_A13.2 patogene_B2 for_Z5 mennesker_S2 idet_Z5 den_Z8 forårsager_A2.2 luftvejsinfektioner_B2 øjeninfektioner_B2 blodforgiftning_B2 sepsis_B2 og_Z5 meningitis_B2
+Andre_A6.1 risikofaktorer_A15 er_A3 badning_M4 i_Z5 naturligt_A6.2 overfladevand_O1.2 og_Z5 direkte_M6 kontakt_X3.3 med_Z5 smittede_B2 dyr_L2
+ECDC_Z3 koordinerede_S7.1 denne_Z5 indsats_X8 på_Z5 europæisk_Z2 plan_N3.7 og_Z5 støttede_S8 medlemsstaterne_G1.1 i_Z5 deres_Z8 indsats_X8
+Tilfælde_A4.1 uden_Z5 komplikationer_B2 er_Z5 karakteriseret_A4.2 ved_Z5 akut_B2 influenzalignende_B2 sygdom_B2 hvor_Z5 patienterne_B2 kommer_B2 sig_Z8 helt_A13.2
+De_Z5 fleste_N5.1 rickettsioser_B2 overføres_M2 af_Z5 flåter_L2 men_Z5 de_Z8 kan_A7 også_Z5 overføres_M2 af_Z5 lopper_L2 lus_L2 og_Z5 mider_L2
+Der_Z5 planlægges_X7 gennemført_A1.1.1 nye_T3 udgaver_A4.1 af_Z5 alle_N5.1 de_Z5 nævnte_Q2.1 korterevarende_T1.3 kurser_P1 i_Z5 første_N4 halvdel_N5.1 af_Z5 2009_T1.3
+Sider_Y2 som_Z8 kræver_S6 sådanne_Z5 oplysninger_X2.2 behandler_A1.1.1 disse_Z8 i_Z5 overensstemmelse_A6.1 med_Z5 den_Z5 politik_G1.2 som_Z8 er_Z5 beskrevet_Q2.1 i_Z5 ovennævnte_Q2.2 forordning_G2.1
+Det_Z8 tager_T1.3 ca._A13.4 5_N1 minutter_T1.3 at_Z5 gå_M1 til_Z5 ECDC_Z3 fra_Z5 busstoppestedet_M3
+Linket_A2.2 information_X2.2 til_Z5 ECDC_Z3 må_S7.4 ikke_Z6 vises_A10 sammen_S5 med_Z5 annoncering_I2.2
+Derfor_A2.2 vil_T1.1.3 den_Z5 officielt_G1.1 vedtagne_X6 tekst_Q1.2 altid_N6 have_A9 forrang_A11.1 hvis_Z7 der_Z5 er_A3 uoverensstemmelser_A6.1
+Denguefeber_B2 findes_A3 i_Z5 dele_N5.1 af_Z5 Asien_Z2 Stillehavsområdet_Z2 Caribien_Z2 Nord-_Z2 og_Z5 Sydamerika_Z2 samt_Z5 Afrika_Z2
+Laboratoriekvalitet_A5.1 er_A3 et_Z5 krav_S6 i_Z5 laboratoriemedicin_B3 om_Z5 at_Z5 sørge_A1.1.1 for_Z5 diagnostiske_B3 tilgange_X4.2 som_Z8 er_A3 nøjagtige_A5.3 præcise_A5.3 specifikke_A4.2 og_Z5 sammenlignelige_A6.1 med_Z5 andre_A6.1 laboratorier_Y1
+Forebyggelse_A1.9 er_Z5 baseret_A2.2 på_Z5 udbredt_N5 brug_A1.5.1 af_Z5 vaccination_B3 og_Z5 passende_A1.2 behandling_B3 af_Z5 kontaminerede_B2 sår_B2
+På_Z5 grund_A2.2 af_Z5 giftstoffets_B2 ekstremt_A13.2 høje_A13.3 styrke_S1.2.5 regnes_X2.1 botulisme_B2 blandt_Z5 de_Z5 alvorligste_A11.1 biologiske_L1 terrortrusler_G3
+I_Z5 EU_Z3 er_A3 der_Z5 et_Z5 væld_N5 af_Z5 ekspertise_X9.1 inden_Z5 for_Z5 biorisikostyring_S7.1 som_Z8 kan_A7 samles_A1.8 og_Z5 bidrage_S8 til_Z5 kommunikation_Q1.1 og_Z5 etablering_T2 af_Z5 bedste_A5.1 praksis_X4.2
+Det_Z8 er_A3 vores_Z8 mål_X7 at_Z5 information_X2.2 og_Z5 materiale_O1 er_A3 opdateret_A2.1 og_Z5 korrekt_A5.3
+Behandlingssuccesen_X9.2 i_Z5 EU_Z3 EØS_Z3 er_A3 for_A13.3 lav_N5 til_Z5 at_Z5 opfylde_X9.2 de_Z5 globale_W1 mål_X7
+Sygdommen_B2 forekommer_A3 hovedsagelig_A14 i_Z5 troperne_W3 men_Z5 findes_A3 også_Z5 i_Z5 tempererede_O4.6 områder_M7 herunder_A1.8 Europa_Z2
+Denne_Z8 PHE-plan_X7 er_A3 en_Z5 videreudvikling_A2.1 af_Z5 styringspraksis_S7.1 der_Z8 er_Z5 fastlagt_X6 af_Z5 de_Z5 strategiske_X7 retningslinjer_X4.2 for_Z5 ECDC_Z3 s_Z5 styringscyklus_S7.1

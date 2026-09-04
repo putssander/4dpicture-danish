@@ -64,33 +64,47 @@ texts (Qwen) is a fourth, separate family, so no model ever grades its own homew
 the same three families grade every language, so scores are comparable across languages
 in construction, even though we still only compare dictionaries within a language.
 
-## What the numbers say
+## The test texts
+
+Four texts were used to score the dictionaries. All of them are shipped in
+[`lexicon_pipeline/data/`](lexicon_pipeline/data/) so every number below can be re-computed.
+
+| Name used below | What it is | Size per language | Who labelled it | Where it comes from |
+|---|---|---|---|---|
+| **Coffee text** | A short history of coffee from a Finnish coffee website, the standard USAS test text since 2003. It exists in Finnish and English with labels by human experts, and we translated it into Danish and Dutch. | 73 sentences; 2,068 (fi), 3,468 (en), 3,399 (da), 3,675 (nl) words | Finnish and English: linguists (Löfberg et al. 2003). Danish and Dutch: the three-model committee | [USAS-WSD on Hugging Face](https://huggingface.co/datasets/ucrelnlp/USAS-WSD); our translations in [`data/references/`](lexicon_pipeline/data/references/) |
+| **Talks sample** | 50 sentences of TED talk subtitles, the same 50 in English, Danish, Dutch and Finnish. Spoken, everyday language. | 50 sentences; 468–729 words | The committee | [TED2020 on OPUS](https://opus.nlpl.eu/TED2020/); shipped as `talks_*.txt` |
+| **Health sample** | 50 sentences from the European Centre for Disease Prevention and Control, the same 50 in the four languages. Public-health communication, the register closest to the project's patient texts. | 50 sentences; 589–886 words | The committee | [ECDC translation memory on OPUS](https://opus.nlpl.eu/ECDC/); shipped as `health_*.txt` |
+| **Finnish and English gold** | The human-labelled coffee text, used only to measure how good the committee is. | 2,068 and 3,468 words | Linguists | shipped in [`data/usas_wsd/`](lexicon_pipeline/data/usas_wsd/) |
+
+The talks and health samples are small on purpose: they show whether the coffee-text
+result carries over to two very different kinds of language, not to give precise scores.
+
+## Results: how well do the dictionaries work
 
 Each score is the share of words whose first category matched the reference exactly. The
 number after `@` is coverage: the share of words for which the dictionary had any answer
 at all. Both matter, because a dictionary can look more accurate simply by answering less.
-"Own reference" is the committee-labelled test text for that language; the two PAR columns
-are the same 50 public sentences in every language, from TED talks and from European
-public-health leaflets.
+For the coffee text we give two columns: scored only on the words where the committee was
+unanimous (the labels close to human quality), and scored on all words.
 
-| Dictionary | Own reference, unanimous words | Own reference, all words | Talks (PAR) | Health (PAR) |
+| Dictionary | Coffee text, unanimous words | Coffee text, all words | Talks sample | Health sample |
 |---|---|---|---|---|
 | Danish, 2024 official release | 55.9 @ 78.7 | 50.3 @ 77.8 | 63.3 @ 84.4 | 52.9 @ 77.1 |
 | **Danish `da_open` (this release)** | **65.4 @ 88.4** | **57.8 @ 86.8** | **68.7 @ 91.5** | **59.4 @ 85.6** |
 | Dutch, current official (4,220 words) | 44.5 @ 70.4 | 38.2 @ 67.7 | 40.8 @ 71.6 | 34.3 @ 61.9 |
 | **Dutch `nl_open` (this release)** | **70.1 @ 93.4** | **61.1 @ 91.2** | **68.2 @ 92.0** | **60.4 @ 89.3** |
-| English hand-built dictionary, for scale (human-labelled test) | — | 72.4 | 74.8 @ 97.9 | 71.2 @ 94.5 |
+| English hand-built dictionary, for scale, scored on human labels | — | 72.4 | 74.8 @ 97.9 | 71.2 @ 94.5 |
 
 Reading the table: the new Danish dictionary answers more words and agrees with the
 reference more often than the 2024 release. The Dutch gain is larger because the old
 dictionary was so small. Neither reaches the hand-built English dictionary, which is the
 ceiling to aim for. If you add a neural fallback for words the dictionary does not know
-(dictionary first, a multilingual model for the rest), the PAR scores rise to 71.4 and
-64.5 for Danish and 70.8 and 64.3 for Dutch.
+(dictionary first, a multilingual model for the rest), the talks and health scores rise to
+71.4 and 64.5 for Danish and 70.8 and 64.3 for Dutch.
 
 ## How much to trust the committee
 
-Measured on all human-labelled words in the Finnish and English test texts, through the
+Measured on the human-labelled coffee text in Finnish and English, every word, through the
 three vendors' APIs. Anyone can re-run this check without an API key:
 `python lexicon_pipeline/score_calibration_classes.py`.
 
