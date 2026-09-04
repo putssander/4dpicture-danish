@@ -10,11 +10,11 @@ and disease*, while "journey", "road" and "destination" land under *movement*. O
 word carries such a label, you can ask questions of a whole corpus at once: how much of
 this patient forum talks about illness in terms of travel, or fighting, or weather?
 
-The best-known system of this kind is **USAS**, developed at Lancaster University. Its
+The best-known system of this kind is **USAS** ([UCREL Semantic Analysis System](https://ucrel.lancs.ac.uk/usas/)), developed at Lancaster University. Its
 category scheme has 21 broad fields and about 230 finer ones, and its English dictionary,
 built by hand over two decades, holds tens of thousands of words with their categories in
-order of likelihood. The open-source software **PyMUSAS** applies such a dictionary to text
-in any language for which a dictionary exists.
+order of likelihood. The open-source software **PyMUSAS** ([documentation](https://ucrel.github.io/pymusas/), [code](https://github.com/UCREL/pymusas)) applies such a dictionary to text
+in any language for which a dictionary exists; the dictionaries themselves are collected in the [Multilingual-USAS](https://github.com/UCREL/Multilingual-USAS) repository, where our 2024 Danish contribution lives as the official Danish entry.
 
 That is the catch. A good dictionary existed for English and a few other languages. For
 Danish there was none until this project contributed one in 2024, and that first version
@@ -140,10 +140,23 @@ roughly $5 to $15 through an API; enrichment, repair and scoring are free and ta
 on a laptop; the optional committee reference, which translates and labels a 3,300-word
 test text with three commercial models, costs about $20 and under an hour.
 
+## Official USAS and PyMUSAS resources
+
+| Resource | Link |
+|---|---|
+| USAS semantic tagger and category scheme (UCREL, Lancaster University) | https://ucrel.lancs.ac.uk/usas/ |
+| The USAS tagset, all categories with descriptions | https://ucrel.lancs.ac.uk/usas/semtags.txt |
+| PyMUSAS documentation, including how to load a custom lexicon | https://ucrel.github.io/pymusas/ |
+| PyMUSAS source code | https://github.com/UCREL/pymusas |
+| Multilingual-USAS: the official dictionaries for all languages, including Danish | https://github.com/UCREL/Multilingual-USAS |
+| USAS-WSD: the human-labelled test sets used for calibration | https://huggingface.co/datasets/ucrelnlp/USAS-WSD |
+| The PyMUSAS paper (Moore, Rayson et al. 2026) | https://arxiv.org/abs/2601.09648 |
+| The multilingual lexicon papers (Piao et al. 2015, 2016) | https://aclanthology.org/N15-1137/ , https://aclanthology.org/L16-1416/ |
+
 ## Licences and credits
 
-USAS and its English dictionary are the work of UCREL, Lancaster University, released as
-CC BY-NC-SA 4.0; the Danish and Dutch dictionaries derive from it and from Wiktionary,
+USAS and its English dictionary are the work of [UCREL](https://ucrel.lancs.ac.uk/), Lancaster University, released as
+CC BY-NC-SA 4.0 in [Multilingual-USAS](https://github.com/UCREL/Multilingual-USAS); the Danish and Dutch dictionaries derive from it and from Wiktionary,
 DanNet and Open Dutch WordNet. The shipped Finnish and English human-labelled test files
 are the USAS-WSD test sets (CC BY-NC-SA 4.0; Moore, Rayson et al. 2026). The work was done
 in Work Package 3 of the EU-funded 4D PICTURE project.
