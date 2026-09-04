@@ -1,65 +1,135 @@
-# PyMUSAS dictionaries for Danish and Dutch, and the recipe for any language
+# Teaching a computer what Danish and Dutch words mean
+
+## What this is
+
+When researchers study large collections of text, they often want to know not just which
+words occur but what those words are *about*: health, movement, emotion, money, family,
+time. A **semantic tagger** does this automatically. It reads a text and attaches a meaning
+category to every word, so that "surgeon", "tumour" and "recovery" all land under *health
+and disease*, while "journey", "road" and "destination" land under *movement*. Once every
+word carries such a label, you can ask questions of a whole corpus at once: how much of
+this patient forum talks about illness in terms of travel, or fighting, or weather?
+
+The best-known system of this kind is **USAS**, developed at Lancaster University. Its
+category scheme has 21 broad fields and about 230 finer ones, and its English dictionary,
+built by hand over two decades, holds tens of thousands of words with their categories in
+order of likelihood. The open-source software **PyMUSAS** applies such a dictionary to text
+in any language for which a dictionary exists.
+
+That is the catch. A good dictionary existed for English and a few other languages. For
+Danish there was none until this project contributed one in 2024, and that first version
+depended partly on a commercial translation service. For Dutch the available dictionary
+had only about 4,000 words, roughly one in ten of what the English one holds. The 4D
+PICTURE project needed to tag Danish and Dutch cancer-patient texts, so we built new
+dictionaries for both languages from open sources only, and we release them here.
+
+## How the dictionaries were built
+
+The recipe has four steps, and all of them run on ordinary hardware without paid services.
+
+1. **Translate the English dictionary word by word** with an open-weights language model
+   (Qwen), keeping each word's part of speech and its ordered list of categories.
+   Translation is efficient because it carries the English categories across without
+   labelling every word again.
+2. **Add words the translation missed** from two free lexical resources: Wiktionary, and
+   the language's own WordNet (DanNet for Danish, Open Dutch WordNet for Dutch), linked to
+   the English dictionary through shared concept identifiers.
+3. **Repair**: remove broken records, duplicates and multi-word strings that the tagger
+   could never match. The repair rules reproduce the two review rounds Lancaster applied
+   to our 2024 Danish submission, so they act as a release gate.
+4. **Validate** the idiom list separately, since multi-word patterns have their own syntax.
+
+The result is a plain text file anyone can open, inspect, correct and version. The Danish
+file holds 43,169 words, the Dutch one 58,303. A separate Danish list of 30,516 idioms and
+fixed expressions is included as an optional extra.
+
+## How we checked them without a single human annotator
+
+A dictionary is only useful if its categories are right, and checking that normally means
+paying linguists to label thousands of words by hand. For Danish and Dutch no such
+hand-labelled test set exists anywhere, and the project had no budget to create one.
+
+We used a committee of three AI models from three different companies (Claude, GPT and
+Gemini). Each model labels every word of a test text on its own, without seeing the
+others' answers. Where all three agree, we take that label as the reference. The reason
+this is more than wishful thinking is **calibration**: Finnish and English do have
+human-labelled test texts, so we ran the same committee there first and measured how often
+its answers matched the human experts. The result is the table further down. In short:
+where all three models agree, they match the experts about 85 to 88 times in a hundred.
+Where they disagree, the majority vote is right only about half the time. So we treat the
+unanimous labels as the answer key and report scores on those.
+
+Two guardrails keep this honest. The model that translated the dictionaries and the test
+texts (Qwen) is a fourth, separate family, so no model ever grades its own homework. And
+the same three families grade every language, so scores are comparable across languages
+in construction, even though we still only compare dictionaries within a language.
+
+## What the numbers say
+
+Each score is the share of words whose first category matched the reference exactly. The
+number after `@` is coverage: the share of words for which the dictionary had any answer
+at all. Both matter, because a dictionary can look more accurate simply by answering less.
+"Own reference" is the committee-labelled test text for that language; the two PAR columns
+are the same 50 public sentences in every language, from TED talks and from European
+public-health leaflets.
+
+| Dictionary | Own reference, unanimous words | Own reference, all words | Talks (PAR) | Health (PAR) |
+|---|---|---|---|---|
+| Danish, 2024 official release | 55.9 @ 78.7 | 50.3 @ 77.8 | 63.3 @ 84.4 | 52.9 @ 77.1 |
+| **Danish `da_open` (this release)** | **65.4 @ 88.4** | **57.8 @ 86.8** | **68.7 @ 91.5** | **59.4 @ 85.6** |
+| Dutch, current official (4,220 words) | 44.5 @ 70.4 | 38.2 @ 67.7 | 40.8 @ 71.6 | 34.3 @ 61.9 |
+| **Dutch `nl_open` (this release)** | **70.1 @ 93.4** | **61.1 @ 91.2** | **68.2 @ 92.0** | **60.4 @ 89.3** |
+| English hand-built dictionary, for scale (human-labelled test) | — | 72.4 | 74.8 @ 97.9 | 71.2 @ 94.5 |
+
+Reading the table: the new Danish dictionary answers more words and agrees with the
+reference more often than the 2024 release. The Dutch gain is larger because the old
+dictionary was so small. Neither reaches the hand-built English dictionary, which is the
+ceiling to aim for. If you add a neural fallback for words the dictionary does not know
+(dictionary first, a multilingual model for the rest), the PAR scores rise to 71.4 and
+64.5 for Danish and 70.8 and 64.3 for Dutch.
+
+## How much to trust the committee
+
+Measured on all human-labelled words in the Finnish and English test texts, through the
+three vendors' APIs. Anyone can re-run this check without an API key:
+`python lexicon_pipeline/score_calibration_classes.py`.
+
+| What the committee did | Finnish: share of words → correct | English: share of words → correct |
+|---|---|---|
+| All three models agreed | 69.1% → **85.5%** | 79.0% → **88.2%** |
+| Only two agreed (majority vote) | 26.5% → 48.4% | 19.0% → 56.2% |
+| All three differed (strongest model decides) | 4.4% → 46.7% | 2.0% → 35.3% |
+| The combined reference, all classes | 74.0% | 81.1% |
+| The best single model on its own | 75.2% | 81.3% |
+
+## What this cannot tell you
+
+Every Danish and Dutch test word sits in translated text, not in text originally written
+in those languages. The Dutch text was rewritten by a native speaker before labelling; the
+Danish text was not. No native speaker checked the category labels themselves. The scores
+therefore show which dictionary is better within a language. They are not a promise of
+absolute accuracy, and any high-stakes use should add a human check on the texts at hand.
+
+## Use it, or build your own
 
 | What | Where |
 |---|---|
-| The released dictionaries (use these) | [`lexicons/`](lexicons/) — `da/semantic_lexicon_da_open.tsv` (43,169 entries), `da/mwe_da_ALL.tsv` (30,516 idioms), `nl/semantic_lexicon_nl_open.tsv` (58,303) |
-| Understand it: how they were built and evaluated, every number from result files, no GPU | [`build_a_language.ipynb`](build_a_language.ipynb) |
-| Run it: the six stages as cells for a new language | [`build_your_language.ipynb`](build_your_language.ipynb) |
-| The scripts behind each stage | [`lexicon_pipeline/`](lexicon_pipeline/) |
-| Every number the notebook shows | [`results_index.json`](results_index.json) |
+| The dictionaries, ready for PyMUSAS with the matching spaCy model | [`lexicons/`](lexicons/) |
+| Understand it: the whole story with every number drawn from result files, runs in seconds without a GPU | [`build_a_language.ipynb`](build_a_language.ipynb) |
+| Run it: the recipe as cells, for any language with a spaCy model | [`build_your_language.ipynb`](build_your_language.ipynb) |
+| The scripts behind each step | [`lexicon_pipeline/`](lexicon_pipeline/) |
+| Every number shown in the notebook | [`results_index.json`](results_index.json) |
 
-## Results
+Cost to add a language, at August 2026 list prices: translating the 54,000-entry English
+list with a local open-weights model is free and takes about two hours on one GPU, or
+roughly $5 to $15 through an API; enrichment, repair and scoring are free and take minutes
+on a laptop; the optional committee reference, which translates and labels a 3,300-word
+test text with three commercial models, costs about $20 and under an hour.
 
-Exact top-1 accuracy @ coverage (share of words that got any answer). Danish and Dutch have
-no human-labelled USAS test set, so "own reference" is a three-model committee reference
-(Claude, GPT, Gemini). Its **unanimous** labels are the primary comparison; see the
-calibration below for why. The two PAR columns are the same 50 public sentences in every
-language (TED2020 talks, ECDC health text). Compare rows within one language only.
+## Licences and credits
 
-| Lexicon | Own reference, unanimous tokens | Own reference, all tokens | Talks (PAR) | Health (PAR) |
-|---|---|---|---|---|
-| Danish, 2024 official release | 55.9 @ 78.7 | 50.3 @ 77.8 | 63.3 @ 84.4 | 52.9 @ 77.1 |
-| **Danish `da_open`** | **65.4 @ 88.4** | **57.8 @ 86.8** | **68.7 @ 91.5** | **59.4 @ 85.6** |
-| Dutch, current official (4,220 entries) | 44.5 @ 70.4 | 38.2 @ 67.7 | 40.8 @ 71.6 | 34.3 @ 61.9 |
-| **Dutch `nl_open`** | **70.1 @ 93.4** | **61.1 @ 91.2** | **68.2 @ 92.0** | **60.4 @ 89.3** |
-| English hand-built (ceiling, human gold) | — | 72.4 | 74.8 @ 97.9 | 71.2 @ 94.5 |
-
-With a neural fallback for uncovered words (dictionary first, BEM for the rest) the PAR
-scores rise to 71.4 / 64.5 (Danish) and 70.8 / 64.3 (Dutch).
-
-## How much to trust the committee reference
-
-Measured on the two languages that have human labels, all tokens, through the vendors'
-APIs. Reproduce offline: `python lexicon_pipeline/score_calibration_classes.py`.
-
-| Label class | Finnish: share of tokens → correct | English: share of tokens → correct |
-|---|---|---|
-| All three models agree | 69.1% → **85.5%** | 79.0% → **88.2%** |
-| Only two agree (majority vote) | 26.5% → 48.4% | 19.0% → 56.2% |
-| All differ (strongest model decides) | 4.4% → 46.7% | 2.0% → 35.3% |
-| Combined reference | 74.0% | 81.1% |
-| Best single model alone | 75.2% | 81.3% |
-
-Unanimous labels are close to human quality; disagreements are a coin flip. Score a new
-dictionary on the unanimous tokens and report the share of tokens that reached unanimity.
-
-## Known limits
-
-Every Danish and Dutch test token is translated text (the Dutch text was rewritten by a
-native speaker, the Danish text was not), and no native speaker checked the semantic
-labels. The scores compare dictionaries within a language; they are not absolute accuracy.
-
-## Cost to add a language (August 2026 list prices)
-
-| Stage | Cost |
-|---|---|
-| Translate the 54k-entry English list with a local open-weights model (Qwen via Ollama) | free, about two hours on one GPU; roughly $5–15 via an API instead |
-| Wiktionary and WordNet enrichment, repair, validation | free, CPU minutes |
-| Committee reference: translate and post-edit a 3,300-word text, tag with three API families | about $20, under an hour |
-| Scoring | free, CPU minutes |
-
-## Licences
-
-The dictionaries derive from UCREL's Multilingual-USAS (CC BY-NC-SA 4.0), Wiktionary,
-DanNet and Open Dutch WordNet. The shipped Finnish and English gold files are the USAS-WSD
-test sets (CC BY-NC-SA 4.0, Moore, Rayson et al. 2026).
+USAS and its English dictionary are the work of UCREL, Lancaster University, released as
+CC BY-NC-SA 4.0; the Danish and Dutch dictionaries derive from it and from Wiktionary,
+DanNet and Open Dutch WordNet. The shipped Finnish and English human-labelled test files
+are the USAS-WSD test sets (CC BY-NC-SA 4.0; Moore, Rayson et al. 2026). The work was done
+in Work Package 3 of the EU-funded 4D PICTURE project.
