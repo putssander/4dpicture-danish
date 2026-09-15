@@ -26,7 +26,9 @@ correction.
    [pyannote/segmentation-3.0](https://hf.co/pyannote/segmentation-3.0). Put `HF_TOKEN=hf_...`
    in a file `.env` in the repo root (git-ignored), or paste it once into the `HF_TOKEN`
    field of the notebook (it is then saved to `.env`; remove it from the notebook again).
-3. Open the notebook, set the audio folder, **Run → Run All Cells**.
+3. Open the notebook, set the audio folder, menu **Run → Run All Cells**. Not the toolbar's
+   "Restart the kernel and run all cells" button: on this image any kernel *restart* silently
+   disconnects the notebook from its kernel (see below).
 
 Output per recording, next to it: `<name>-transcription.json`
 (`{"speakers": [{"timestamp": [start, end], "speaker": "SPEAKER_00", "text": "..."}]}`) and
@@ -63,7 +65,7 @@ the environment and repairs only what is broken, in this order:
 1. NVIDIA pip libraries invisible to the kernel → discovered and preloaded in-process
    (`LD_LIBRARY_PATH` set inside a running kernel does nothing).
 2. torch ↔ torchaudio CUDA-build mismatch → torchaudio reinstalled to match torch
-   (the notebook then asks for a kernel restart).
+   (the notebook then asks for a new kernel).
 3. Upstream API churn → `transcribe/requirements.lock` (verified versions) is installed
    first; `transcribe/requirements.in` (unpinned) is the fallback. torch/torchaudio/nvidia-*
    are deliberately unpinned: they must match the machine's CUDA build.
@@ -86,10 +88,13 @@ After a verified-good run on a new image, refresh `transcribe/requirements.lock`
 ## Known JupyterLab problem: "Run All does nothing"
 
 The first output line (`STEP 1/4 ...`) appears within a second or two of starting. If after
-a minute there is still no output, whether the cells show `[*]` or not, and a Kernel →
-Restart does not help: the image's `jupyter-server-documents` extension has dropped the
-link between the notebook and its kernel (it happens after the notebook sat idle, and also
-after "Restart Kernel and Run All"). The kernel is fine but never receives the cells: the
+a minute there is still no output, whether the cells show `[*]` or not: the notebook is no
+longer connected to its kernel. On this image **every kernel restart** does that, whether
+from the toolbar button "Restart the kernel and run all cells", Kernel → Restart Kernel, or
+the `RESTART` shortcut; a notebook left open and idle can lose the link too. The
+`jupyter-server-documents` extension connects the notebook to the kernel once, at kernel
+start, and not again after a restart. The kernel is fine but never receives the cells: the
 server log (`/work/stdout-0.log`) shows `Kernel restarted` with no `Connected yroom ... to
 kernel` line after it, and `curl -s localhost:8888/api/kernels` reports `"connections": 0`.
-Fix: **Kernel → Shut Down Kernel**, then pick **Python 3** again (top-right) and Run All.
+Fix: **Kernel → Shut Down Kernel**, then pick **Python 3** again (top-right) and menu
+**Run → Run All Cells**. Never restart; shut down and start a new kernel instead.

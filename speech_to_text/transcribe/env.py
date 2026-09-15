@@ -225,8 +225,8 @@ def ensure_numpy_before_torch() -> None:
     pip_install(spec)
     if "torch" in sys.modules:
         raise KernelRestartRequired(
-            "torch was imported while numpy was missing; numpy is installed now. RESTART THE "
-            "KERNEL (Kernel -> Restart) and run the cell again.")
+            "torch was imported while numpy was missing; numpy is installed now. START A NEW "
+            "KERNEL (Kernel -> Shut Down Kernel, then pick Python 3 again) and Run All again.")
 
 
 # --------------------------------------------------------------------------- torchaudio
@@ -559,8 +559,8 @@ def bootstrap(install: bool = True, need_token: bool = True, verbose: bool = Tru
         ensure_numpy_before_torch()
         if reconcile_torchaudio():
             raise KernelRestartRequired(
-                "torchaudio was reinstalled to match torch. RESTART THE KERNEL "
-                "(Kernel -> Restart) and run the cell again.")
+                "torchaudio was reinstalled to match torch. START A NEW KERNEL "
+                "(Kernel -> Shut Down Kernel, then pick Python 3 again) and Run All again.")
         install_dependencies()
         bootstrap_cuda_library_path(verbose=False)  # deps may have added NVIDIA packages
     asr_device, asr_compute_type = ensure_asr_gpu(download_root=str(model_cache) if model_cache else None)
