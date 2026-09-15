@@ -27,7 +27,7 @@ correction.
    in a file `.env` in the repo root (git-ignored), or paste it once into the `HF_TOKEN`
    field of the notebook (it is then saved to `.env`; remove it from the notebook again).
 3. Open the notebook, set the audio folder, menu **Run → Run All Cells**. Not the toolbar's
-   "Restart the kernel and run all cells" button: on this image any kernel *restart* silently
+   "Restart the kernel and run all cells" button: on this image a kernel *restart* usually
    disconnects the notebook from its kernel (see below).
 
 Output per recording, next to it: `<name>-transcription.json`
@@ -89,11 +89,11 @@ After a verified-good run on a new image, refresh `transcribe/requirements.lock`
 
 The first output line (`STEP 1/4 ...`) appears within a second or two of starting. If after
 a minute there is still no output, whether the cells show `[*]` or not: the notebook is no
-longer connected to its kernel. On this image **every kernel restart** does that, whether
-from the toolbar button "Restart the kernel and run all cells", Kernel → Restart Kernel, or
-the `RESTART` shortcut; a notebook left open and idle can lose the link too. The
-`jupyter-server-documents` extension connects the notebook to the kernel once, at kernel
-start, and not again after a restart. The kernel is fine but never receives the cells: the
+longer connected to its kernel. On this image a **kernel restart** usually does that (4 of
+5 restarts on 15 Sep 2026, whether from the toolbar button "Restart the kernel and run all
+cells" or Kernel → Restart Kernel); a notebook left open and idle can lose the link too. The
+`jupyter-server-documents` extension connects the notebook to the kernel at kernel start and
+does not reliably reconnect after a restart. The kernel is fine but never receives the cells: the
 server log (`/work/stdout-0.log`) shows `Kernel restarted` with no `Connected yroom ... to
 kernel` line after it, and `curl -s localhost:8888/api/kernels` reports `"connections": 0`.
 Fix: **Kernel → Shut Down Kernel**, then pick **Python 3** again (top-right) and menu
