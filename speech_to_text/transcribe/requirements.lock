@@ -1,0 +1,39 @@
+# Pinned, verified-working versions for the transcribe package
+# Generated 2026-09-15 on Python 3.13.13 (torch 2.14.0+cu130, pyannote.audio 4.0.7, ctranslate2 4.8.2).
+# The setup cell tries this file first and falls back to the unpinned requirements.in if it
+# Only packages with API surface for this notebook are pinned; generic libs (requests, rich, ...) float.
+# cannot be installed (e.g. a newer Python without wheels). torch/torchaudio/nvidia-* are
+# deliberately NOT pinned: they must match the machine's CUDA build.
+
+asteroid-filterbanks==0.4.0
+av==18.1.0
+ctranslate2==4.8.2
+einops==0.8.2
+faster-whisper==1.2.1
+hf-xet==1.6.0
+huggingface-hub==1.31.0
+hyperpyyaml==1.2.3
+lightning==2.6.6
+lightning-utilities==0.15.3
+numpy==2.5.2
+onnxruntime==1.30.0
+optuna==5.0.0
+pandas==3.0.5
+pyannoteai-sdk==0.4.0
+python-docx==1.2.0
+pytorch-lightning==2.6.6
+pytorch-metric-learning==2.9.0
+ruamel-yaml==0.18.17
+safetensors==0.8.0
+scikit-learn==1.9.1
+scipy==1.18.1
+sentencepiece==0.2.2
+soundfile==0.14.0
+speechbrain==1.1.1
+tokenizers==0.23.2
+tqdm==4.67.3
+pyannote-audio==4.0.7
+pyannote-core==6.0.1
+pyannote-database==6.1.1
+pyannote-metrics==4.1
+pyannote-pipeline==4.0.0
